@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ОРЛС · Методический портал — УМВД по Нижегородской области</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M24 3.5 C32.5 3.5 37.5 9.5 37.5 17 L37.5 25 C37.5 34 31.5 41 24 45 C16.5 41 10.5 34 10.5 25 L10.5 17 C10.5 9.5 15.5 3.5 24 3.5 Z' fill='%23121d33' stroke='%23c9a24b' stroke-width='2'/%3E%3Cpath d='M24 18 L25.59 21.82 L29.71 22.15 L26.57 24.83 L27.53 28.85 L24 26.7 L20.47 28.85 L21.43 24.83 L18.29 22.15 L22.41 21.82 Z' fill='%23c9a24b'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#0b1322;
+  --bg-soft:#0e1728;
+  --panel:#121d33;
+  --panel-2:#16233c;
+  --line:rgba(255,255,255,.08);
+  --gold:#c9a24b;
+  --gold-2:#e6c878;
+  --blue:#2f6fb4;
+  --red:#d6455b;
+  --text:#eef2f8;
+  --muted:#93a5c0;
+  --head:#f4f6fb;
+  --shadow:0 18px 44px rgba(0,0,0,.34);
+}
+[data-theme="light"]{
+  --bg:#f4f6fb;
+  --bg-soft:#e9edf5;
+  --panel:#ffffff;
+  --panel-2:#fbfcfe;
+  --line:rgba(18,34,66,.1);
+  --gold:#9a7a2e;
+  --gold-2:#b8943a;
+  --blue:#1d5aa6;
+  --red:#c22f47;
+  --text:#16233c;
+  --muted:#55688a;
+  --head:#0f1b30;
+  --shadow:0 14px 36px rgba(20,40,90,.12);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden;transition:background .35s,color .35s}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+::selection{background:rgba(201,162,75,.32);color:#fff}
+::-webkit-scrollbar{width:9px;height:9px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--gold-2),var(--gold));border-radius:8px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+/* ================= HEADER ================= */
+header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,19,34,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+[data-theme="light"] header{background:rgba(244,246,251,.94)}
+.nav{max-width:1180px;margin:0 auto;padding:0 24px;height:66px;display:flex;align-items:center;gap:26px}
+.logo{display:flex;align-items:center;gap:12px;font-family:'Russo One',sans-serif;font-size:16px;letter-spacing:.4px;color:var(--head);white-space:nowrap}
+.logo svg{width:34px;height:36px}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:300;background:linear-gradient(90deg,var(--gold-2),var(--gold));box-shadow:0 0 12px rgba(201,162,75,.55)}
+.nav-links{display:flex;gap:2px;margin-left:auto}
+.nav-links a{color:var(--muted);font-size:13px;font-weight:600;padding:8px 13px;border-radius:8px;transition:.25s;white-space:nowrap}
+.nav-links a:hover{color:var(--gold)}
+.nav-links a.active{color:var(--gold)}
+.nav-right{display:flex;align-items:center;gap:10px}
+.theme-btn{cursor:pointer;width:38px;height:38px;border-radius:9px;border:1px solid var(--line);background:transparent;color:var(--text);font-size:15px;display:grid;place-items:center;transition:.25s}
+.theme-btn:hover{border-color:var(--gold);color:var(--gold)}
+.burger{display:none;cursor:pointer;width:38px;height:38px;border-radius:9px;border:1px solid var(--line);background:transparent;color:var(--text);font-size:17px}
+@media(max-width:920px){
+  .burger{display:grid;place-items:center}
+  .nav-links{position:fixed;top:66px;right:0;left:0;background:var(--bg-soft);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px;gap:4px;display:none}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:12px 14px;border-radius:9px}
+  .nav-links a:hover{background:var(--panel)}
+}
+
+/* ================= HERO ================= */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:140px 24px 90px;overflow:hidden}
+.hero .bgimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.85)}
+.hero .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,19,34,.78) 0%,rgba(11,19,34,.55) 45%,var(--bg) 100%)}
+[data-theme="light"] .hero .overlay{background:linear-gradient(180deg,rgba(11,19,34,.72) 0%,rgba(11,19,34,.42) 50%,var(--bg) 100%)}
+.hero-inner{position:relative;z-index:2;max-width:900px}
+.emblem{width:clamp(110px,16vw,150px);margin:0 auto 30px;filter:drop-shadow(0 6px 24px rgba(0,0,0,.5))}
+.hero h1{font-family:'Russo One',sans-serif;font-size:clamp(30px,5.5vw,58px);line-height:1.12;color:#fff;text-transform:uppercase;letter-spacing:1px}
+.hero h1 span{color:var(--gold-2)}
+.hero .dept{display:inline-block;margin-top:20px;font-size:clamp(12px,1.6vw,14px);letter-spacing:3px;text-transform:uppercase;color:#d9e2f0;border:1px solid rgba(255,255,255,.28);padding:9px 22px;border-radius:100px;background:rgba(255,255,255,.06)}
+.hero p{color:#c6d2e4;max-width:680px;margin:22px auto 0;font-size:clamp(14px,1.8vw,16.5px)}
+.hero-actions{display:flex;gap:14px;justify-content:center;margin-top:36px;flex-wrap:wrap}
+.btn{font-family:'Russo One',sans-serif;font-size:13.5px;letter-spacing:.5px;padding:15px 30px;border-radius:10px;display:inline-flex;align-items:center;gap:9px;transition:.28s;border:1px solid transparent}
+.btn.gold{background:linear-gradient(135deg,var(--gold-2),var(--gold));color:#1a1405;box-shadow:0 12px 30px rgba(201,162,75,.35)}
+.btn.gold:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(201,162,75,.45)}
+.btn.ghost{background:rgba(255,255,255,.07);color:#fff;border-color:rgba(255,255,255,.32)}
+.btn.ghost:hover{background:rgba(255,255,255,.14);transform:translateY(-3px)}
+.hero-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;max-width:760px;margin:56px auto 0}
+.hstat{background:var(--panel);padding:22px 14px;text-align:center}
+.hstat b{font-family:'Russo One',sans-serif;font-size:clamp(22px,3vw,30px);color:var(--gold);display:block}
+.hstat span{font-size:11.5px;color:var(--muted);letter-spacing:.4px;text-transform:uppercase;font-weight:600}
+@media(max-width:640px){.hero-stats{grid-template-columns:repeat(2,1fr)}}
+
+/* ================= SECTIONS ================= */
+section{padding:88px 0}
+.shead{margin-bottom:52px;text-align:left;position:relative;padding-left:22px;border-left:4px solid var(--gold)}
+.shead .kicker{font-family:'Russo One',sans-serif;font-size:11.5px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.shead h2{font-family:'Russo One',sans-serif;font-size:clamp(24px,3.6vw,38px);color:var(--head);margin-top:8px;line-height:1.2}
+.shead p{color:var(--muted);margin-top:12px;max-width:680px;font-size:14.5px}
+.shead.center{text-align:center;padding-left:0;border-left:0}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+
+/* ================= HIERARCHY ================= */
+.hier{display:flex;flex-direction:column;align-items:center;gap:0;max-width:760px;margin:0 auto}
+.hnode{width:100%;max-width:560px;background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:12px;padding:20px 26px;text-align:center;transition:.3s;position:relative}
+.hnode:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.hnode h4{font-family:'Russo One',sans-serif;font-size:15.5px;color:var(--head)}
+.hnode p{color:var(--muted);font-size:12.5px;margin-top:4px}
+.hnode .rank{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.hlink{width:2px;height:38px;background:linear-gradient(var(--gold),var(--gold));position:relative;flex:0 0 auto}
+.hlink::before{content:"";position:absolute;left:50%;bottom:0;transform:translateX(-50%) rotate(45deg);width:8px;height:8px;border-right:2px solid var(--gold);border-bottom:2px solid var(--gold)}
+.hnode.multi .chips{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.hnode.multi .chip{background:var(--panel-2);border:1px solid var(--line);padding:7px 18px;border-radius:8px;font-size:12.5px;font-weight:600;color:var(--text)}
+
+/* ================= MODULE CARDS ================= */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
+.mcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:.3s;display:flex;flex-direction:column}
+.mcard:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:rgba(201,162,75,.4)}
+.mcard .thumb{height:170px;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--panel-2),var(--bg-soft))}
+.mcard .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.mcard:hover .thumb img{transform:scale(1.06)}
+.mcard .thumb .num{position:absolute;top:14px;right:14px;font-family:'Russo One',sans-serif;font-size:13px;color:#fff;background:rgba(11,19,34,.7);padding:5px 12px;border-radius:7px;border:1px solid rgba(255,255,255,.2)}
+.mcard .body{padding:22px 24px 24px;flex:1;display:flex;flex-direction:column}
+.mcard h3{font-family:'Russo One',sans-serif;font-size:17.5px;color:var(--head);margin-bottom:8px}
+.mcard p{color:var(--muted);font-size:13.5px;flex:1}
+.mcard .more{margin-top:16px;font-family:'Russo One',sans-serif;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:6px}
+.mcard .more::after{content:"→";transition:transform .25s}
+.mcard:hover .more::after{transform:translateX(4px)}
+
+/* ================= LECTURES ================= */
+.lecture-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.lecture-tabs button{cursor:pointer;font-family:'Russo One',sans-serif;font-size:12px;letter-spacing:.6px;padding:10px 18px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--muted);transition:.25s}
+.lecture-tabs button.active{background:var(--gold);color:#1a1405;border-color:var(--gold)}
+.acc{background:var(--panel);border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden;transition:.25s}
+.acc:hover{border-color:rgba(201,162,75,.45)}
+.acc-head{display:flex;align-items:center;gap:16px;padding:18px 22px;cursor:pointer;user-select:none}
+.acc-head .num{width:38px;height:38px;flex:0 0 38px;border-radius:9px;display:grid;place-items:center;font-family:'Russo One',sans-serif;font-size:13px;background:var(--panel-2);border:1px solid var(--line);color:var(--gold)}
+.acc-head h3{font-size:15px;font-weight:700;color:var(--head);flex:1}
+.acc-head .time{font-size:11.5px;color:var(--muted);background:var(--panel-2);border:1px solid var(--line);padding:4px 10px;border-radius:6px;white-space:nowrap}
+.acc-head .arrow{color:var(--gold);font-size:14px;transition:.3s}
+.acc.open .arrow{transform:rotate(180deg)}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .5s ease}
+.acc-inner{padding:6px 24px 26px;color:var(--muted);font-size:14px;border-top:1px dashed var(--line)}
+.acc-inner h4{color:var(--head);margin:18px 0 8px;font-size:13px;text-transform:uppercase;letter-spacing:1.4px;color:var(--gold)}
+.acc-inner p{margin:8px 0}
+.acc-inner ul,ol{padding-left:22px;margin:8px 0}
+.acc-inner li{margin:6px 0}
+.acc-inner b{color:var(--text)}
+.acc-inner .warn{background:rgba(214,69,91,.08);border:1px solid rgba(214,69,91,.35);border-radius:10px;padding:14px 16px;margin:12px 0;color:#f0a9b5;font-size:13.5px}
+[data-theme="light"] .acc-inner .warn{color:#8d2135}
+.acc-inner .info{background:rgba(47,111,180,.08);border:1px solid rgba(47,111,180,.35);border-radius:10px;padding:14px 16px;margin:12px 0;font-size:13.5px}
+.acc-table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0}
+.acc-table td,.acc-table th{border:1px solid var(--line);padding:9px 12px;text-align:left}
+.acc-table th{background:var(--panel-2);color:var(--gold);font-weight:700}
+
+/* ================= THEORY CARDS ================= */
+.theory-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:30px}
+.theory-tabs button{cursor:pointer;font-family:'Russo One',sans-serif;font-size:12px;letter-spacing:.5px;padding:9px 16px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--muted);transition:.25s}
+.theory-tabs button.active{background:var(--gold);color:#1a1405;border-color:var(--gold)}
+.qgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.qcard{perspective:1000px;height:100%}
+.qcard .inner{position:relative;width:100%;height:100%;min-height:168px;transition:transform .55s cubic-bezier(.2,.8,.3,1);transform-style:preserve-3d;cursor:pointer}
+.qcard.flipped .inner{transform:rotateY(180deg)}
+.qface{position:absolute;inset:0;backface-visibility:hidden;border-radius:12px;padding:22px;display:flex;flex-direction:column;justify-content:center;border:1px solid var(--line)}
+.qface.front{background:var(--panel)}
+.qface.front .qnum{font-family:'Russo One',sans-serif;font-size:11px;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px}
+.qface.front p{font-size:14px;font-weight:600;color:var(--head)}
+.qface.front .hint{margin-top:14px;font-size:10.5px;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
+.qface.back{background:var(--panel-2);border-color:rgba(201,162,75,.5);transform:rotateY(180deg)}
+.qface.back .ans-label{font-family:'Russo One',sans-serif;font-size:11px;letter-spacing:2px;color:var(--gold);margin-bottom:8px;text-transform:uppercase}
+.qface.back p{font-size:13px;color:var(--text)}
+
+/* ================= TIMELINE ================= */
+.timeline{max-width:780px;margin:0 auto;position:relative;padding-left:26px}
+.timeline::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--gold),var(--blue))}
+.tstep{display:flex;gap:20px;margin-bottom:20px;position:relative}
+.tstep .dot{width:52px;height:52px;flex:0 0 52px;border-radius:50%;display:grid;place-items:center;font-family:'Russo One',sans-serif;font-size:15px;background:var(--panel);border:2px solid var(--gold);color:var(--gold);box-shadow:0 0 0 4px var(--bg)}
+.tstep .body{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 22px;flex:1;transition:.25s}
+.tstep .body:hover{border-color:rgba(201,162,75,.45)}
+.tstep .body h4{font-size:15px;color:var(--head);margin-bottom:6px}
+.tstep .body p{color:var(--muted);font-size:13.5px}
+.tstep .body code{background:var(--panel-2);border:1px solid var(--line);padding:2px 8px;border-radius:6px;color:var(--gold);font-size:12.5px}
+.rights{margin-top:44px;background:linear-gradient(135deg,rgba(214,69,91,.12),rgba(201,162,75,.08));border:1px solid rgba(214,69,91,.4);border-radius:14px;padding:30px;position:relative}
+.rights h3{font-family:'Russo One',sans-serif;color:var(--red);font-size:18px;margin-bottom:12px}
+.rights ul{padding-left:22px}
+.rights li{margin:7px 0;color:var(--text);font-size:14.5px}
+
+/* ================= INTERVIEW ================= */
+.req-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-bottom:56px}
+.req{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:10px;padding:20px}
+.req b{display:block;font-family:'Russo One',sans-serif;font-size:13.5px;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.req p{color:var(--muted);font-size:13.5px}
+.steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-bottom:56px}
+.step-card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px;position:relative;transition:.28s}
+.step-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.step-card .snum{font-family:'Russo One',sans-serif;font-size:32px;color:rgba(201,162,75,.22);line-height:1}
+.step-card h4{font-family:'Russo One',sans-serif;font-size:14px;color:var(--head);margin:10px 0 8px}
+.step-card p{color:var(--muted);font-size:12.5px}
+.abbr-wrap{display:flex;flex-wrap:wrap;gap:10px}
+.abbr{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:9px 15px;transition:.25s;text-align:center;min-width:130px}
+.abbr:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:var(--shadow)}
+.abbr b{font-family:'Russo One',sans-serif;font-size:13px;color:var(--gold);display:block}
+.abbr span{font-size:11px;color:var(--muted);display:block;margin-top:2px}
+.shead-sub{font-family:'Russo One',sans-serif;font-size:16px;color:var(--gold);text-transform:uppercase;letter-spacing:1.5px;margin:0 0 18px}
+
+/* ================= TEST ================= */
+.test-controls{display:flex;gap:10px;margin-bottom:26px;flex-wrap:wrap}
+.test-controls button{cursor:pointer;font-family:'Russo One',sans-serif;font-size:12px;padding:10px 20px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--muted);transition:.25s}
+.test-controls button:hover{color:var(--gold);border-color:var(--gold)}
+.test-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+.test{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px;transition:.25s}
+.test:hover{border-color:rgba(201,162,75,.4)}
+.test h4{font-size:13.5px;font-weight:600;color:var(--head);margin-bottom:14px;display:flex;gap:10px}
+.test .tnum{font-family:'Russo One',sans-serif;color:var(--gold);font-size:12.5px;flex:0 0 auto}
+.test .ans{display:none;font-size:13px;color:var(--text);border-top:1px dashed var(--line);padding-top:12px;margin-top:4px}
+.test .ans b{color:var(--gold)}
+.test .show{font-family:'Russo One',sans-serif;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;cursor:pointer;border:1px solid var(--line);background:var(--panel-2);color:var(--gold);padding:8px 16px;border-radius:7px;transition:.25s}
+.test .show:hover{border-color:var(--gold)}
+
+/* ================= TRAINING ================= */
+.training-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:24px}
+.tblock{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:.28s}
+.tblock:hover{box-shadow:var(--shadow);border-color:rgba(201,162,75,.4)}
+.tblock .thumb{height:150px;overflow:hidden;background:linear-gradient(135deg,var(--panel-2),var(--bg-soft));position:relative}
+.tblock .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.tblock:hover .thumb img{transform:scale(1.05)}
+.tblock .tbody{padding:22px 24px 26px}
+.tblock h3{font-family:'Russo One',sans-serif;font-size:16.5px;color:var(--head);margin-bottom:12px}
+.tblock ul{list-style:none}
+.tblock ul li{font-size:13.5px;color:var(--muted);padding:8px 0;border-bottom:1px dashed var(--line);display:flex;gap:10px}
+.tblock ul li:last-child{border-bottom:0}
+.tblock ul li b{color:var(--gold);flex:0 0 auto}
+.route{border:1px solid var(--line);border-radius:10px;padding:16px;margin-top:12px;background:var(--panel-2);transition:.25s}
+.route:hover{border-color:rgba(201,162,75,.5)}
+.route h4{font-size:13.5px;color:var(--gold);margin-bottom:4px}
+.route p{font-size:12.5px;color:var(--muted)}
+.route .bar{height:7px;border-radius:5px;background:var(--bg);margin-top:10px;overflow:hidden}
+.route .bar i{display:block;height:100%;border-radius:5px;background:linear-gradient(90deg,var(--gold),var(--gold-2));width:0;transition:width 1.3s cubic-bezier(.2,.8,.3,1)}
+
+/* ================= FOOTER ================= */
+footer{margin-top:60px;border-top:1px solid var(--line);background:var(--bg-soft);padding:52px 0 34px}
+.foot{display:flex;flex-wrap:wrap;gap:36px;justify-content:space-between;padding-bottom:30px;border-bottom:1px solid var(--line)}
+.foot .f1{max-width:400px}
+.foot .f1 h3{font-family:'Russo One',sans-serif;font-size:17px;color:var(--head);margin-bottom:10px}
+.foot .f1 p{color:var(--muted);font-size:13px}
+.foot .cols{display:flex;gap:56px;flex-wrap:wrap}
+.foot h4{font-size:11.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.foot .cols a{display:block;color:var(--muted);font-size:13.5px;margin:7px 0;transition:.2s}
+.foot .cols a:hover{color:var(--gold);transform:translateX(4px)}
+.copy{max-width:1180px;margin:26px auto 0;padding:0 24px;color:var(--muted);font-size:12.5px;display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between}
+#toTop{position:fixed;bottom:24px;right:24px;z-index:90;width:46px;height:46px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--gold);font-size:18px;cursor:pointer;opacity:0;pointer-events:none;transition:.3s}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{border-color:var(--gold);transform:translateY(-4px)}
+.watermark{position:fixed;right:-30px;bottom:-36px;z-index:2;pointer-events:none;user-select:none;
+  font-family:'Russo One',sans-serif;font-size:clamp(90px,18vw,340px);letter-spacing:14px;white-space:nowrap;
+  color:rgba(201,162,75,.52);-webkit-text-stroke:2px rgba(230,200,120,.65);paint-order:stroke fill;
+  text-shadow:0 0 40px rgba(201,162,75,.85),0 0 110px rgba(201,162,75,.6),0 6px 22px rgba(0,0,0,.5);
+  transform:rotate(-8deg);line-height:1}
+[data-theme="light"] .watermark{color:rgba(154,122,46,.5);-webkit-text-stroke:1.4px rgba(154,122,46,.7);
+  text-shadow:0 0 38px rgba(154,122,46,.6),0 0 80px rgba(154,122,46,.45)}
+.devnote{margin-top:18px;font-size:13px;color:#c6d2e4}
+.devnote a{color:var(--gold-2);font-weight:700;border-bottom:1px dashed rgba(230,200,120,.5);transition:.2s}
+.devnote a:hover{color:#fff;border-bottom-color:#fff}
+@media(max-width:640px){.acc-head .time{display:none}.shead{padding-left:16px}}
+</style>
+</head>
+<body data-theme="dark">
+<div class="watermark">ARKHAM</div>
+<header>
+  <div class="nav">
+    <div class="logo">
+      <svg viewBox="0 0 44 44" fill="none">
+        <circle cx="22" cy="22" r="20" fill="#121d33" stroke="#c9a24b" stroke-width="2"/>
+        <circle cx="22" cy="22" r="15" fill="none" stroke="#c9a24b" stroke-width="0.8" opacity=".5"/>
+        <path d="M22 10.5 C 27.6 10.5 30.8 14.2 30.8 19.4 L 30.8 24.8 C 30.8 30.4 26.6 34.9 22 37.3 C 17.4 34.9 13.2 30.4 13.2 24.8 L 13.2 19.4 C 13.2 14.2 16.4 10.5 22 10.5 Z" fill="#121d33" stroke="#c9a24b" stroke-width="1.4"/>
+        <path d="M22 14.6 L 23.4 17.9 L 26.9 18.2 L 24.3 20.4 L 25.2 23.8 L 22 21.9 L 18.8 23.8 L 19.7 20.4 L 17.1 18.2 L 20.6 17.9 Z" fill="#c9a24b"/>
+        <path d="M22 26 L 28 27.9 L 22 29.8 L 16 27.9 Z" fill="#c9a24b"/>
+      </svg>
+      ОРЛС <span style="color:var(--gold)">·</span> УМВД
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#hierarchy">Иерархия</a>
+      <a href="#lectures">Лекции</a>
+      <a href="#theory">Экзамен</a>
+      <a href="#practical">Практика</a>
+      <a href="#interview">Собеседование</a>
+      <a href="#test">Тест</a>
+      <a href="#training">Тренировки</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-btn" id="themeBtn" title="Тема">🌙</button>
+      <button class="burger" id="burger">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <img class="bgimg" src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=2000&auto=format&fit=crop" alt="Патрульный автомобиль" onerror="this.style.display='none'">
+  <div class="overlay"></div>
+  <div class="hero-inner">
+    <svg class="emblem" viewBox="0 0 120 140" fill="none">
+      <defs>
+        <linearGradient id="eg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e6c878"/><stop offset="1" stop-color="#c9a24b"/></linearGradient>
+      </defs>
+      <path d="M60 4 L 106 22 L 106 70 C 106 100 84 120 60 136 C 36 120 14 100 14 70 L 14 22 Z" fill="rgba(11,19,34,.95)" stroke="url(#eg)" stroke-width="3.5" stroke-linejoin="round"/>
+      <path d="M60 13 L 97 28 L 97 70 C 97 95 82 112 60 125 C 38 112 23 95 23 70 L 23 28 Z" fill="none" stroke="url(#eg)" stroke-width="1.2" opacity=".5"/>
+      <path d="M60 27 L 64.2 37.5 L 75.5 38.5 L 67 46.2 L 69.4 57.3 L 60 51.9 L 50.6 57.3 L 53 46.2 L 44.5 38.5 L 55.8 37.5 Z" fill="url(#eg)"/>
+      <path d="M28 66 L 92 66" stroke="url(#eg)" stroke-width="1.4" opacity=".7"/>
+      <path d="M32 96 L 88 96" stroke="url(#eg)" stroke-width="1.2" opacity=".6"/>
+      <text x="60" y="78" text-anchor="middle" font-size="11.5" font-family="Arial" font-weight="bold" letter-spacing="2.6" fill="#e6c878">УМВД</text>
+      <text x="60" y="88" text-anchor="middle" font-size="8" font-family="Arial" font-weight="700" letter-spacing="2.4" fill="#c9a24b" opacity=".95">РОССИИ</text>
+      <text x="60" y="113" text-anchor="middle" font-size="23" font-family="Arial" font-weight="bold" letter-spacing="4" fill="#e6c878">ОРЛС</text>
+      <text x="60" y="121" text-anchor="middle" font-size="6.5" font-family="Arial" font-weight="600" letter-spacing="1.1" fill="#c9a24b" opacity=".95">НИЖЕГОРОДСКАЯ ОБЛАСТЬ</text>
+    </svg>
+    <div class="dept">Отдел по работе с личным составом</div>
+    <h1>Методический <span>портал</span></h1>
+    <p>Полный методический материал для подготовки сотрудников и курсантов: лекции, экзаменационные вопросы, алгоритмы задержания, собеседование и тренировочные нормативы.</p>
+    <div class="hero-actions">
+      <a class="btn gold" href="#lectures">📖 К материалам</a>
+      <a class="btn ghost" href="#theory">🎯 К экзамену</a>
+      <a class="btn ghost" href="https://vk.ru/aliarkham" target="_blank" rel="noopener">👤 Ali_Arkham</a>
+    </div>
+    <p class="devnote">Автор и разработчик методички — <a href="https://vk.ru/aliarkham" target="_blank" rel="noopener">Ali_Arkham</a> · ВКонтакте</p>
+    <div class="hero-stats">
+      <div class="hstat"><b>13</b><span>Лекций</span></div>
+      <div class="hstat"><b>42</b><span>Карточки экзамена</span></div>
+      <div class="hstat"><b>40</b><span>Тест курсанта</span></div>
+      <div class="hstat"><b>10</b><span>Шагов задержания</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <!-- ============ HIERARCHY ============ -->
+  <section id="hierarchy">
+    <div class="shead reveal">
+      <span class="kicker">Структура</span>
+      <h2>Иерархия ОРЛС</h2>
+      <p>Схема подчинения сотрудников отдела по работе с личным составом УМВД по Нижегородской области.</p>
+    </div>
+    <div class="hier">
+      <div class="hnode reveal"><span class="rank">Управление</span><h4>УМВД по Нижегородской области</h4><p>Управление Министерства внутренних дел</p></div>
+      <div class="hlink reveal"></div>
+      <div class="hnode reveal"><span class="rank">Руководство</span><h4>Начальник ОРЛС</h4></div>
+      <div class="hlink reveal"></div>
+      <div class="hnode reveal"><span class="rank">Заместитель</span><h4>Первый заместитель начальника ОРЛС</h4></div>
+      <div class="hlink reveal"></div>
+      <div class="hnode multi reveal"><span class="rank">Состав</span><h4>Старшие инструкторы ОРЛС</h4>
+        <div class="chips"><span class="chip">Старший инструктор</span><span class="chip">Старший инструктор</span><span class="chip">Старший инструктор</span></div></div>
+      <div class="hlink reveal"></div>
+      <div class="hnode reveal"><span class="rank">Личный состав</span><h4>Инструкторы ОРЛС</h4></div>
+      <div class="hlink reveal"></div>
+      <div class="hnode reveal"><span class="rank">Кандидаты</span><h4>Стажёры ОРЛС</h4></div>
+    </div>
+  </section>
+
+  <!-- ============ MODULES ============ -->
+  <section id="modules">
+    <div class="shead reveal">
+      <span class="kicker">Разделы</span>
+      <h2>Навигация по материалам</h2>
+      <p>Выберите нужный раздел для подготовки и аттестации.</p>
+    </div>
+    <div class="cards">
+      <a class="mcard reveal" href="#lectures">
+        <div class="thumb"><img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=800&auto=format&fit=crop" alt="Лекционный материал" onerror="this.style.display='none'"><span class="num">13</span></div>
+        <div class="body"><h3>Лекционный материал</h3><p>Нормы и основания права, УК, КоАП, субординация, табельное оружие, пост, рация, устав, спец. средства, похищение, строевая подготовка.</p><span class="more">Читать</span></div>
+      </a>
+      <a class="mcard reveal d1" href="#theory">
+        <div class="thumb"><img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=800&auto=format&fit=crop" alt="Теоретический экзамен" onerror="this.style.display='none'"><span class="num">42</span></div>
+        <div class="body"><h3>Теоретический экзамен</h3><p>Карточки по субординации, УК, КоАП, ФЗ «Об оружии», ФЗ «О полиции», территориям и уставу. Время на ответ — 15 секунд.</p><span class="more">Перейти</span></div>
+      </a>
+      <a class="mcard reveal d2" href="#practical">
+        <div class="thumb"><img src="https://images.unsplash.com/photo-1601823984263-b87b597608b6?q=80&w=800&auto=format&fit=crop" alt="Практический экзамен" onerror="this.style.display='none'"><span class="num">10</span></div>
+        <div class="body"><h3>Практический экзамен</h3><p>Алгоритм задержания: представление, досмотр, изъятие, объявление в розыск, протокол и передача в КПЗ. Права задержанного.</p><span class="more">Перейти</span></div>
+      </a>
+      <a class="mcard reveal" href="#interview">
+        <div class="thumb"><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=800&auto=format&fit=crop" alt="Собеседование" onerror="this.style.display='none'"><span class="num">5</span></div>
+        <div class="body"><h3>Собеседование</h3><p>Требования к кандидатам, пять этапов проверки и расшифровка 30+ аббревиатур для собеседования.</p><span class="more">Перейти</span></div>
+      </a>
+      <a class="mcard reveal d1" href="#test">
+        <div class="thumb"><img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800&auto=format&fit=crop" alt="Тестовая часть" onerror="this.style.display='none'"><span class="num">40</span></div>
+        <div class="body"><h3>Тестовая часть</h3><p>40 вопросов для курсантов рядового состава. Проходной балл — не менее 80% правильных ответов (32 из 40).</p><span class="more">Перейти</span></div>
+      </a>
+      <a class="mcard reveal d2" href="#training">
+        <div class="thumb"><img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?q=80&w=800&auto=format&fit=crop" alt="Тренировки" onerror="this.style.display='none'"><span class="num">4</span></div>
+        <div class="body"><h3>Тренировочный материал</h3><p>Нормативы физической подготовки, строевая подготовка, разминирование СВУ и три маршрута кросса.</p><span class="more">Перейти</span></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ LECTURES ============ -->
+  <section id="lectures">
+    <div class="shead reveal">
+      <span class="kicker">Учебный блок</span>
+      <h2>Лекционный материал</h2>
+      <p>Нажмите на лекцию, чтобы раскрыть содержание.</p>
+    </div>
+    <div class="lecture-tabs reveal">
+      <button class="active" data-ltab="all">Все</button>
+      <button data-ltab="base">Основы права</button>
+      <button data-ltab="law">УК и КоАП</button>
+      <button data-ltab="service">Служба</button>
+      <button data-ltab="tactic">Тактика</button>
+    </div>
+    <div id="lectureList">
+
+      <div class="acc reveal" data-lcat="base">
+        <div class="acc-head"><div class="num">01</div><h3>Понятия. Нормы и основания права</h3><span class="time">~15 мин</span><span class="arrow">▾</span></div>
+        <div class="acc-body"><div class="acc-inner">
+          <p><b>Понятие права</b> — это система общеобязательных правил поведения, установленных или санкционированных государством, регулирующих общественные отношения и обеспечиваемых силой государственного принуждения. Право является основным регулятором общественных отношений, оно закрепляет права и обязанности участников.</p>
+          <h4>Признаки права</h4>
+          <ul><li><b>Общеобязательность</b> — нормы обязательны для всех без исключения.</li><li><b>Формальная определённость</b> — закреплены в письменных источниках (законах, кодексах).</li><li><b>Системность</b> — единая внутренне согласованная система.</li><li><b>Государственное принуждение</b> — обеспечено силой государства.</li><li><b>Регулятивность</b> — регулирует общественные отношения.</li></ul>
+          <h4>Функции права</h4>
+          <ul><li><b>Регулятивная</b> — упорядочивает общественные отношения.</li><li><b>Охранительная</b> — защищает отношения от нарушений.</li><li><b>Воспитательная</b> — формирует уважение к закону.</li></ul>
+          <h4>Структура нормы права</h4>
+          <ul><li><b>Гипотеза</b> — условие применения («Если лицо совершает убийство…»).</li><li><b>Диспозиция</b> — правило поведения («…то оно подлежит наказанию…»).</li><li><b>Санкция</b> — последствие («…в виде лишения свободы до 10 лет»).</li></ul>
+          <h4>Виды норм права</h4>
+          <p>По регуляции: <b>управомочивающие</b>, <b>обязывающие</b>, <b>запрещающие</b>. По отрасли: уголовно-правовые (УК), административно-правовые (КоАП), гражданско-правовые, трудовые, семейные.</p>
+          <h4>Основания права</h4>
+          <p>Это фактические обстоятельства (юридические факты), с которыми закон связывает возникновение, изменение или прекращение правоотношений.</p>
+          <ul><li><b>События</b> — не зависят от воли (стихийные бедствия, смерть, рождение).</li><li><b>Действия</b> — зависят от воли (договор, преступление).</li><li><b>Состояния</b> — длительные (брак, гражданство).</li></ul>
+          <div class="info">Ключевое различие: <b>Основание</b> — факт (что произошло). <b>Норма права</b> — закон (по какой статье наказывают). <b>Правоотношение</b> — связь между фактом и законом.</div>
+        </div></div>
+      </div>
+
+      <div class="acc reveal" data-lcat="base">
+        <div class="acc-head"><div class="num">02</div><h3>Законодательство</h3><span class="time">Лекция</span><span class="arrow">▾</span></div>
+        <div class="acc-body"><div class="acc-inner">
+          <p>Законодательство — основа порядка и стабильности государства. Игнорирование статей — прямая дорога к увольнению и тюремному сроку. <b>Незнание закона не освобождает от ответственности.</b></p>
+          <h4>Нарушение закона</h4>
+          <p>Любое деяние, противоречащее установленным нормам и правилам: от мелкого правонарушения до серьёзного преступления (убийство, кража).</p>
+          <h4>Последствия</h4>
+          <ul><li><b>Уголовная ответственность</b> — лишение свободы, штрафы, исправительные работы, увольнение с госслужбы.</li><li><b>Административная ответственность</b> — штрафы, арест автомобиля, лишение прав.</li><li><b>Гражданская ответственность</b> — возмещение ущерба потерпевшей стороне.</li><li><b>Репутационные потери</b> — потеря доверия, ухудшение отношений, сложности в карьере.</li></ul>
+        </div></div>
+      </div>
+
+      <div class="acc reveal" data-lcat="law">
+        <div class="acc-head"><div class="num">03</div><h3>Уголовный кодекс</h3><span class="time">Лекция</span><span class="arrow">▾</span></div>
+        <div class="acc-body"><div class="acc-inner">
+          <p><b>Уголовный кодекс (УК)</b> — систематизированный законодательный акт, основной источник уголовного права. Определяет, какие деяния являются преступлениями, и устанавливает виды наказаний.</p>
+          <h4>Основные статьи</h4>
+          <ul><li><b>Ст. 7 — Побои.</b> Побои, причинение телесных повреждений, не влекущих вреда здоровью (ушибы, синяки, ссадины, кровоподтёки). <i>Единственная статья, применяемая без медицинского заключения.</i></li>
+          <li><b>Ст. 14 — Клевета.</b> Распространение заведомо ложных сведений, порочащих честь и достоинство. <i>Наказывается только по решению суда.</i></li>
+          <li><b>Ст. 20 — Нарушение неприкосновенности жилища.</b> Незаконное проникновение против воли проживающего.</li>
+          <li><b>Ст. 22 — Кража.</b> Тайное хищение имущества. Пример: мужчина взял сумку со скамейки и унёс.</li>
+          <li><b>Ст. 23 — Грабеж.</b> Открытое хищение при свидетелях.</li>
+          <li><b>Ст. 27 — Умышленное уничтожение/повреждение имущества.</b> Пример: гражданин бьёт чужую машину.</li>
+          <li><b>Ст. 37 — Хулиганство</b> (грубое нарушение порядка) / <b>Ст. 38 — Вандализм</b> (осквернение зданий, порча имущества).</li>
+          <li><b>Ст. 39 — Незаконное проникновение на охраняемый объект.</b> Территория ВЧ, ИК, ФСБ, парковок правоохранительных органов, оцепленные зоны.</li>
+          <li><b>Ст. 40</b> — незаконное приобретение, передача, изготовление оружия. <b>Ст. 41</b> — незаконное ношение/хранение оружия.</li>
+          <li><b>Ст. 45 — Незаконный оборот наркотиков.</b> Освобождение при добровольной сдаче. Наказывается при 6+ г чая или 2+ г мятной пудры.</li>
+          <li><b>Ст. 53 — Присвоение полномочий должностного лица.</b></li>
+          <li><b>Ст. 63 — Укрывательство преступлений.</b> Пример: автомобиль забирает убегающего нарушителя.</li>
+          <li><b>Ст. 65 — Посягательство на жизнь сотрудника правоохранительного органа.</b></li>
+          <li><b>Ст. 66 — Применение насилия в отношении представителя власти.</b></li>
+          <li><b>Ст. 71</b> — самовольное оставление части (с возвращением) / <b>Ст. 72</b> — дезертирство (без намерения вернуться).</li></ul>
+        </div></div>
+      </div>
+
+      <div class="acc reveal" data-lcat="law">
+        <div class="acc-head"><div class="num">04</div><h3>Кодекс об административных правонарушениях</h3><span class="time">Лекция</span><span class="arrow">▾</span></div>
+        <div class="acc-body"><div class="acc-inner">
+          <p><b>КоАП РФ</b> — закон, устанавливающий ответственность за административные правонарушения (проступки). Если УК борется с преступлениями, то КоАП — с проступками. Главное отличие — <b>степень общественной опасности</b>.</p>
+          <h4>Сфера действия</h4>
+          <ul><li>Нарушения общественного порядка (распитие алкоголя, нецензурная брань).</li><li>Правила дорожного движения (скорость, красный свет, ремень).</li><li>Сфера торговли и финансов.</li><li>Охрана окружающей среды.</li></ul>
+          <h4>Виды наказаний</h4>
+          <ul><li><b>Предупреждение</b> — официальная мера.</li><li><b>Административный штраф</b> — самое распространённое.</li><li><b>Лишение специального права</b> — например, водительских прав.</li><li><b>Административный арест</b> — до 15 суток (до 30 за отдельные нарушения), назначается судом.</li></ul>
+          <p><b>Кто привлекает:</b> судьи, органы внутренних дел (полиция), ГИБДД.</p>
+          <h4>Основные статьи (работаем от 15 главы КоАП РФ)</h4>
+          <table class="acc-table"><tr><th>Статья</th><th>Суть</th></tr>
+          <tr><td>15.1</td><td>Неповиновение требованию сотрудника полиции об остановке ТС</td></tr>
+          <tr><td>16.1</td><td>Оскорбление гражданского лица</td></tr>
+          <tr><td>16.4</td><td>Мелкое хулиганство — нецензурная брань в общественных местах</td></tr>
+          <tr><td>17.1</td><td>Незаконный оборот/употребление наркотиков в общественных местах</td></tr>
+          <tr><td>18.5</td><td>Нарушение правил перевозки оружия</td></tr>
+          <tr><td>20.4</td><td>Применение насилия в отношении представителя власти (не опасного для жизни)</td></tr>
+          <tr><td>20.5</td><td>Оскорбление представителя власти (НЕ в общественном месте, наедине)</td></tr>
+          <tr><td>20.6</td><td>Неповиновение законному распоряжению (штраф в случае пешей погони)</td></tr></table>
+        </div></div>
+      </div>
+
+      <div class="acc reveal" data-lcat="service">
+        <div class="acc-head"><div class="num">05</div><h3>Правила пользования табельным оружием</h3><span class="time">~12 мин</span><span class="arrow">▾</span></div>
+        <div class="acc-body"><div class="acc-inner">
+          <p>Сотрудник полиции имеет право применять оружие:</p>
+          <ul><li>Для самозащиты или защиты граждан от нападения, опасного для жизни и здоровья.</li><li>Для задержания лица, совершившего тяжкое или особо тяжкое преступление, если иными способами задержать невозможно.</li><li>Для остановки ТС путём повреждения, если водитель не останавливается и создаёт угрозу.</li><li>Для пресечения хищения частного имущества при достоверных данных.</li></ul>
+          <div class="info">Примечание: применение допускается только если других способов нет — это <b>крайняя мера</b>.</div>
+          <h4>Алгоритм применения спец. средств и физ. силы</h4>
+          <ol><li>Осведомить лицо, что сотрудник — представитель правоохранительного органа.</li><li>Предупредить о применении спец. средств и/или физической силы.</li><li>Дать время на выполнение законных требований (10–15 секунд).</li><li>Применить спец. средства и/или физическую силу.</li></ol>
+          <h4>Алгоритм применения огнестрельного оружия</h4>
+          <ol><li>Осведомить лицо, что сотрудник — представитель правоохранительного органа.</li><li>Предупредить о применении огнестрельного оружия.</li><li>Дать время (10–15 секунд, кроме случаев, требующих немедленного применения).</li><li>Применить огнестрельное оружие.</li></ol>
+          <h4>Исключения (без предупреждения)</h4>
+          <p>Если промедление создаёт непосредственную угрозу жизни и здоровью, либо лицо пытается скрыться после совершения тяжкого преступления.</p>
+          <h4>Цели применения</h4>
+          <p><b>Обезвреживание</b> — временное лишение способности сопротивляться. <b>Ликвидация</b> — при преступлениях против личности или общественной безопасности (только крайняя необходимость).</p>
+          <div class="warn">Запрещается применять оружие при значительном скоплении граждан, если могут пострадать посторонние лица. Сотрудник действует по принципу соразмерности ущерба.</div>
+        </div></div>
+      </div>
+
+      <div class="acc reveal" data-lcat="service">
+        <div class="acc-head"><div class="num">06</div><h3>Субординация</h3><span class="time">~12 мин</span><span class="arrow">▾</span></div>
+        <div class="acc-body"><div class="acc-inner">
+          <p><b>Субординация</b> — военная дисциплина, система служебных отношений, связанных с подчинением. Предусматривает уважительные отношения, порядок доклада, беспрекословное выполнение законных приказов и чёткое понимание иерархии.</p>
+          <h4>Виды субординации</h4>
+          <ul><li><b>Прямая</b> — подчинение непосредственному начальнику.</li><li><b>Косвенная</b> — подчинение вышестоящим через цепочку командования.</li></ul>
+          <h4>Регламент речи (замена слов)</h4>
+          <table class="acc-table"><tr><th>Неправильно (разговорно)</th><th>Правильно (по уставу)</th></tr>
+          <tr><td>«Здравствуйте»</td><td>«Здравия желаю»</td></tr>
+          <tr><td>«Да»</td><td>«Так точно»</td></tr>
+          <tr><td>«Нет»</td><td>«Никак нет»</td></tr>
+          <tr><td>«Можно?»</td><td>«Разрешите?»</td></tr>
+          <tr><td>«Не знаю»</td><td>«Не могу знать»</td></tr>
+          <tr><td>«Ладно, хорошо»</td><td>«Есть»</td></tr>
+          <tr><td>«Привет»</td><td>Запрещено — только «Здравия желаю»</td></tr></table>
+          <h4>Правила обращения</h4>
+          <ul><li>К старшему по званию: <b>«Товарищ [звание]»</b> — «Товарищ майор».</li><li>Ко всем сослуживцам — только на «Вы».</li><li>Запрещено перечить старшим по званию.</li><li>Из строя: «Товарищ [звание], разрешите обратиться из строя».</li><li>При опоздании: сначала приветствие, затем обращение за разрешением встать в строй.</li></ul>
+          <div class="warn">Несоблюдение субординации — прямое нарушение устава, карается выговором или увольнением.</div>
+        </div></div>
+      </div>
+
+      <div class="acc reveal" data-lcat="service">
+        <div class="acc-head"><div class="num">07</div><h3>Правила нахождения на посту</h3><span class="time">~10 мин</span><span class="arrow">▾</span></div>
+        <div class="acc-body"><div class="acc-inner">
+          <div class="info">Находиться на посту без напарника разрешено только с <b>20:00 до 10:00</b>. В остальное время служба — только в составе пары.</div>
+          <h4>Цели нахождения на посту</h4>
+          <ul><li>Обеспечение общественного порядка.</li><li>Предотвращение правонарушений (визуальное присутствие — фактор сдерживания).</li><li>Проведение спецопераций по приказу начальника управления.</li><li>Оказание помощи гражданам и консультирование по правовым вопросам.</li><li>Контроль безопасности, выявление подозрительных лиц и предметов.</li></ul>
+          <h4>Алгоритм при обнаружении правонарушения</h4>
+          <ol><li><b>Подготовка:</b> проверить работоспособность нагрудной камеры — это ваша юридическая защита.</li><li><b>Сигнал нарушителю:</b> представиться, назвать звание и фамилию, указать на нарушение.</li><li><b>Принятие мер:</b> УК — задержание и доставление в отдел; КоАП — штраф на месте.</li><li><b>Завершение:</b> передача задержанного дежурному / отпускание после протокола.</li></ol>
+          <div class="warn">Запрещено: дежурство на посту в составе более 4 сотрудников; охрана собеседований — более 5 сотрудников.</div>
+        </div></div>
+      </div>
+
+      <div class="acc reveal" data-lcat="service">
+        <div class="acc-head"><div class="num">08</div><h3>Правила пользования рацией</h3><span class="time">~10 мин</span><span class="arrow">▾</span></div>
+        <div class="acc-body"><div class="acc-inner">
+          <div class="info">(( ООС: чтобы воспользоваться рабочей рацией, используйте клавишу <b>«Z»</b> ))</div>
+          <ul><li>Использование рации строго по служебному назначению.</li><li>Запрещены нецензурная брань, неуважительное общение, оскорбления коллег.</li><li>По рации можно и нужно просить помощь в экстренных ситуациях.</li><li>Запрещено обсуждать коллег и руководство.</li><li>Запрещено игнорировать требования и вызовы в рацию.</li><li>Запрещено продавать, покупать, рекламировать.</li><li>Запрещено создавать помехи и «засорять» волну.</li></ul>
+          <h4>Уровни доступа к рации департамента</h4>
+          <table class="acc-table"><tr><th>Организация</th><th>Минимальное звание</th></tr>
+          <tr><td>МВД</td><td>Старшина полиции</td></tr>
+          <tr><td>Воинская часть</td><td>Старшина</td></tr>
+          <tr><td>УФСИН</td><td>Младший лейтенант внутренней службы</td></tr>
+          <tr><td>ЕСС</td><td>Инспектор</td></tr>
+          <tr><td>Правительство</td><td>Адвокат</td></tr></table>
+          <div class="warn">Система наказаний: предупреждение, выговор, увольнение — в зависимости от тяжести нарушения.</div>
+        </div></div>
+      </div>
+
+      <div class="acc reveal" data-lcat="service">
+        <div class="acc-head"><div class="num">09</div><h3>Устав: основные пункты</h3><span class="time">Лекция</span><span class="arrow">▾</span></div>
+        <div class="acc-body"><div class="acc-inner">
+          <p><b>Устав</b> — основополагающий юридический документ (свод правил), определяющий структуру, цели, деятельность и порядок управления.</p>
+          <h4>Ключевые пункты</h4>
+          <ul><li><b>3.1</b> — Сотрудники ОВД подчиняются принципу субординации.</li><li><b>3.2</b> — Выполнение служебных приказов вышестоящих руководителей обязательно.</li><li><b>3.4</b> — Уважение и дружелюбие к сотрудникам других гос. организаций.</li><li><b>4.1</b> — Рация строго в служебных целях (предупреждение/выговор/понижение/увольнение).</li><li><b>5.1</b> — Запрещено пользоваться телефоном/рацией, выкрикивать, вести посторонние разговоры в строю.</li><li><b>5.2</b> — Запрещено не приходить на построение без весомой причины.</li><li><b>5.3</b> — Запрещено спать в строю. AFK (ESC и без) на построении запрещён.</li><li><b>6.1</b> — Запрещено нарушать законодательство Нижегородской области.</li><li><b>6.2</b> — Запрещено выпрашивать повышение.</li><li><b>6.4</b> — Запрещено использовать оружие в личных целях (понижение/увольнение).</li><li><b>6.5</b> — Запрещено спать на посту более 20 минут. Исключение — комната хранения оружия (раздевалка).</li><li><b>6.14</b> — Запрещено парковать личный транспорт на служебной парковке.</li><li><b>6.15</b> — Запрещено исполнять служебную деятельность на личном ТС.</li><li><b>6.20</b> — Запрещена служба на территории автовокзала Батырево (увольнение).</li><li><b>6.21</b> — Дежурство на посту — не более 4 сотрудников (выговор).</li><li><b>6.22</b> — Охрана собеседования/призыва — не более 5 сотрудников.</li><li><b>6.23</b> — Запрещено нарушать субординацию (выговор/увольнение).</li><li><b>6.24</b> — Запрещено нарушать устные и письменные приказы.</li><li><b>6.25</b> — Запрещено понижать репутацию органов внутренних дел.</li><li><b>6.27</b> — Запрещено снижать/снимать розыск без причины.</li><li><b>6.31</b> — Запрещено увольняться до истечения 3 суток службы.</li><li><b>7.5</b> — С 10:00 до 20:00 служба исключительно в сопровождении напарника.</li><li><b>7.6</b> — По прибытии в область в течение 15 минут прибыть в управление и начать рабочий день.</li></ul>
+        </div></div>
+      </div>
+
+      <div class="acc reveal" data-lcat="service">
+        <div class="acc-head"><div class="num">10</div><h3>Служебный транспорт</h3><span class="time">Лекция</span><span class="arrow">▾</span></div>
+        <div class="acc-body"><div class="acc-inner">
+          <p><b>Служебный транспорт</b> — ТС, используемые сотрудниками МВД в пределах компетенции для охраны порядка и борьбы с преступностью.</p>
+          <h4>При использовании запрещено</h4>
+          <ul><li>Садиться за руль в состоянии опьянения.</li><li>Садиться за руль в уставшем состоянии.</li><li>Изменять цвет ТС.</li><li>Нарушать ПДД (исключение: ЧС или преследование).</li><li>Не возвращать транспорт на парковку УМВД.</li></ul>
+          <h4>Обязанности сотрудника</h4>
+          <ul><li>При получении — проверить техническое состояние.</li><li>Бережно относиться, соблюдать чистоту и порядок.</li><li>При сдаче — отчитаться о состоянии транспорта.</li></ul>
+        </div></div>
+      </div>
+
+      <div class="acc reveal" data-lcat="service">
+        <div class="acc-head"><div class="num">11</div><h3>Специальные средства</h3><span class="time">Лекция</span><span class="arrow">▾</span></div>
+        <div class="acc-body"><div class="acc-inner">
+          <h4>Перечень и назначение</h4>
+          <ul><li><b>Электрошокер</b> — нелетальное средство нейромышечного воздействия для самообороны, задержания и пресечения сопротивления.</li><li><b>Дубинка</b> — несмертельное действие для силового воздействия и отражения нападения.</li><li><b>Стяжки</b> — временное ограничение свободы передвижения.</li><li><b>Бронежилет</b> — защита от холодного и огнестрельного оружия.</li></ul>
+          <h4>Основания для применения</h4>
+          <ul><li>Пресечение совершаемого преступления или правонарушения.</li><li>Пресечение сопротивления сотруднику.</li><li>Задержание лица, способного оказать вооружённое сопротивление.</li><li>Пресечение массовых беспорядков.</li><li>Прямая угроза жизни и здоровью.</li></ul>
+          <h4>Порядок применения</h4>
+          <ol><li><b>Предупреждение:</b> представиться, предупредить о намерении, дать возможность выполнить требования.</li><li><b>Информирование:</b> после применения разъяснить задержанному его права.</li></ol>
+          <p><b>Исключение:</b> предупреждение не действует, если промедление создаёт непосредственную угрозу жизни и здоровью.</p>
+          <div class="warn">Запрещается применять спец. средства без оснований, в отношении лиц, не нарушающих порядок, и в целях, не связанных со служебной необходимостью.</div>
+        </div></div>
+      </div>
+
+      <div class="acc reveal" data-lcat="tactic">
+        <div class="acc-head"><div class="num">12</div><h3>Как вести себя при похищении</h3><span class="time">~12 мин</span><span class="arrow">▾</span></div>
+        <div class="acc-body"><div class="acc-inner">
+          <h4>Первоначальные действия</h4>
+          <ul><li>Не сопротивляйтесь активно, если похитителей явно больше (правило 1:3).</li><li>Примите действия испуга (/me вздрогнул, /me побледнел).</li><li>Если есть шанс — попытайтесь убежать до первого попадания. После ранения прекратите сопротивление.</li></ul>
+          <h4>Что запрещено</h4>
+          <ul><li>Выходить из игры или уходить в AFK (наказание — варн/деморган).</li><li>Провоцировать похитителей (грубить, угрожать, насмехаться).</li><li>Использовать рацию или телефон, если их отобрали (/togphone).</li><li>Называть похитителей по именам или указывать их организацию.</li><li>Сообщать местоположение через сторонние каналы (Discord, Skype).</li><li>Симулировать отсутствие денег/связей (нарушение RP).</li></ul>
+          <h4>Правильное взаимодействие</h4>
+          <ul><li>Выполняйте все требования (сесть в машину, лечь на пол, поднять руки).</li><li>Отдавайте документы и телефон, если просят.</li><li>Отвечайте кратко и по делу, без лишних деталей.</li><li>Если связывают — не пытайтесь освободиться без веской причины.</li></ul>
+          <h4>После освобождения</h4>
+          <ul><li>Примите действия последствий (/me дрожащими руками достал платок).</li><li>Обязательно сообщите руководству о произошедшем.</li><li>Не мстите похитителям вне RP — это нарушение правил.</li></ul>
+        </div></div>
+      </div>
+
+      <div class="acc reveal" data-lcat="tactic">
+        <div class="acc-head"><div class="num">13</div><h3>Строевая подготовка</h3><span class="time">~12 мин</span><span class="arrow">▾</span></div>
+        <div class="acc-body"><div class="acc-inner">
+          <p><b>Строевая подготовка</b> — комплекс мероприятий по обучению правильному и единообразному выполнению строевых приёмов и действий. Обеспечивает слаженность и организованность подразделений.</p>
+          <h4>Основные элементы</h4>
+          <ul><li>Построение, перестроение.</li><li>Движение строевым шагом.</li><li>Повороты на месте и в движении («Направо», «Налево», «Кругом»).</li><li>Воинское приветствие.</li></ul>
+          <h4>Строевые приёмы</h4>
+          <ul><li><b>Выход из строя:</b> «Рядовой Иванов, выйти из строя на столько-то шагов». Услышав фамилию — ответить «Я», по команде — «Есть», выйти строевым шагом, остановиться за 2–3 шага, доложить: «Товарищ лейтенант, сержант Иванов по Вашему приказу прибыл».</li><li><b>Возвращение в строй:</b> по команде приложить руку к головному убору, ответить «Есть», кратчайшим путём встать в строй.</li><li><b>Подход к начальнику</b> и <b>отход от начальника</b> — строевым шагом.</li></ul>
+          <div class="warn">В строю запрещены разговоры, телефон/рация, выкрики, оружие в руках, сон и самовольный уход.</div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THEORY EXAM ============ -->
+  <section id="theory">
+    <div class="shead reveal">
+      <span class="kicker">Теоретический экзамен</span>
+      <h2>Экзаменационные карточки</h2>
+      <p>Кликните по карточке, чтобы увидеть ответ. Время на ответ — 15 секунд, тестовая часть — 15 минут, пересдача раз в 2 часа.</p>
+    </div>
+    <div class="theory-tabs reveal" id="theoryTabs">
+      <button class="active" data-cat="all">Все</button>
+      <button data-cat="sub">Субординация</button>
+      <button data-cat="uk">УК</button>
+      <button data-cat="koap">КоАП</button>
+      <button data-cat="weapon">Оружие</button>
+      <button data-cat="terr">Территории</button>
+      <button data-cat="police">О полиции</button>
+      <button data-cat="ustav">Устав</button>
+    </div>
+    <div class="qgrid" id="qgrid">
+      <div class="qcard reveal" data-cat="sub"><div class="inner">
+        <div class="qface front"><div class="qnum">Субординация · 1</div><p>Представьтесь в звании младшего сержанта полиции.</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>Здравия желаю! Являюсь полицейским ОБ ППСП, младший сержант полиции Коваленко.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="sub"><div class="inner">
+        <div class="qface front"><div class="qnum">Субординация · 2</div><p>Как вы будете обращаться к старшему по званию?</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>Товарищ прапорщик, разрешите обратиться, обращается младший сержант полиции Коваленко.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="sub"><div class="inner">
+        <div class="qface front"><div class="qnum">Субординация · 3</div><p>Как вы будете обращаться из строя к руководящему построением?</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>Товарищ прапорщик, разрешите обратиться, обращается из строя младший сержант полиции Коваленко.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="sub"><div class="inner">
+        <div class="qface front"><div class="qnum">Субординация · 4</div><p>Как обратиться к полковнику / генералу для получения очередного звания?</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>Товарищ полковник полиции / генерал-майор полиции, я рядовой полиции Коваленко, прибыл для присвоения очередного специального звания младшего сержанта полиции в связи с успешной сдачей экзамена / одобренным рапортом на официальном портале.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="uk"><div class="inner">
+        <div class="qface front"><div class="qnum">УК · 4</div><p>Как расшифровывается статья 66 УК? Приведите пример.</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>66 УК — применение насилия в отношении представителя власти. Пример: гражданин начал избивать сотрудника полиции.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="uk"><div class="inner">
+        <div class="qface front"><div class="qnum">УК · 5</div><p>Расшифруйте статью 27 УК и приведите пример.</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>27 УК — умышленное уничтожение или повреждение имущества. Пример: гражданин начал бить машину просто так.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="uk"><div class="inner">
+        <div class="qface front"><div class="qnum">УК · 6</div><p>Расшифруйте статью 45 УК и приведите пример.</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>45 УК — незаконное изготовление, приобретение, продажа, перевозка, переработка, хранение наркотических средств. Пример: при досмотре найдено более 2 грамм мятной пудры или более 6 грамм зеленого чая.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="uk"><div class="inner">
+        <div class="qface front"><div class="qnum">УК · 7</div><p>В чём разница между 22 и 23 статьёй УК?</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>22 УК — кража (тайное хищение), 23 УК — грабеж (открытое хищение). Пример: без свидетелей взял чужую сумку — 22; при свидетелях крадет микроволновку — 23.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="uk"><div class="inner">
+        <div class="qface front"><div class="qnum">УК · 8</div><p>В чём разница между 67 УК и 20.5 КоАП?</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>Оскорбили в общественном месте — уголовная ответственность (67 УК). Наедине, без свидетелей — административная (20.5 КоАП). Пример: в здании ЕСС — 67 УК; в лесу — 20.5 КоАП.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="uk"><div class="inner">
+        <div class="qface front"><div class="qnum">УК · 9</div><p>Расшифруйте статью 7 УК и приведите пример.</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>7 УК — побои. Пример: гражданин бьет другого, у пострадавшего появляются синяки, ссадины, кровоподтеки.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="uk"><div class="inner">
+        <div class="qface front"><div class="qnum">УК · 10</div><p>Расшифруйте статью 13 УК и приведите пример.</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>13 УК — незаконное лишение свободы. Пример: гражданин запер свою соседку в доме и не давал ей выйти.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="uk"><div class="inner">
+        <div class="qface front"><div class="qnum">УК · 11</div><p>Расшифруйте статью 14 УК и приведите пример.</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>14 УК — клевета. Пример: гражданин А начал порочить честь и распространять ложные сведения о гражданине Б.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="uk"><div class="inner">
+        <div class="qface front"><div class="qnum">УК · 12</div><p>Расшифруйте статью 39 УК и приведите пример.</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>39 УК — проникновение на охраняемую территорию. Пример: самовольный заход на парковки гос. организаций, ВЧ, правительственной колонны, ЕСС, ФСБ.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="uk"><div class="inner">
+        <div class="qface front"><div class="qnum">УК · 13</div><p>Гражданин потребовал 2 000 ₽, угрожая сломать телефон. Какую статью нарушил?</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>Ст. 26 УК «Вымогательство».</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="koap"><div class="inner">
+        <div class="qface front"><div class="qnum">КоАП · 14</div><p>Что предусматривают статьи 15.1, 16.4, 18.4 КоАП?</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p><b>15.1</b> — водитель не остановился по требованию (штраф 50 000 ₽ + лишение прав). <b>16.4</b> — мат на остановке и приставание к прохожим (штраф 10 000 ₽). <b>18.4</b> — группа перекрыла дорогу, игнорируя полицию (штраф 30 000 ₽).</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="koap"><div class="inner">
+        <div class="qface front"><div class="qnum">КоАП · 15</div><p>Расшифруйте статью 17.1 КоАП и приведите пример.</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>17.1 — незаконный оборот/употребление наркотиков до 2 граммов в общественном месте. Пример: гражданин употребляет 1 грамм мятной пудры в парке.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="koap"><div class="inner">
+        <div class="qface front"><div class="qnum">КоАП · 16</div><p>Расшифруйте статью 18.1 КоАП и приведите пример.</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>18.1 — организация несанкционированного публичного мероприятия. Пример: размещение объявлений о митинге без согласования и координация участников.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="koap"><div class="inner">
+        <div class="qface front"><div class="qnum">КоАП · 17</div><p>Расшифруйте статью 18.2 КоАП и приведите пример.</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>18.2 — участие в несанкционированном публичном мероприятии. Пример: гражданин приходит на несогласованную демонстрацию и держит плакат рядом с организаторами.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="koap"><div class="inner">
+        <div class="qface front"><div class="qnum">КоАП · 18</div><p>Расшифруйте статью 20.1 КоАП и приведите пример.</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>20.1 — заведомо ложный вызов специализированных служб. Пример: гражданин звонит в полицию, сообщая о пожаре, зная, что это ложь.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="koap"><div class="inner">
+        <div class="qface front"><div class="qnum">КоАП · 19</div><p>Гражданин толкает сотрудника ППС в грудь, сопротивляясь задержанию без оружия. Что нарушил?</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>20.4 КоАП — применение насилия в отношении представителя власти.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="koap"><div class="inner">
+        <div class="qface front"><div class="qnum">КоАП · 20</div><p>Расшифруйте статью 20.5 КоАП и приведите пример.</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>20.5 — оскорбление представителя власти в неприличной форме. Пример: оскорбление сотрудника 1 на 1, без свидетелей, не в общественном месте.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="koap"><div class="inner">
+        <div class="qface front"><div class="qnum">КоАП · 21</div><p>Расшифруйте статью 20.6 КоАП и приведите пример.</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>20.6 — воспрепятствование деятельности правоохранительных органов. Пример: гражданин подходит ближе 15 метров к месту обыска, игнорируя требование отойти.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="weapon"><div class="inner">
+        <div class="qface front"><div class="qnum">Оружие · 22</div><p>Какие бывают виды оружия?</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>Служебные и гражданские.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="weapon"><div class="inner">
+        <div class="qface front"><div class="qnum">Оружие · 23</div><p>Перечислите оружие, относящееся к гражданскому.</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>Бита, АК-105М, АКС-74У, АК-47, дробовик, обрез, карабин «Сайга», охотничье ружье (СВД без ПСО).</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="weapon"><div class="inner">
+        <div class="qface front"><div class="qnum">Оружие · 24</div><p>Перечислите оружие, относящееся к служебному.</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>АС ВАЛ, Пистолет ТТ, СВД-ПСО, Автомат АН-94 «Абакан», комплекс ОЦ-14 «Гроза», дробовик Striker-12.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="terr"><div class="inner">
+        <div class="qface front"><div class="qnum">Территории · 22</div><p>Назовите 3 охраняемые территории и помещения в нашей области.</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>ВЧ, Авианосец, ИК, а также территории, оцепленные сотрудниками правоохранительных органов и военнослужащими.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="terr"><div class="inner">
+        <div class="qface front"><div class="qnum">Территории · 23</div><p>Назовите основание на покидание жёлтой зоны.</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>Глава 3, Статья 19, Часть 2.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="terr"><div class="inner">
+        <div class="qface front"><div class="qnum">Территории · 24</div><p>Назовите основание на покидание красной зоны.</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>Глава 3, Статья 19, Часть 3.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="police"><div class="inner">
+        <div class="qface front"><div class="qnum">О полиции · 23</div><p>На каком основании проверяете документы у граждан?</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>ФЗоП глава 3, Статья 7, Часть 1, Пункт 2.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="police"><div class="inner">
+        <div class="qface front"><div class="qnum">О полиции · 24</div><p>На каком основании проводите личный досмотр?</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>ФЗоП глава 3, Статья 7, Часть 1, Пункт 8.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="police"><div class="inner">
+        <div class="qface front"><div class="qnum">О полиции · 25</div><p>На каком основании задерживаете лицо в розыске?</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>ФЗоП глава 4, Статья 8, Часть 2, Пункт 3.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="police"><div class="inner">
+        <div class="qface front"><div class="qnum">О полиции · 26</div><p>На каком основании требуете покинуть т/с?</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>ФЗоП глава 3, Статья 7, Часть 1, Пункт 15.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="police"><div class="inner">
+        <div class="qface front"><div class="qnum">О полиции · 27</div><p>На каком основании доставляете в отдел?</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>Глава 3, Статья 7, Часть 1, Пункт 7.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="police"><div class="inner">
+        <div class="qface front"><div class="qnum">О полиции · 28</div><p>На каком основании можете проникать в жилые помещения?</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>ФЗоП глава 4, Статья 9, Часть 2.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="police"><div class="inner">
+        <div class="qface front"><div class="qnum">О полиции · 29</div><p>На каком основании останавливаете ТС для проверки документов?</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>Глава 3, Статья 7, Часть 1, Пункт 11.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="ustav"><div class="inner">
+        <div class="qface front"><div class="qnum">Устав · 30</div><p>О чём гласит пункт 5.1 устава?</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>Находясь в строю, запрещено разговаривать, кушать, разговаривать по телефону.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="ustav"><div class="inner">
+        <div class="qface front"><div class="qnum">Устав · 31</div><p>С какого звания можно выходить в рацию департамента?</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>Со старшины полиции.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="ustav"><div class="inner">
+        <div class="qface front"><div class="qnum">Устав · 32</div><p>Когда сотрудник обязан предъявить служебное удостоверение?</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>Только по первому требованию гражданина или начальника. В других случаях пихать удостоверение не нужно!</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="ustav"><div class="inner">
+        <div class="qface front"><div class="qnum">Устав · 33</div><p>Расскажите про рабочий график УМВД.</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>Пн–пт: 10:00–20:00. Сб–вс: 10:00–19:00. Перерыв: 13:00–14:00.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="ustav"><div class="inner">
+        <div class="qface front"><div class="qnum">Устав · 34</div><p>Когда вы можете выезжать в патруль без напарника?</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>До начала рабочего дня либо после окончания рабочего дня.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="ustav"><div class="inner">
+        <div class="qface front"><div class="qnum">Устав · 35</div><p>Можете ли вы кричать в рацию и нести непонятную информацию?</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>Нет.</p></div>
+      </div></div>
+      <div class="qcard reveal" data-cat="ustav"><div class="inner">
+        <div class="qface front"><div class="qnum">Устав · 36</div><p>Рабочий график во время КТО?</p><div class="hint">Нажмите для ответа</div></div>
+        <div class="qface back"><div class="ans-label">Ответ</div><p>10:00–22:00.</p></div>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- ============ PRACTICAL ============ -->
+  <section id="practical">
+    <div class="shead reveal">
+      <span class="kicker">Практический экзамен</span>
+      <h2>Алгоритм задержания</h2>
+      <p>Во время экзамена вы отыгрываете роль задержанного. Курсант проводит задержание, соблюдая последовательность действий.</p>
+    </div>
+    <div class="timeline">
+      <div class="tstep reveal"><div class="dot">1</div><div class="body"><h4>Задержание и представление</h4><p>Задерживаете гражданское лицо и представляетесь: <code>«Здравия желаю! Полицейский ОБ ППСП при УМВД по НО, [звание], [фамилия]»</code>.</p></div></div>
+      <div class="tstep reveal"><div class="dot">2</div><div class="body"><h4>Уведомление о статье</h4><p>Уведомляете, по какой статье задержан гражданин, и расшифровываете её.</p></div></div>
+      <div class="tstep reveal"><div class="dot">3</div><div class="body"><h4>Личный досмотр</h4><p>Проводите личный досмотр, находите документы (паспорт). Если найдено оружие — проверяете лицензии.</p></div></div>
+      <div class="tstep reveal"><div class="dot">4</div><div class="body"><h4>Изъятие</h4><p>Изымаете нелегальное оружие, наркотики и т.д.</p></div></div>
+      <div class="tstep reveal"><div class="dot">5</div><div class="body"><h4>Розыск и права</h4><p>Объявляете в розыск по статье задержания, везёте в отдел, зачитывая права.</p></div></div>
+      <div class="tstep reveal"><div class="dot">6</div><div class="body"><h4>Протокол задержания</h4><p>В отделе составляете протокол: чистый бланк, ручка, ФИО задержанного, время, обстоятельства, причина, инициалы и подпись.</p></div></div>
+      <div class="tstep reveal"><div class="dot">7</div><div class="body"><h4>Освобождение руки</h4><p>Спрашиваете, какой рукой пишет задержанный, и освобождаете ему одну руку, пристегивая к себе или к столу.</p></div></div>
+      <div class="tstep reveal"><div class="dot">8</div><div class="body"><h4>Подпись</h4><p>Задержанный расписывается в протоколе либо не расписывается — тогда в графе подписи ставится прочерк.</p></div></div>
+      <div class="tstep reveal"><div class="dot">9</div><div class="body"><h4>Копия протокола</h4><p>Делаете копию на принтере, сворачиваете и кладёте в карман задержанному.</p></div></div>
+      <div class="tstep reveal"><div class="dot">10</div><div class="body"><h4>Передача в КПЗ</h4><p>Вызываете дежурного и отправляете задержанного в КПЗ.</p></div></div>
+    </div>
+    <div class="rights reveal">
+      <h3>Права задержанного</h3>
+      <ul>
+        <li>Вы имеете право хранить молчание — всё, что вы скажете, может быть использовано против вас в суде.</li>
+        <li>Имеете право на 1 телефонный звонок.</li>
+        <li>Имеете право на юридическую помощь после доставления в ИК.</li>
+      </ul>
+    </div>
+    <div style="margin-top:52px">
+      <h3 class="shead-sub reveal" style="text-align:center">Особый случай — административный протокол</h3>
+      <div class="tblock reveal" style="max-width:760px;margin:0 auto;border:1px solid var(--line);border-radius:12px;padding:24px">
+        <p style="color:var(--muted);font-size:14px">При задержании за административное правонарушение по КоАП алгоритм отличается: протокол составляется <b style="color:var(--text)">на месте</b>, задержанный <b style="color:var(--text)">не помещается в КПЗ</b>. После составления протокола и вручения копии задержанный <b style="color:var(--text)">отпускается</b>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INTERVIEW ============ -->
+  <section id="interview">
+    <div class="shead reveal">
+      <span class="kicker">Проверка на собеседовании</span>
+      <h2>Собеседование с кандидатами</h2>
+      <p>Сотрудник ОРЛС проводит собеседование для определения пригодности кандидата к службе в органах внутренних дел.</p>
+    </div>
+    <h3 class="shead-sub reveal">Требования к кандидатам</h3>
+    <div class="req-grid">
+      <div class="req reveal"><b>Проживание</b><p>более 7 лет в Нижегородской области</p></div>
+      <div class="req reveal d1"><b>Чистая история</b><p>отсутствие судимостей и неоплаченных штрафов</p></div>
+      <div class="req reveal d2"><b>Законопослушность</b><p>уровень не менее 75</p></div>
+      <div class="req reveal d3"><b>Документы</b><p>паспорт, военный билет, лицензия на оружие, ВУ категории «B»</p></div>
+      <div class="req reveal"><b>Здоровье</b><p>отсутствие наркозависимости</p></div>
+    </div>
+    <h3 class="shead-sub reveal">Этапы собеседования</h3>
+    <div class="steps-grid">
+      <div class="step-card reveal"><div class="snum">1</div><h4>Знакомство</h4><p>«Инструктор ОРЛС лейтенант Иванов». Вопросы: ФИО, срок проживания, возраст, образование, штрафы.</p></div>
+      <div class="step-card reveal d1"><div class="snum">2</div><h4>Проверка документов</h4><p>Паспорт, лицензия на оружие, водительское удостоверение, трудовая книжка (с RP-отыгровками).</p></div>
+      <div class="step-card reveal d2"><div class="snum">3</div><h4>Знание аббревиатур</h4><p>УМВД, УГИБДД, ФСБ, ЕСС, УК, КоАП и др. Спрашивать по отдельности.</p></div>
+      <div class="step-card reveal d3"><div class="snum">4</div><h4>Психологический тест</h4><p>«Прыгнете ли вы с крыши 5-этажного дома за 500 000 ₽?» — вопросы на фантазию.</p></div>
+      <div class="step-card reveal"><div class="snum">5</div><h4>Отказ / Принят</h4><p>Менее 3 ошибок — кандидат проходит и ожидает руководства УМВД.</p></div>
+    </div>
+    <h3 class="shead-sub reveal">Аббревиатуры</h3>
+    <div class="abbr-wrap">
+      <div class="abbr reveal"><b>УМВД</b><span>Управление МВД</span></div>
+      <div class="abbr reveal"><b>УГИБДД</b><span>Управление Госавтоинспекции</span></div>
+      <div class="abbr reveal"><b>ФСБ</b><span>Федеральная служба безопасности</span></div>
+      <div class="abbr reveal"><b>ЕСС</b><span>Единая служба спасения</span></div>
+      <div class="abbr reveal"><b>УК</b><span>Уголовный кодекс</span></div>
+      <div class="abbr reveal"><b>КоАП</b><span>Кодекс об административных правонарушениях</span></div>
+      <div class="abbr reveal"><b>ОВД</b><span>Органы внутренних дел</span></div>
+      <div class="abbr reveal"><b>ОБ ППСП</b><span>Отдельный батальон патрульно-постовой службы</span></div>
+      <div class="abbr reveal"><b>ОСН</b><span>Отряд специального назначения</span></div>
+      <div class="abbr reveal"><b>ОСБ</b><span>Отдел собственной безопасности</span></div>
+      <div class="abbr reveal"><b>ОУР</b><span>Отдел уголовного розыска</span></div>
+      <div class="abbr reveal"><b>ОРЛС</b><span>Отдел по работе с личным составом</span></div>
+      <div class="abbr reveal"><b>УФСИН</b><span>Управление ФСИН</span></div>
+      <div class="abbr reveal"><b>МЧС</b><span>Министерство чрезвычайных ситуаций</span></div>
+      <div class="abbr reveal"><b>КПЗ</b><span>Камера предварительного заключения</span></div>
+      <div class="abbr reveal"><b>УПК</b><span>Уголовно-процессуальный кодекс</span></div>
+      <div class="abbr reveal"><b>УИК</b><span>Уголовно-исполнительный кодекс</span></div>
+      <div class="abbr reveal"><b>КАС</b><span>Кодекс административного судопроизводства</span></div>
+      <div class="abbr reveal"><b>ФЗ</b><span>Федеральный закон</span></div>
+      <div class="abbr reveal"><b>НПА</b><span>Нормативный правовой акт</span></div>
+      <div class="abbr reveal"><b>КТО</b><span>Контртеррористическая операция</span></div>
+      <div class="abbr reveal"><b>ОРМ</b><span>Оперативно-розыскные мероприятия</span></div>
+      <div class="abbr reveal"><b>ОРД</b><span>Оперативно-розыскная деятельность</span></div>
+      <div class="abbr reveal"><b>ПДД</b><span>Правила дорожного движения</span></div>
+      <div class="abbr reveal"><b>ВВК</b><span>Военно-врачебная комиссия</span></div>
+      <div class="abbr reveal"><b>ООП</b><span>Охрана общественного порядка</span></div>
+      <div class="abbr reveal"><b>ЧП</b><span>Чрезвычайное происшествие</span></div>
+      <div class="abbr reveal"><b>ЧС</b><span>Чрезвычайная ситуация</span></div>
+      <div class="abbr reveal"><b>КПК</b><span>Карманный персональный компьютер</span></div>
+      <div class="abbr reveal"><b>ИВС</b><span>Изолятор временного содержания</span></div>
+    </div>
+  </section>
+
+  <!-- ============ TEST 40 ============ -->
+  <section id="test">
+    <div class="shead reveal">
+      <span class="kicker">Тестовая часть</span>
+      <h2>Тест для курсантов</h2>
+      <p>40 вопросов для проверки знаний рядового состава. Проходной балл — не менее 80% правильных ответов (минимум 32 из 40).</p>
+    </div>
+    <div class="test-controls reveal">
+      <button id="revealAll">Показать все ответы</button>
+      <button id="hideAll">Скрыть все ответы</button>
+    </div>
+    <div class="test-grid" id="testGrid"></div>
+  </section>
+
+  <!-- ============ TRAINING ============ -->
+  <section id="training">
+    <div class="shead reveal">
+      <span class="kicker">Тренировочный материал</span>
+      <h2>Нормативы и тренировки</h2>
+      <p>Разрешено проводить тренировки по физической и строевой подготовке, разминированию и кроссу.</p>
+    </div>
+    <div class="training-grid">
+      <div class="tblock reveal">
+        <div class="thumb"><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=800&auto=format&fit=crop" alt="Физическая подготовка" onerror="this.style.display='none'"></div>
+        <div class="tbody">
+          <h3>Физическая подготовка</h3>
+          <ul>
+            <li><b>Бег 100 м</b> — не более 14 секунд</li>
+            <li><b>Бег 1000 м</b> — не более 3 мин 40 сек</li>
+            <li><b>Отжимания</b> — не менее 40 раз за 1 минуту</li>
+          </ul>
+          <p style="color:var(--muted);font-size:12.5px;margin-top:12px">Цели: сила и выносливость, скорость, ловкость и координация, психологическая устойчивость.</p>
+        </div>
+      </div>
+      <div class="tblock reveal d1">
+        <div class="thumb"><img src="https://images.unsplash.com/photo-1516131206008-dd041a9764fd?q=80&w=800&auto=format&fit=crop" alt="Строевая подготовка — личный состав в строю" onerror="this.style.display='none'"></div>
+        <div class="tbody">
+          <h3>Строевая подготовка</h3>
+          <ul>
+            <li><b>Построение</b> — формирование в установленном порядке</li>
+            <li><b>Перестроение</b> — изменение строя по команде</li>
+            <li><b>Строевой шаг</b> — движение с дистанцией и интервалом</li>
+            <li><b>Повороты</b> — «Направо», «Налево», «Кругом»</li>
+            <li><b>Приветствие</b> — отдание чести в установленном порядке</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tblock reveal d2">
+        <div class="thumb"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop" alt="Разминирование СВУ" onerror="this.style.display='none'"></div>
+        <div class="tbody">
+          <h3>Разминирование СВУ</h3>
+          <p style="color:var(--muted);font-size:13px;margin-bottom:10px"><b style="color:var(--gold)">Допущены:</b> сотрудники ФСБ и специальных подразделений. Запрещено лицам без квалификации.</p>
+          <ul>
+            <li><b>Алгоритм:</b> обнаружение → периметр 50 м → оценка → вызов ФСБ → осмотр → защита → обезвреживание → вывоз/подрыв</li>
+            <li><b>Ответственные:</b> ФСБ — разминирование; ППС/ОБ ППСП — оцепление</li>
+          </ul>
+          <div class="warn">Запрещено минирование без ролевой подготовки, применение ВУ без обоснования, минирование в местах появления новичков, «пояс смертника» и сверхмощные бомбы.</div>
+        </div>
+      </div>
+      <div class="tblock reveal d3">
+        <div class="thumb"><img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?q=80&w=800&auto=format&fit=crop" alt="Кросс" onerror="this.style.display='none'"></div>
+        <div class="tbody">
+          <h3>Кросс — 3 маршрута</h3>
+          <div class="route">
+            <h4>Маршрут №1 — УМВД → ФСИН</h4>
+            <p>Отдел полиции → Исправительная колония · ~900 м · норматив 4 минуты</p>
+            <div class="bar" data-w="60"><i></i></div>
+          </div>
+          <div class="route">
+            <h4>Маршрут №2 — УМВД → ТЦ АШАН</h4>
+            <p>Отдел полиции → ТЦ АШАН · ~700 м · норматив 3 мин 15 сек</p>
+            <div class="bar" data-w="47"><i></i></div>
+          </div>
+          <div class="route">
+            <h4>Маршрут №3 — УМВД → южный круг</h4>
+            <p>Южная объездная → круг → обратно · ~1500 м · норматив 6 минут</p>
+            <div class="bar" data-w="100"><i></i></div>
+          </div>
+          <p style="color:var(--muted);font-size:12px;margin-top:12px">Учитывается время, техника бега, дыхание и общее физическое состояние.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <div class="f1">
+          <h3>ОРЛС · Методический портал</h3>
+          <p>Отдел по работе с личным составом УМВД по Нижегородской области. Полный методический материал для подготовки сотрудников. Все материалы составлены на основе действующего законодательства.</p>
+          <p style="margin-top:14px">📱 Разработчик методички: <a href="https://vk.ru/aliarkham" target="_blank" rel="noopener">Ali_Arkham</a> · ВКонтакте</p>
+        </div>
+        <div class="cols">
+          <div>
+            <h4>Разделы</h4>
+            <a href="#hierarchy">Иерархия</a>
+            <a href="#lectures">Лекции</a>
+            <a href="#theory">Теоретический экзамен</a>
+            <a href="#practical">Практический экзамен</a>
+          </div>
+          <div>
+            <h4>Подготовка</h4>
+            <a href="#interview">Собеседование</a>
+            <a href="#test">Тестовая часть</a>
+            <a href="#training">Тренировки</a>
+          </div>
+        </div>
+      </div>
+      <div class="copy">
+        <span>© ОРЛС — Методический портал</span>
+<span>На основе методичек ОРЛС · Ali_Arkham</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<button id="toTop" title="Наверх">↑</button>
+
+<script>
+/* Theme */
+const themeBtn = document.getElementById('themeBtn');
+themeBtn.onclick = ()=>{ const b = document.body; const isD = b.getAttribute('data-theme')==='dark';
+  b.setAttribute('data-theme', isD?'light':'dark'); themeBtn.textContent = isD?'🌙':'☀️'; };
+
+/* Burger */
+const burger = document.getElementById('burger'), navLinks = document.getElementById('navLinks');
+burger.onclick = ()=> navLinks.classList.toggle('open');
+navLinks.querySelectorAll('a').forEach(a=> a.onclick = ()=> navLinks.classList.remove('open'));
+
+/* Reveal */
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(en=>{
+    if(!en.isIntersecting) return;
+    en.target.classList.add('in');
+    if(en.target.classList.contains('tblock')){ en.target.querySelectorAll('.bar i').forEach(b=> b.style.width = en.target.querySelector('.bar').dataset.w + '%'); }
+    io.unobserve(en.target);
+  });
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
+
+/* Accordion */
+document.querySelectorAll('.acc-head').forEach(head=>{
+  head.addEventListener('click', ()=>{
+    const acc = head.parentElement, body = acc.querySelector('.acc-body');
+    const isOpen = acc.classList.contains('open');
+    document.querySelectorAll('.acc.open').forEach(a=>{ a.classList.remove('open'); a.querySelector('.acc-body').style.maxHeight = 0; });
+    if(!isOpen){ acc.classList.add('open'); body.style.maxHeight = body.scrollHeight + 'px'; }
+  });
+});
+
+/* Lecture tabs */
+document.querySelectorAll('.lecture-tabs button').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.lecture-tabs button').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const cat = btn.dataset.ltab;
+    document.querySelectorAll('.acc').forEach(a=>{ a.style.display = (cat==='all' || a.dataset.lcat===cat) ? '' : 'none'; });
+  });
+});
+
+/* Theory tabs + flip */
+document.querySelectorAll('.theory-tabs button').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.theory-tabs button').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const cat = btn.dataset.cat;
+    document.querySelectorAll('.qcard').forEach(c=>{ c.classList.remove('flipped'); c.style.display = (cat==='all' || c.dataset.cat===cat) ? '' : 'none'; });
+  });
+});
+document.querySelectorAll('.qcard').forEach(c=> c.addEventListener('click', ()=> c.classList.toggle('flipped')));
+
+/* Test 40 */
+const testData = [
+["Как правильно представиться гражданину?","Кратко, только звание и фамилия: «Старшина полиции Архам». По ч.3 ст.4 ФЗ «О полиции»."],
+["Нужно ли спрашивать у гражданина «Удостоверение показать?»","Нет. Удостоверение предъявляется только по прямому требованию гражданина."],
+["Какие права разъясняются задержанному?","Право хранить молчание, один телефонный звонок, юридическая помощь после доставления в ИВС."],
+["Каков максимальный срок задержания до судебного решения?","Не более 2 часов согласно ст.8 ФЗ «О полиции»."],
+["Что такое КПК и для чего он используется?","Карманный персональный компьютер. Используется для объявления в розыск и проверки документов."],
+["Что запрещено во время построения?","Разговоры по телефону/рации, выкрики, оружие в руках, сон, самовольный уход из строя."],
+["Как правильно обратиться к старшему по званию?","«Товарищ [звание]», например: «Товарищ лейтенант»."],
+["Какие слова запрещены в силовых структурах?","«Здравствуйте», «Да», «Нет», «Можно?», «Не знаю», «Ладно». Правильно: «Здравия желаю», «Так точно», «Никак нет», «Разрешите?», «Не могу знать», «Есть»."],
+["Когда разрешено находиться на посту без напарника?","Только с 20:00 до 10:00. В остальное время — только в составе пары."],
+["Что такое ст.20 УК?","Нарушение неприкосновенности жилища — незаконное проникновение против воли проживающего."],
+["Чем отличается кража от грабежа?","Кража (ст.22 УК) — тайное хищение. Грабеж (ст.23 УК) — открытое хищение (при свидетелях)."],
+["Чем отличается ст.40 от ст.41 УК?","Ст.40 — незаконное приобретение, передача, изготовление оружия. Ст.41 — незаконное ношение/хранение оружия."],
+["Какая статья УК применяется без медицинского заключения?","Ст.7 УК — Побои."],
+["Чем отличается хулиганство от вандализма?","Ст.37 УК — хулиганство (грубое нарушение порядка). Ст.38 УК — вандализм (осквернение сооружений, порча имущества)."],
+["В чем разница между ст.71 и ст.72 УК?","Ст.71 — самовольное оставление части (временное, с возвращением). Ст.72 — дезертирство (без намерения возвращаться)."],
+["Что грозит за укрывательство преступлений (ст.63 УК)?","Лишение свободы на срок до 4 лет."],
+["Каковы признаки ст.66 УК?","Применение насилия в отношении представителя власти, опасного для его жизни и здоровья."],
+["Что такое ст.15.1 КоАП?","Неповиновение законному требованию сотрудника полиции об остановке транспортного средства."],
+["Чем отличается ст.16.1 от ст.16.4 КоАП?","Ст.16.1 — оскорбление гражданского лица. Ст.16.4 — мелкое хулиганство (нецензурная брань в общественных местах)."],
+["Что грозит по ст.20.6 КоАП?","Административный штраф в размере 40 000 рублей за неповиновение законному распоряжению сотрудника."],
+["Что такое КоАП?","Кодекс об административных правонарушениях — закон, устанавливающий ответственность за административные проступки."],
+["Что такое УК?","Уголовный кодекс — закон, определяющий преступления и наказания за них."],
+["Какие виды административных наказаний существуют?","Предупреждение, административный штраф, лишение специального права, административный арест."],
+["Кто может привлекать к административной ответственности?","Судьи, органы внутренних дел (полиция), ГИБДД."],
+["Что такое ОРЛС?","Отдел по работе с личным составом."],
+["Что такое ОБ ППСП?","Отдельный батальон патрульно-постовой службы полиции."],
+["Что такое ОСБ?","Отдел собственной безопасности."],
+["Что такое ОУР?","Отдел уголовного розыска."],
+["Что такое ОСН?","Отряд специального назначения."],
+["Что такое КПЗ?","Камера предварительного заключения."],
+["Что такое УГИБДД?","Управление Государственной инспекции безопасности дорожного движения."],
+["Что такое ФСБ?","Федеральная служба безопасности."],
+["Что такое ЕСС?","Единая служба спасения."],
+["Что такое ПДД?","Правила дорожного движения."],
+["Что такое ООП?","Охрана общественного порядка."],
+["Что такое ОРД?","Оперативно-розыскная деятельность."],
+["Что такое ОРМ?","Оперативно-розыскные мероприятия."],
+["Что такое ИВС?","Изолятор временного содержания."],
+["Что такое УФСИН?","Управление Федеральной службы исполнения наказаний."],
+["Что такое МЧС?","Министерство чрезвычайных ситуаций."]
+];
+const grid = document.getElementById('testGrid');
+testData.forEach((q,i)=>{
+  const div = document.createElement('div');
+  div.className = 'test reveal';
+  div.innerHTML = `<h4><span class="tnum">${i+1}.</span>${q[0]}</h4><div class="ans"><b>Ответ:</b> ${q[1]}</div><button class="show">Показать ответ</button>`;
+  grid.appendChild(div);
+  const btn = div.querySelector('.show'), ans = div.querySelector('.ans');
+  btn.onclick = ()=>{ if(ans.style.display==='block'){ ans.style.display='none'; btn.textContent='Показать ответ'; } else { ans.style.display='block'; btn.textContent='Скрыть ответ'; } };
+  io.observe(div);
+});
+document.getElementById('revealAll').onclick = ()=>{
+  document.querySelectorAll('.test').forEach(t=>{ t.querySelector('.ans').style.display='block'; t.querySelector('.show').textContent='Скрыть ответ'; });
+};
+document.getElementById('hideAll').onclick = ()=>{
+  document.querySelectorAll('.test').forEach(t=>{ t.querySelector('.ans').style.display='none'; t.querySelector('.show').textContent='Показать ответ'; });
+};
+
+/* Back to top + active nav */
+const toTop = document.getElementById('toTop');
+const secs = document.querySelectorAll('section[id]');
+const navA = document.querySelectorAll('.nav-links a');
+addEventListener('scroll', ()=>{
+  toTop.classList.toggle('show', scrollY > 600);
+  let cur = '';
+  secs.forEach(s=>{ if(scrollY >= s.offsetTop - 160) cur = s.id; });
+  navA.forEach(a=> a.classList.toggle('active', a.getAttribute('href')==='#'+cur));
+});
+toTop.onclick = ()=> scrollTo({top:0, behavior:'smooth'});
+</script>
+</body>
+</html>
+

@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LAW OFFICE — игровые юридические документы · AMAZING ONLINE</title>
+<meta name="description" content="LAW OFFICE — магазин цифровых услуг для AMAZING ONLINE. Иски, жалобы, ходатайства, консультации и обучение. С гарантией доработки. Пишите в VK — vk.ru/aliarkham.">
+<meta name="author" content="Ali_Arkham">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LAW OFFICE">
+<meta property="og:title" content="LAW OFFICE — игровые юридические документы · AMAZING ONLINE">
+<meta property="og:description" content="Игровые документы, жалобы, ходатайства, консультации и обучение для AMAZING ONLINE. Быстро, грамотно, с гарантией доработки.">
+<meta property="og:image" content="og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LAW OFFICE — игровые юридические документы · AMAZING ONLINE">
+<meta name="twitter:description" content="Игровые документы для AMAZING ONLINE. Иски, жалобы, консультации, обучение.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='2' width='28' height='28' fill='%230d0c0a'/%3E%3Cpath d='M10 7 L10 25 M22 7 L22 25 M8 25 L24 25 M10 13 L22 13 M6 10 L10 7 M26 10 L22 7' stroke='%23d9a03f' stroke-width='1.6' fill='none'/%3E%3C/svg%3E">
+<style>
+/* ============================================================
+   LAW OFFICE — редакционная типографика.
+   Серif-дисплей (Fraunces) + гротеск (Manrope) + моно (JetBrains).
+   Линии, а не тени. Асимметрия. Одна акцентная.
+   ============================================================ */
+:root{
+  --bg:#0d0c0a;
+  --bg-2:#121009;
+  --surface:#161410;
+  --surface-2:#1c1913;
+  --ink:#f0e9db;
+  --muted:#a39781;
+  --faint:#746a58;
+  --hairline:rgba(240,233,219,.12);
+  --hairline-strong:rgba(240,233,219,.24);
+  --accent:#d9a03f;
+  --accent-ink:#1a1206;
+  --accent-soft:rgba(217,160,63,.12);
+  --red:#e05a3f;
+  --red-soft:rgba(224,90,63,.12);
+  --green:#8ab86e;
+  --display:'Fraunces',Georgia,serif;
+  --body:'Manrope',system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+  --radius:6px;
+  --maxw:1200px;
+  --ease:cubic-bezier(.2,.6,.2,1);
+}
+[data-theme="light"]{
+  --bg:#f4efe4;
+  --bg-2:#efe8d8;
+  --surface:#fffdf6;
+  --surface-2:#f1ebdc;
+  --ink:#211c13;
+  --muted:#6d6350;
+  --faint:#a09680;
+  --hairline:rgba(33,28,19,.14);
+  --hairline-strong:rgba(33,28,19,.3);
+  --accent:#96641a;
+  --accent-ink:#fffaf0;
+  --accent-soft:rgba(150,100,26,.12);
+  --red:#a63b28;
+  --red-soft:rgba(166,59,40,.1);
+  --green:#3f7a45;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--bg);color:var(--ink);line-height:1.65;overflow-x:hidden;transition:background .35s,color .35s;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer}
+::selection{background:var(--accent);color:var(--accent-ink)}
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--hairline-strong);border-radius:0}
+::-webkit-scrollbar-thumb:hover{background:var(--accent)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+section[id]{scroll-margin-top:80px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.skip-link{position:absolute;left:-999px;top:8px;z-index:2000;background:var(--accent);color:var(--accent-ink);font-family:var(--mono);font-size:12px;padding:10px 16px;transition:left .2s}
+.skip-link:focus{left:8px}
+.mono{font-family:var(--mono)}
+/* ---------- утилиты ---------- */
+.kicker{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+.serif{font-family:var(--display)}
+.hairline{border-top:1px solid var(--hairline)}
+.overline{position:relative}
+.num-mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+/* ---------- прелоадер ---------- */
+#preloader{position:fixed;inset:0;z-index:1500;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;transition:opacity .5s ease,visibility .5s ease}
+#preloader.hide{opacity:0;visibility:hidden}
+#preloader .pl-svg{width:54px;height:54px;animation:plFade 1.2s ease infinite alternate}
+#preloader .pl-word{font-family:var(--display);font-size:22px;letter-spacing:.06em}
+#preloader .pl-line{width:150px;height:1px;background:var(--hairline);position:relative;overflow:hidden}
+#preloader .pl-line i{position:absolute;left:0;top:0;height:100%;width:40%;background:var(--accent);animation:plSlide 1.1s ease infinite}
+@keyframes plFade{from{opacity:.4}to{opacity:1}}
+@keyframes plSlide{0%{transform:translateX(-100%)}100%{transform:translateX(400%)}}
+
+/* ---------- header ---------- */
+header{position:fixed;top:0;left:0;right:0;z-index:900;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--hairline);transition:transform .3s var(--ease)}
+header.hidden{transform:translateY(-100%)}
+.nav{max-width:var(--maxw);margin:0 auto;padding:0 28px;height:72px;display:flex;align-items:center;gap:28px}
+.brand{display:flex;align-items:center;gap:14px;line-height:1}
+.brand .logo-mark{width:36px;height:36px;flex:0 0 36px;color:var(--accent)}
+.brand .brand-name{font-family:var(--display);font-size:20px;letter-spacing:.02em}
+.brand .brand-sub{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.nav-links{display:flex;gap:4px;margin-left:auto}
+.nav-links a{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:9px 12px;transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a.active{color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:10px}
+.icon-btn{width:40px;height:40px;display:grid;place-items:center;border:1px solid var(--hairline);background:transparent;color:var(--ink);border-radius:var(--radius);transition:border-color .2s,color .2s}
+.icon-btn:hover{border-color:var(--accent);color:var(--accent)}
+.burger{display:none}
+#progress{position:fixed;top:0;left:0;height:2px;width:0;z-index:1000;background:var(--accent)}
+@media(max-width:920px){
+  .burger{display:grid}
+  .nav-links{position:fixed;top:72px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--hairline);flex-direction:column;padding:14px 28px;gap:2px;display:none}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:12px 4px}
+}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding:172px 0 0;overflow:hidden}
+.hero-grid{max-width:var(--maxw);margin:0 auto;padding:0 28px;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:64px;align-items:end}
+.hero .kicker{display:inline-flex;align-items:center;gap:10px}
+.hero .kicker::before{content:"";width:34px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--display);font-weight:500;font-size:clamp(46px,7.2vw,92px);line-height:.98;letter-spacing:-.03em;margin:26px 0 28px;max-width:16ch}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero .lede{color:var(--muted);font-size:17px;max-width:52ch;line-height:1.7}
+.hero-actions{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:15px 24px;border-radius:var(--radius);border:1px solid transparent;transition:transform .18s var(--ease),background .18s,color .18s,border-color .18s}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-ghost{border-color:var(--hairline-strong);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.btn svg{width:15px;height:15px}
+.hero-meta{margin-top:30px;display:flex;flex-wrap:wrap;gap:22px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+.hero-meta b{color:var(--accent);font-weight:500}
+.hero-figure{position:relative}
+.hero-figure .frame{position:relative;overflow:hidden}
+.hero-figure img{width:100%;height:520px;object-fit:cover;filter:saturate(.9) contrast(1.03)}
+.hero-figure .caption{margin-top:12px;font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--faint);text-transform:uppercase}
+.hero-figure .stamp{position:absolute;top:-18px;right:-14px;width:104px;height:104px;border:1px solid var(--hairline-strong);border-radius:50%;display:grid;place-items:center;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(4px);font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);text-align:center;line-height:1.5;transform:rotate(10deg)}
+@media(max-width:920px){
+  .hero{padding:140px 0 0}
+  .hero-grid{grid-template-columns:1fr;gap:40px;align-items:start}
+  .hero-figure img{height:340px}
+  .hero-figure .stamp{top:-12px;right:6px}
+}
+
+/* ---------- price strip ---------- */
+.pricestrip{border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);margin:120px auto 0}
+.pricestrip .inner{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.pricestrip .p-head{display:flex;justify-content:space-between;align-items:baseline;padding:26px 0 8px;gap:16px;flex-wrap:wrap}
+.pricestrip .p-head .kicker::before{display:none}
+.pricestrip table{width:100%;border-collapse:collapse}
+.pricestrip th,.pricestrip td{text-align:left;padding:16px 6px;border-top:1px solid var(--hairline)}
+.pricestrip th{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);font-weight:400}
+.pricestrip td{font-size:15px}
+.pricestrip td .cat{font-family:var(--display);font-size:19px}
+.pricestrip td .sub{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--faint);margin-top:2px}
+.pricestrip td .rub,.pricestrip td .gm{font-family:var(--mono);font-size:13px;white-space:nowrap}
+.pricestrip td .rub{color:var(--ink)}
+.pricestrip td .gm{color:var(--accent)}
+.pricestrip tfoot td{padding:18px 6px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+@media(max-width:720px){
+  .pricestrip th:nth-child(2),.pricestrip td:nth-child(2){display:none}
+}
+
+/* ---------- sections ---------- */
+section{padding:120px 0}
+.shead{margin-bottom:56px;max-width:760px}
+.shead .kicker{display:inline-flex;align-items:center;gap:10px}
+.shead .kicker::before{content:"";width:26px;height:1px;background:var(--accent)}
+.shead h2{font-family:var(--display);font-weight:500;font-size:clamp(34px,5vw,58px);line-height:1.04;letter-spacing:-.02em;margin:18px 0 16px}
+.shead p{color:var(--muted);font-size:16px;max-width:56ch;line-height:1.7}
+
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+
+/* ---------- animated lines wrapper ---------- */
+.alines-wrap{position:relative}
+.alines-wrap svg.alines{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;overflow:visible;z-index:1}
+.alines-wrap>*:not(svg){position:relative;z-index:2}
+
+/* ---------- origin badge ---------- */
+.origin{display:flex;justify-content:center;margin-bottom:56px}
+.origin .emblem{display:inline-flex;align-items:center;gap:14px;padding:14px 24px;border:1px solid var(--hairline-strong);background:var(--surface);border-radius:var(--radius)}
+.origin .emblem svg{width:22px;height:22px;color:var(--accent)}
+.origin .emblem .e-name{font-family:var(--display);font-size:17px;letter-spacing:.02em}
+.origin .emblem .e-sub{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+
+/* ---------- categories (индекс) ---------- */
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--hairline);border-left:1px solid var(--hairline)}
+.cat{border-right:1px solid var(--hairline);border-bottom:1px solid var(--hairline);padding:34px 28px 30px;background:var(--bg);cursor:pointer;transition:background .25s;position:relative;display:flex;flex-direction:column;gap:16px}
+.cat:hover{background:var(--surface-2)}
+.cat .c-num{font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.14em}
+.cat h4{font-family:var(--display);font-weight:500;font-size:24px;line-height:1.1}
+.cat p{color:var(--muted);font-size:13.5px;line-height:1.6}
+.cat .c-go{margin-top:auto;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:8px}
+.cat .c-go svg{width:14px;height:14px;transition:transform .25s}
+.cat:hover .c-go svg{transform:translateX(5px)}
+@media(max-width:920px){.cats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.cats{grid-template-columns:1fr}}
+
+/* ---------- search ---------- */
+.search-panel{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:20px}
+.search-wrap{flex:1;min-width:260px;position:relative}
+.search-wrap svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:var(--faint);pointer-events:none}
+.search-wrap input{width:100%;padding:14px 16px 14px 46px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--radius);color:var(--ink);font-size:14px;font-family:var(--body);transition:border-color .2s}
+.search-wrap input::placeholder{color:var(--faint)}
+.search-wrap input:focus{border-color:var(--accent);outline:none}
+.chip-row{display:flex;gap:0;flex-wrap:wrap;border:1px solid var(--hairline);border-radius:var(--radius);overflow:hidden}
+.chip{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:14px 16px;background:transparent;color:var(--muted);border:none;border-right:1px solid var(--hairline);transition:background .2s,color .2s}
+.chip:last-child{border-right:none}
+.chip:hover{color:var(--ink)}
+.chip.active{background:var(--accent);color:var(--accent-ink)}
+.search-count{margin:6px 0 46px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--faint)}
+.search-count b{color:var(--accent)}
+
+/* ---------- service rows ---------- */
+.s-block{padding-top:0}
+.svc{border-bottom:1px solid var(--hairline);padding:22px 0;display:grid;grid-template-columns:1fr auto auto auto;gap:22px;align-items:center;transition:background .2s,padding .2s;margin:0}
+.svc:hover{background:var(--surface)}
+.svc .s-t{font-family:var(--display);font-size:21px;font-weight:500;line-height:1.25}
+.svc .s-d{color:var(--muted);font-size:13.5px;margin-top:4px;max-width:52ch}
+.svc .p-rub{font-family:var(--mono);font-size:14px;white-space:nowrap}
+.svc .p-gm{font-family:var(--mono);font-size:12px;color:var(--accent);white-space:nowrap}
+.svc .order{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);border:1px solid var(--hairline-strong);background:transparent;padding:10px 14px;border-radius:var(--radius);transition:background .2s,border-color .2s}
+.svc .order:hover{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.svc.hidden-row{display:none}
+.svc.first{border-top:1px solid var(--hairline)}
+@media(max-width:820px){
+  .svc{grid-template-columns:1fr auto;gap:10px 16px}
+  .svc .s-d{grid-column:1/-1}
+  .svc .p-gm{grid-column:1;grid-row:3}
+  .svc .order{grid-column:2;grid-row:3;justify-self:end}
+}
+
+/* ---------- split sections (фото + список) ---------- */
+.split{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:start}
+.split .photo{position:sticky;top:100px}
+.split .photo img{width:100%;height:480px;object-fit:cover;filter:saturate(.88) contrast(1.04)}
+.split .photo .cap{margin-top:12px;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+.split .photo .num-big{font-family:var(--display);font-size:120px;line-height:1;color:var(--hairline-strong);-webkit-text-stroke:1px var(--hairline-strong);opacity:.6}
+.split.rev .photo{order:2}
+@media(max-width:920px){
+  .split{grid-template-columns:1fr;gap:36px}
+  .split .photo{position:static;order:-1!important}
+  .split.rev .photo{order:-1!important}
+  .split .photo img{height:260px}
+}
+
+/* ---------- packages ---------- */
+.packs{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--hairline);border-left:1px solid var(--hairline)}
+.pack{border-right:1px solid var(--hairline);border-bottom:1px solid var(--hairline);padding:38px 34px;display:flex;flex-direction:column;gap:18px;background:var(--bg)}
+.pack h4{font-family:var(--mono);font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--accent)}
+.pack .p-price{font-family:var(--display);font-size:42px;line-height:1;letter-spacing:-.02em}
+.pack .p-price small{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--muted);margin-top:8px;font-weight:400}
+.pack ul{list-style:none;border-top:1px solid var(--hairline);margin-top:6px;padding-top:16px}
+.pack li{padding:8px 0;border-bottom:1px solid var(--hairline);font-size:14px;color:var(--muted);display:flex;justify-content:space-between;gap:12px}
+.pack li:last-child{border-bottom:none}
+.pack li b{font-family:var(--mono);font-weight:400;color:var(--ink);font-size:12px}
+.pack .order{margin-top:auto;align-self:flex-start}
+.pack-featured{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--hairline);background:var(--surface-2);overflow:hidden}
+.pack-featured .pf-body{padding:44px 40px;display:flex;flex-direction:column;gap:18px;justify-content:center}
+.pack-featured .pf-body h4{font-family:var(--mono);font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--accent)}
+.pack-featured .pf-body h3{font-family:var(--display);font-weight:500;font-size:clamp(30px,4vw,48px);line-height:1.02;letter-spacing:-.02em}
+.pack-featured .pf-body p{color:var(--muted);font-size:15px;max-width:48ch}
+.pack-featured .pf-price{font-family:var(--display);font-size:56px;letter-spacing:-.02em}
+.pack-featured .pf-price small{display:block;font-family:var(--mono);font-size:13px;color:var(--muted);margin-top:6px;font-weight:400}
+.pack-featured .pf-photo{min-height:320px;position:relative}
+.pack-featured .pf-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.85)}
+@media(max-width:820px){
+  .packs{grid-template-columns:1fr}
+  .pack-featured{grid-template-columns:1fr}
+  .pack-featured .pf-photo{min-height:200px;order:-1}
+}
+
+/* ---------- условия / правила ---------- */
+.info-grid{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--hairline);border-left:1px solid var(--hairline)}
+.info-cell{border-right:1px solid var(--hairline);border-bottom:1px solid var(--hairline);padding:34px 32px;background:var(--bg)}
+.info-cell h4{font-family:var(--display);font-weight:500;font-size:23px;margin-bottom:10px}
+.info-cell p{color:var(--muted);font-size:14.5px;line-height:1.7}
+.info-cell .i-num{font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.16em;display:block;margin-bottom:16px}
+.info-cell.warn{background:var(--red-soft)}
+.info-cell.warn h4{color:var(--red)}
+.info-cell.warn .i-num{color:var(--red)}
+@media(max-width:820px){.info-grid{grid-template-columns:1fr}}
+
+/* ---------- quotes ---------- */
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--hairline);border-left:1px solid var(--hairline)}
+.quote{border-right:1px solid var(--hairline);border-bottom:1px solid var(--hairline);padding:38px 32px;background:var(--bg)}
+.quote .q-mark{font-family:var(--display);font-size:54px;line-height:.6;color:var(--accent);display:block;margin-bottom:20px}
+.quote p{font-family:var(--display);font-size:19px;line-height:1.4;font-style:italic}
+.quote .q-who{margin-top:22px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+.quote .q-who b{color:var(--ink);font-weight:500}
+@media(max-width:920px){.quotes{grid-template-columns:1fr}}
+
+/* ---------- faq ---------- */
+.faq-list{max-width:820px}
+.faq-item{border-bottom:1px solid var(--hairline)}
+.faq-item:first-child{border-top:1px solid var(--hairline)}
+.faq-head{display:flex;align-items:center;gap:24px;padding:26px 4px;cursor:pointer;user-select:none}
+.faq-head .f-num{font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.14em}
+.faq-head h3{font-family:var(--display);font-weight:500;font-size:21px;flex:1;line-height:1.3}
+.faq-head .arrow{color:var(--accent);transition:transform .3s var(--ease);flex:0 0 auto}
+.faq-head .arrow svg{width:16px;height:16px;display:block}
+.faq-item.open .arrow{transform:rotate(180deg)}
+.faq-body{max-height:0;overflow:hidden;transition:max-height .45s var(--ease)}
+.faq-inner{padding:0 4px 28px 60px;color:var(--muted);font-size:15px;line-height:1.75;max-width:66ch}
+.faq-inner a{color:var(--accent);border-bottom:1px solid var(--accent)}
+
+/* ---------- contacts ---------- */
+.contact-band{display:grid;grid-template-columns:1.2fr .8fr;gap:0;border:1px solid var(--hairline-strong);background:var(--surface-2);overflow:hidden}
+.contact-band .cb-left{padding:56px 48px;display:flex;flex-direction:column;gap:20px;justify-content:center}
+.contact-band .cb-left .kicker::before{display:none}
+.contact-band h2{font-family:var(--display);font-weight:500;font-size:clamp(34px,4.4vw,52px);line-height:1.02;letter-spacing:-.02em}
+.contact-band p{color:var(--muted);max-width:46ch;line-height:1.7}
+.contact-band .author{display:flex;align-items:center;gap:16px;margin-top:8px}
+.contact-band .author .a-mark{width:52px;height:52px;border:1px solid var(--hairline-strong);display:grid;place-items:center;color:var(--accent);background:var(--bg)}
+.contact-band .author .a-mark svg{width:24px;height:24px}
+.contact-band .author .who b{font-family:var(--display);font-size:18px;font-weight:500;display:block}
+.contact-band .author .who span{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.contact-band .cb-right{padding:56px 48px;display:flex;flex-direction:column;gap:14px;justify-content:center;border-left:1px solid var(--hairline)}
+.contact-band .cb-right .btn{width:100%;justify-content:center}
+.btn-vk{background:#4680c2;color:#fff}
+.btn-vk:hover{transform:translateY(-2px);background:#3a6faa}
+.btn-ds{background:#5865f2;color:#fff}
+.btn-ds:hover{transform:translateY(-2px);background:#4b55d6}
+.contact-band .note{margin-top:10px;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);text-align:center}
+@media(max-width:820px){
+  .contact-band{grid-template-columns:1fr}
+  .contact-band .cb-right{border-left:none;border-top:1px solid var(--hairline)}
+}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--hairline);background:var(--bg-2);padding:64px 0 40px}
+.foot{max-width:var(--maxw);margin:0 auto;padding:0 28px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid var(--hairline)}
+.foot .f-brand .brand-name{font-family:var(--display);font-size:20px}
+.foot .f-brand p{color:var(--muted);font-size:13.5px;margin-top:12px;max-width:40ch;line-height:1.7}
+.foot h5{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);font-weight:400;margin-bottom:16px}
+.foot .cols a{display:block;color:var(--muted);font-size:14px;margin:9px 0;transition:color .2s}
+.foot .cols a:hover{color:var(--accent)}
+.colophon{max-width:var(--maxw);margin:0 auto;padding:26px 28px 0;display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:space-between;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.colophon a{color:var(--muted)}
+.colophon a:hover{color:var(--accent)}
+@media(max-width:820px){.foot{grid-template-columns:1fr;gap:36px}}
+
+/* ---------- toTop / watermark ---------- */
+#toTop{position:fixed;bottom:26px;right:26px;z-index:800;width:48px;height:48px;border-radius:var(--radius);border:1px solid var(--hairline-strong);background:var(--surface);color:var(--accent);display:grid;place-items:center;opacity:0;pointer-events:none;transition:opacity .3s,transform .2s}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{transform:translateY(-4px);border-color:var(--accent)}
+#toTop svg{width:16px;height:16px}
+.watermark{position:fixed;right:-40px;bottom:-44px;z-index:0;pointer-events:none;user-select:none;font-family:var(--display);font-weight:600;font-size:clamp(120px,24vw,420px);line-height:1;color:transparent;-webkit-text-stroke:1px var(--hairline-strong);letter-spacing:.04em;transform:rotate(-8deg)}
+
+/* ---------- modal ---------- */
+.modal-overlay{position:fixed;inset:0;z-index:1200;background:rgba(8,7,5,.7);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:20px}
+.modal{background:var(--surface);border:1px solid var(--hairline-strong);border-radius:var(--radius);max-width:480px;width:100%;padding:40px;position:relative;box-shadow:0 40px 120px rgba(0,0,0,.5)}
+.modal-close{position:absolute;top:16px;right:16px;width:38px;height:38px;display:grid;place-items:center;background:transparent;border:1px solid var(--hairline);border-radius:var(--radius);color:var(--muted);transition:border-color .2s,color .2s}
+.modal-close:hover{border-color:var(--accent);color:var(--accent)}
+.modal .kicker::before{display:none}
+.modal h3{font-family:var(--display);font-weight:500;font-size:28px;margin:12px 0 8px;line-height:1.15}
+.modal .m-sub{color:var(--muted);font-size:14px;margin-bottom:24px;line-height:1.65}
+.modal .m-btns{display:flex;flex-direction:column;gap:12px}
+.modal .m-btns .btn{width:100%;justify-content:center}
+.modal .m-foot{margin-top:20px;padding-top:18px;border-top:1px solid var(--hairline);font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);line-height:1.7}
+.modal .m-warn{margin-top:12px;font-size:12px;color:var(--red);line-height:1.6}
+
+/* ---------- анимации карточек ---------- */
+@keyframes rowIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.stagger .svc{animation:rowIn .5s var(--ease) backwards}
+.svc.hidden-row{display:none}
+
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body data-theme="dark">
+<a class="skip-link" href="#catalog">К содержанию</a>
+<div class="watermark" aria-hidden="true">ARKHAM</div>
+
+<!-- прелоадер -->
+<div id="preloader" role="status" aria-label="Загрузка">
+  <svg class="pl-svg" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+    <rect x="2" y="2" width="28" height="28" fill="none" stroke="var(--accent)" stroke-width="1.4"/>
+    <path d="M10 7 L10 25 M22 7 L22 25 M8 25 L24 25 M10 13 L22 13 M6 10 L10 7 M26 10 L22 7" stroke="var(--accent)" stroke-width="1.6"/>
+  </svg>
+  <div class="pl-word">LAW OFFICE</div>
+  <div class="pl-line"><i></i></div>
+</div>
+
+<header id="header">
+  <div class="nav">
+    <a class="brand" href="#top" aria-label="LAW OFFICE — на главную">
+      <svg class="logo-mark" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+        <rect x="3" y="3" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.4"/>
+        <path d="M12 8 L12 28 M24 8 L24 28 M10 28 L26 28 M12 15 L24 15 M7 11 L12 8 M29 11 L24 8" stroke="currentColor" stroke-width="1.6"/>
+      </svg>
+      <span>
+        <span class="brand-name">LAW OFFICE</span>
+        <span class="brand-sub">AMAZING ONLINE · игровые документы</span>
+      </span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Основная навигация">
+      <a href="#catalog">Каталог</a>
+      <a href="#prices">Прайс</a>
+      <a href="#packages">Пакеты</a>
+      <a href="#terms">Условия</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <div class="nav-right">
+      <button class="icon-btn theme-btn" id="themeBtn" title="Переключить тему" aria-label="Переключить тему">☾</button>
+      <button class="icon-btn burger" id="burger" title="Меню" aria-label="Открыть меню">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M2 4.5 H16 M2 9 H16 M2 13.5 H16" stroke="currentColor" stroke-width="1.6"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<div id="progress" aria-hidden="true"></div>
+
+<main id="top">
+  <!-- ============ HERO ============ -->
+  <section class="hero" style="padding-bottom:0">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="kicker reveal">Магазин цифровых услуг · AMAZING ONLINE</span>
+        <h1 class="reveal d1">Документы для игры. <em>Принимают</em> с первого раза.</h1>
+        <p class="lede reveal d2">Исковые заявления, жалобы, ходатайства, консультации и обучение. Пишу грамотно, по делу и без воды. Если суд формально отклонит документ — доработаю бесплатно.</p>
+        <div class="hero-actions reveal d3">
+          <a class="btn btn-primary" href="#catalog">
+            Смотреть каталог
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8 H14 M9 3 L14 8 L9 13" stroke="currentColor" stroke-width="1.6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="https://vk.ru/aliarkham" target="_blank" rel="noopener">
+            Написать в VK
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4 L8 8 L14 4 M3 12 H13" stroke="currentColor" stroke-width="1.5"/></svg>
+          </a>
+        </div>
+        <div class="hero-meta reveal d3">
+          <span><b>15</b> услуг</span>
+          <span><b>4</b> раздела</span>
+          <span><b>3</b> пакета</span>
+          <span>гарантия доработки</span>
+        </div>
+      </div>
+      <figure class="hero-figure reveal d2">
+        <div class="frame">
+          <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=1200&auto=format&fit=crop" alt="Печатная машинка на письменном столе" loading="eager" onerror="this.style.display='none'">
+        </div>
+        <figcaption class="caption">Канцелярия LAW OFFICE — каждое слово выверено.</figcaption>
+        <div class="stamp" aria-hidden="true">Принято<br>с 1 раза</div>
+      </figure>
+    </div>
+
+    <!-- прайс-полоса -->
+    <div class="pricestrip" id="prices">
+      <div class="inner">
+        <div class="p-head">
+          <span class="kicker">Прайс-лист — осень 2026</span>
+          <span class="mono" style="font-size:11px;color:var(--faint)">цены договорные · рубли и игровая валюта</span>
+        </div>
+        <table>
+          <thead><tr><th>Категория</th><th>Рубли ₽</th><th>Игровая валюта</th></tr></thead>
+          <tbody>
+            <tr><td><span class="cat">Исковые заявления</span><span class="sub">иски, апелляция, кассация</span></td><td class="rub">50 – 90 ₽</td><td class="gm">250.000 – 450.000</td></tr>
+            <tr><td><span class="cat">Жалобы и ходатайства</span><span class="sub">УПК, КоАП, отказ от иска</span></td><td class="rub">20 – 50 ₽</td><td class="gm">100.000 – 250.000</td></tr>
+            <tr><td><span class="cat">Консультации</span><span class="sub">устно, письменно, разбор</span></td><td class="rub">50 – 100 ₽</td><td class="gm">250.000 – 500.000</td></tr>
+            <tr><td><span class="cat">Обучалки</span><span class="sub">2 / 3 / 5 блоков</span></td><td class="rub">80 – 150 ₽</td><td class="gm">400.000 – 750.000</td></tr>
+            <tr><td><span class="cat">Пакеты</span><span class="sub">минимум · стандарт · максимум</span></td><td class="rub">120 – 300 ₽</td><td class="gm">600.000 – 1.500.000</td></tr>
+          </tbody>
+          <tfoot><tr><td colspan="3">⚠️ Все документы — только для игры AMAZING ONLINE. Реальной юридической силы не имеют.</td></tr></tfoot>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <!-- ============ КАТАЛОГ (индекс категорий + линии) ============ -->
+    <section id="catalog">
+      <div class="shead reveal">
+        <span class="kicker">§ 01 — Каталог</span>
+        <h2>Четыре раздела. Пятнадцать услуг.</h2>
+        <p>От простого ходатайства до полного обучения. Выберите раздел — дальше покажу состав и цены.</p>
+      </div>
+
+      <div class="search-panel reveal">
+        <div class="search-wrap">
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="4.5" stroke="currentColor" stroke-width="1.5"/><path d="M10.5 10.5 L14 14" stroke="currentColor" stroke-width="1.5"/></svg>
+          <input type="text" id="serviceSearch" placeholder="Поиск по услугам: иск, жалоба, консультация…" autocomplete="off" aria-label="Поиск по услугам">
+        </div>
+        <div class="chip-row" id="chipRow" role="group" aria-label="Фильтр по категориям">
+          <button class="chip active" data-filter="all">Все</button>
+          <button class="chip" data-filter="claims">Иски</button>
+          <button class="chip" data-filter="complaints">Жалобы</button>
+          <button class="chip" data-filter="consult">Консультации</button>
+          <button class="chip" data-filter="training">Обучалки</button>
+        </div>
+      </div>
+      <div class="search-count reveal" id="searchCount"><b>15</b> услуг доступно</div>
+
+      <div class="alines-wrap reveal" id="catsWrap">
+        <div class="origin" id="catsOrigin">
+          <div class="emblem">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 4 L6 20 M18 4 L18 20 M4 20 L20 20 M6 10 L18 10" stroke="currentColor" stroke-width="1.6"/></svg>
+            <span><span class="e-name">LAW OFFICE</span><span class="e-sub">каталог услуг</span></span>
+          </div>
+        </div>
+        <div class="cats" id="catsGrid">
+          <div class="cat" data-target="claims" tabindex="0" role="button" aria-label="Перейти к разделу «Исковые заявления»">
+            <span class="c-num">01</span>
+            <h4>Исковые заявления</h4>
+            <p>Гражданские и административные иски, обжалование действий, апелляция, кассация.</p>
+            <span class="c-go">К разделу <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8 H14 M9 3 L14 8 L9 13" stroke="currentColor" stroke-width="1.6"/></svg></span>
+          </div>
+          <div class="cat" data-target="complaints" tabindex="0" role="button" aria-label="Перейти к разделу «Жалобы и ходатайства»">
+            <span class="c-num">02</span>
+            <h4>Жалобы и ходатайства</h4>
+            <p>Жалобы в порядке УПК и КоАП, любые ходатайства, отказ от иска.</p>
+            <span class="c-go">К разделу <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8 H14 M9 3 L14 8 L9 13" stroke="currentColor" stroke-width="1.6"/></svg></span>
+          </div>
+          <div class="cat" data-target="consult" tabindex="0" role="button" aria-label="Перейти к разделу «Консультации»">
+            <span class="c-num">03</span>
+            <h4>Консультации</h4>
+            <p>Устные, письменные, полный разбор ситуации с вариантами действий.</p>
+            <span class="c-go">К разделу <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8 H14 M9 3 L14 8 L9 13" stroke="currentColor" stroke-width="1.6"/></svg></span>
+          </div>
+          <div class="cat" data-target="training" tabindex="0" role="button" aria-label="Перейти к разделу «Обучалки»">
+            <span class="c-num">04</span>
+            <h4>Обучалки</h4>
+            <p>Стандартное, усиленное и полное обучение — от базы до практики.</p>
+            <span class="c-go">К разделу <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8 H14 M9 3 L14 8 L9 13" stroke="currentColor" stroke-width="1.6"/></svg></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ИСКИ ============ -->
+    <section id="claims" class="s-block">
+      <div class="split">
+        <div class="photo reveal">
+          <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=900&auto=format&fit=crop" alt="Полки с юридическими книгами" loading="lazy" onerror="this.style.display='none'">
+          <span class="cap">Судебная практика — книги и образцы. Фото: Unsplash</span>
+        </div>
+        <div>
+          <div class="shead reveal" style="margin-bottom:36px">
+            <span class="kicker">§ 02 — Исковые заявления</span>
+            <h2>Пойдёте в суд — приходите с готовым иском.</h2>
+            <p>Составляю по форме, со ссылками на нормы. Судья не должен искать повод вернуть документ.</p>
+          </div>
+          <div class="alines-wrap reveal" id="claimsWrap">
+            <div class="origin" id="claimsOrigin" style="margin-bottom:34px">
+              <div class="emblem"><span class="e-name" style="font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--accent);text-transform:uppercase">Иски</span></div>
+            </div>
+            <div class="svc-list" id="claimsGrid">
+              <div class="svc first"><div><div class="s-t">Исковое заявление (гражданское)</div><div class="s-d">Споры, взыскания, защита прав по гражданскому делу.</div></div><span class="p-rub">50 ₽</span><span class="p-gm">или 250.000</span><button class="order" data-order="Исковое заявление (гражданское)">Заказать</button></div>
+              <div class="svc"><div><div class="s-t">Исковое заявление (административное)</div><div class="s-d">Спор с решениями и действиями органов власти.</div></div><span class="p-rub">60 ₽</span><span class="p-gm">или 300.000</span><button class="order" data-order="Исковое заявление (административное)">Заказать</button></div>
+              <div class="svc"><div><div class="s-t">Обжалование действий</div><div class="s-d">Действия или бездействие должностных лиц и организаций.</div></div><span class="p-rub">70 ₽</span><span class="p-gm">или 350.000</span><button class="order" data-order="Исковое заявление (обжалование действий)">Заказать</button></div>
+              <div class="svc"><div><div class="s-t">Апелляционная жалоба</div><div class="s-d">Обжалование решения первой инстанции в вышестоящем суде.</div></div><span class="p-rub">80 ₽</span><span class="p-gm">или 400.000</span><button class="order" data-order="Апелляционная жалоба">Заказать</button></div>
+              <div class="svc"><div><div class="s-t">Кассационная жалоба</div><div class="s-d">Пересмотр вступивших в силу судебных постановлений.</div></div><span class="p-rub">90 ₽</span><span class="p-gm">или 450.000</span><button class="order" data-order="Кассационная жалоба">Заказать</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ЖАЛОБЫ ============ -->
+    <section id="complaints" class="s-block">
+      <div class="split rev">
+        <div class="photo reveal">
+          <img src="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?q=80&w=900&auto=format&fit=crop" alt="Перьевая ручка на документе" loading="lazy" onerror="this.style.display='none'">
+          <span class="cap">Подпись — последний штрих. Фото: Unsplash</span>
+        </div>
+        <div>
+          <div class="shead reveal" style="margin-bottom:36px">
+            <span class="kicker">§ 03 — Жалобы и ходатайства</span>
+            <h2>Не молчите, когда можно обжаловать.</h2>
+            <p>Действия дознания, постановления КоАП, любые ходатайства по делу — оформлю так, чтобы приняли.</p>
+          </div>
+          <div class="alines-wrap reveal" id="complaintsWrap">
+            <div class="origin" id="complaintsOrigin" style="margin-bottom:34px">
+              <div class="emblem"><span class="e-name" style="font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--accent);text-transform:uppercase">Жалобы</span></div>
+            </div>
+            <div class="svc-list" id="complaintsGrid">
+              <div class="svc first"><div><div class="s-t">Жалоба в порядке УПК</div><div class="s-d">Обжалование действий и решений органов дознания и следствия.</div></div><span class="p-rub">50 ₽</span><span class="p-gm">или 250.000</span><button class="order" data-order="Жалоба в порядке УПК">Заказать</button></div>
+              <div class="svc"><div><div class="s-t">Жалоба на постановление КоАП</div><div class="s-d">Обжалование постановления по административному делу.</div></div><span class="p-rub">40 ₽</span><span class="p-gm">или 200.000</span><button class="order" data-order="Жалоба на постановление КоАП">Заказать</button></div>
+              <div class="svc"><div><div class="s-t">Ходатайство (любое)</div><div class="s-d">О приобщении, вызове, экспертизе и других процессуальных действиях.</div></div><span class="p-rub">30 ₽</span><span class="p-gm">или 150.000</span><button class="order" data-order="Ходатайство (любое)">Заказать</button></div>
+              <div class="svc"><div><div class="s-t">Заявление об отказе от иска</div><div class="s-d">Отказ от исковых требований в установленном порядке.</div></div><span class="p-rub">20 ₽</span><span class="p-gm">или 100.000</span><button class="order" data-order="Заявление об отказе от иска">Заказать</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ КОНСУЛЬТАЦИИ ============ -->
+    <section id="consult" class="s-block">
+      <div class="shead reveal">
+        <span class="kicker">§ 04 — Консультации</span>
+        <h2>Сначала подумаем — потом пишем.</h2>
+        <p>Если не уверены, что вам нужно, — начните с консультации. Разберу ситуацию и предложу варианты.</p>
+      </div>
+      <div class="alines-wrap reveal" id="consultWrap">
+        <div class="origin" id="consultOrigin" style="margin-bottom:34px">
+          <div class="emblem"><span class="e-name" style="font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--accent);text-transform:uppercase">Консультации</span></div>
+        </div>
+        <div class="svc-list" id="consultGrid">
+          <div class="svc first"><div><div class="s-t">Устная консультация</div><div class="s-d">До 15 минут голосового разбора вашего вопроса.</div></div><span class="p-rub">50 ₽</span><span class="p-gm">или 250.000</span><button class="order" data-order="Устная консультация (до 15 мин)">Заказать</button></div>
+          <div class="svc"><div><div class="s-t">Письменная консультация</div><div class="s-d">Развёрнутый ответ со ссылками на нормы — останется у вас.</div></div><span class="p-rub">80 ₽</span><span class="p-gm">или 400.000</span><button class="order" data-order="Письменная консультация">Заказать</button></div>
+          <div class="svc"><div><div class="s-t">Полный разбор ситуации</div><div class="s-d">Анализ дела, варианты действий и правовые риски.</div></div><span class="p-rub">100 ₽</span><span class="p-gm">или 500.000</span><button class="order" data-order="Полный разбор ситуации">Заказать</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ОБУЧАЛКИ ============ -->
+    <section id="training" class="s-block">
+      <div class="shead reveal">
+        <span class="kicker">§ 05 — Обучалки</span>
+        <h2>Научиться можно. Я покажу как.</h2>
+        <p>От двух базовых блоков до полного курса из пяти — с практикой и разбором ошибок.</p>
+      </div>
+      <div class="alines-wrap reveal" id="trainingWrap">
+        <div class="origin" id="trainingOrigin" style="margin-bottom:34px">
+          <div class="emblem"><span class="e-name" style="font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--accent);text-transform:uppercase">Обучалки</span></div>
+        </div>
+        <div class="svc-list" id="trainingGrid">
+          <div class="svc first"><div><div class="s-t">Стандартное обучение</div><div class="s-d">Два блока: база и навыки.</div></div><span class="p-rub">80 ₽</span><span class="p-gm">или 400.000</span><button class="order" data-order="Стандартное обучение (2 блока)">Заказать</button></div>
+          <div class="svc"><div><div class="s-t">Усиленное обучение</div><div class="s-d">Три блока: база + навыки + практика.</div></div><span class="p-rub">100 ₽</span><span class="p-gm">или 500.000</span><button class="order" data-order="Усиленное обучение (3 блока)">Заказать</button></div>
+          <div class="svc"><div><div class="s-t">Полное обучение</div><div class="s-d">Пять блоков под ключ — от теории до самостоятельной работы.</div></div><span class="p-rub">150 ₽</span><span class="p-gm">или 750.000</span><button class="order" data-order="Полное обучение (5 блоков)">Заказать</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ПАКЕТЫ ============ -->
+    <section id="packages">
+      <div class="shead reveal">
+        <span class="kicker">§ 06 — Пакеты</span>
+        <h2>Собрал готовые наборы — дешевле поштучного.</h2>
+        <p>Не надо выбирать каждую услугу отдельно. Берёте пакет — и вопрос закрыт.</p>
+      </div>
+      <div class="alines-wrap reveal" id="packsWrap">
+        <div class="origin" id="packsOrigin" style="margin-bottom:44px">
+          <div class="emblem"><span class="e-name" style="font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--accent);text-transform:uppercase">Пакеты</span></div>
+        </div>
+        <div class="packs" id="packsGrid">
+          <div class="pack">
+            <h4>Минимум</h4>
+            <span class="p-price">120 ₽<small>или 600.000</small></span>
+            <ul>
+              <li>Исковое заявление <b>вкл.</b></li>
+              <li>Консультация <b>вкл.</b></li>
+            </ul>
+            <button class="btn btn-ghost order" data-order="Пакет «МИНИМУМ»">Заказать пакет</button>
+          </div>
+          <div class="pack">
+            <h4>Стандарт</h4>
+            <span class="p-price">150 ₽<small>или 750.000</small></span>
+            <ul>
+              <li>Исковое заявление <b>вкл.</b></li>
+              <li>Жалоба <b>вкл.</b></li>
+              <li>Ходатайство <b>вкл.</b></li>
+            </ul>
+            <button class="btn btn-ghost order" data-order="Пакет «СТАНДАРТ»">Заказать пакет</button>
+          </div>
+          <div class="pack-featured">
+            <div class="pf-body">
+              <h4>Максимум</h4>
+              <h3>Всё под ключ.</h3>
+              <p>Полное сопровождение дела: иск, жалоба, ходатайство, консультации и обучение. Выгоднее, чем по отдельности.</p>
+              <span class="pf-price">300 ₽<small>или 1.500.000</small></span>
+              <button class="btn btn-primary order" data-order="Пакет «МАКСИМУМ»">Заказать максимум</button>
+            </div>
+            <div class="pf-photo">
+              <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1200&auto=format&fit=crop" alt="Молоток судьи и кодексы" loading="lazy" onerror="this.style.display='none'">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ УСЛОВИЯ ============ -->
+    <section id="terms">
+      <div class="shead reveal">
+        <span class="kicker">§ 07 — Условия</span>
+        <h2>Прозрачно, как в хорошей конторе.</h2>
+        <p>Оплата, гарантии и несколько правил, чтобы работа шла быстро.</p>
+      </div>
+      <div class="info-grid reveal">
+        <div class="info-cell">
+          <span class="i-num">01 — Оплата</span>
+          <h4>По договорённости</h4>
+          <p>Настоящие рубли или игровая валюта AMAZING ONLINE. Финальная цена всегда обсуждается индивидуально — зависит от сложности и ваших пожеланий.</p>
+        </div>
+        <div class="info-cell">
+          <span class="i-num">02 — Гарантия</span>
+          <h4>Доработаю бесплатно</h4>
+          <p>Если суд формально отклонил документ — исправляю по вашему ТЗ без доплаты. Отвечаю за качество каждой строчки.</p>
+        </div>
+        <div class="info-cell">
+          <span class="i-num">03 — Сроки</span>
+          <h4>От 15 минут до суток</h4>
+          <p>Стандартный документ — быстро. Сложное (кассация, апелляция, обучение) — дольше. О сроках предупреждаю заранее.</p>
+        </div>
+        <div class="info-cell">
+          <span class="i-num">04 — ТЗ</span>
+          <h4>Чем полнее — тем точнее</h4>
+          <p>Опишите суть дела, сторону и требования. Хорошее техническое задание — половина качественного результата.</p>
+        </div>
+        <div class="info-cell">
+          <span class="i-num">05 — Связь</span>
+          <h4>VK и Discord</h4>
+          <p>Все вопросы, правки и уточнения — через VK или Discord. Отвечаю в течение дня, обычно быстрее.</p>
+        </div>
+        <div class="info-cell warn">
+          <span class="i-num">06 — Важно</span>
+          <h4>Только для игры</h4>
+          <p>Все документы и услуги носят исключительно игровой характер для AMAZING ONLINE и не имеют юридической силы в реальной жизни.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ОТЗЫВЫ ============ -->
+    <section id="reviews">
+      <div class="shead reveal">
+        <span class="kicker">§ 08 — Отзывы</span>
+        <h2>Слово клиентам.</h2>
+        <p>Публикуются с согласия авторов. Как и всё здесь — в рамках игры.</p>
+      </div>
+      <div class="quotes reveal">
+        <div class="quote">
+          <span class="q-mark">“</span>
+          <p>Иск приняли с первого раза, без единого возврата. Всё по форме, со ссылками.</p>
+          <div class="q-who"><b>Дмитрий К.</b> — исковое заявление</div>
+        </div>
+        <div class="quote">
+          <span class="q-mark">“</span>
+          <p>Жалобу по УПК сделали за вечер. Объяснил нюансы и помог с подачей.</p>
+          <div class="q-who"><b>Александр В.</b> — жалоба в порядке УПК</div>
+        </div>
+        <div class="quote">
+          <span class="q-mark">“</span>
+          <p>Полное обучение — пять блоков, всё структурировано. Теперь сам помогаю друзьям.</p>
+          <div class="q-who"><b>Егор М.</b> — полное обучение</div>
+        </div>
+        <div class="quote">
+          <span class="q-mark">“</span>
+          <p>Разбор ситуации дал чёткий план действий и список рисков. Не зря заплатил.</p>
+          <div class="q-who"><b>Сергей П.</b> — консультация</div>
+        </div>
+        <div class="quote">
+          <span class="q-mark">“</span>
+          <p>Пакет «Стандарт» полностью оправдал цену. Всё в срок и без правок.</p>
+          <div class="q-who"><b>Никита Р.</b> — пакет «Стандарт»</div>
+        </div>
+        <div class="quote">
+          <span class="q-mark">“</span>
+          <p>Апелляцию переделывали бесплатно, пока не приняли. Ответственный подход.</p>
+          <div class="q-who"><b>Максим Л.</b> — апелляционная жалоба</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section id="faq">
+      <div class="shead reveal">
+        <span class="kicker">§ 09 — FAQ</span>
+        <h2>Частые вопросы.</h2>
+        <p>То, что спрашивают чаще всего. Не нашли ответ — пишите в VK.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <div class="faq-head"><span class="f-num">01</span><h3>Как заказать услугу?</h3><span class="arrow"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 6 L8 12 L14 6" stroke="currentColor" stroke-width="1.6"/></svg></span></div>
+          <div class="faq-body"><div class="faq-inner">Нажмите «Заказать» на карточке услуги — откроется окно с контактами. Либо сразу пишите в <a href="https://vk.ru/aliarkham" target="_blank" rel="noopener">VK</a>: название услуги, суть дела, удобный способ оплаты.</div></div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-head"><span class="f-num">02</span><h3>Чем можно оплатить?</h3><span class="arrow"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 6 L8 12 L14 6" stroke="currentColor" stroke-width="1.6"/></svg></span></div>
+          <div class="faq-body"><div class="faq-inner">Настоящими рублями или игровой валютой AMAZING ONLINE — как удобнее. Финальная сумма всегда согласуется заранее, без сюрпризов.</div></div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-head"><span class="f-num">03</span><h3>Как быстро получу готовый документ?</h3><span class="arrow"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 6 L8 12 L14 6" stroke="currentColor" stroke-width="1.6"/></svg></span></div>
+          <div class="faq-body"><div class="faq-inner">Обычно от 15 минут до 24 часов. Кассация, апелляция и обучение могут занять больше — о сроках предупрежу до начала работы.</div></div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-head"><span class="f-num">04</span><h3>Суд вернул документ. Что дальше?</h3><span class="arrow"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 6 L8 12 L14 6" stroke="currentColor" stroke-width="1.6"/></svg></span></div>
+          <div class="faq-body"><div class="faq-inner">Пришлите формулировку отказа. Если причина формальная — по гарантии доработаю бесплатно и по вашему ТЗ.</div></div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-head"><span class="f-num">05</span><h3>Это имеет юридическую силу в реале?</h3><span class="arrow"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 6 L8 12 L14 6" stroke="currentColor" stroke-width="1.6"/></svg></span></div>
+          <div class="faq-body"><div class="faq-inner">Нет. Все документы предназначены исключительно для игры AMAZING ONLINE и носят игровой характер. В реальной жизни они силы не имеют.</div></div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-head"><span class="f-num">06</span><h3>Нужного документа нет в списке — сделаете?</h3><span class="arrow"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 6 L8 12 L14 6" stroke="currentColor" stroke-width="1.6"/></svg></span></div>
+          <div class="faq-body"><div class="faq-inner">Да. Напишите в <a href="https://vk.ru/aliarkham" target="_blank" rel="noopener">VK</a> с описанием нужного документа — обсудим состав и согласуем цену.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ КОНТАКТЫ ============ -->
+    <section id="contacts">
+      <div class="contact-band reveal">
+        <div class="cb-left">
+          <span class="kicker">Связь</span>
+          <h2>Обсудим ваш вопрос?</h2>
+          <p>Пишите напрямую — отвечаю быстро. При заказе назовите услугу, опишите ситуацию и удобный способ оплаты.</p>
+          <div class="author">
+            <div class="a-mark">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 C 16 3 18 6 18 9.5 L 18 13 C 18 17 15 20 12 22 C 9 20 6 17 6 13 L 6 9.5 C 6 6 8 3 12 3 Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 8 L 12 12 M9 10 L 15 10" stroke="currentColor" stroke-width="1.5"/></svg>
+            </div>
+            <div class="who"><b>Ali_Arkham</b><span>разработчик LAW OFFICE</span></div>
+          </div>
+        </div>
+        <div class="cb-right">
+          <a class="btn btn-vk" href="https://vk.ru/aliarkham" target="_blank" rel="noopener">Написать в VK — vk.ru/aliarkham</a>
+          <a class="btn btn-ds" href="https://discord.com/users/wtkanaga" target="_blank" rel="noopener">Написать в Discord</a>
+          <span class="note">отвечаю в течение дня</span>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="foot">
+    <div class="f-brand">
+      <span class="brand-name">LAW OFFICE</span>
+      <p>Магазин цифровых услуг для AMAZING ONLINE. Игровые документы, жалобы, ходатайства, консультации и обучение. Составляю грамотно, работаю быстро, отвечаю за результат.</p>
+    </div>
+    <div class="cols">
+      <h5>Разделы</h5>
+      <a href="#catalog">Каталог</a>
+      <a href="#prices">Прайс</a>
+      <a href="#packages">Пакеты</a>
+      <a href="#terms">Условия</a>
+    </div>
+    <div class="cols">
+      <h5>Связь</h5>
+      <a href="https://vk.ru/aliarkham" target="_blank" rel="noopener">VK — vk.ru/aliarkham</a>
+      <a href="https://discord.com/users/wtkanaga" target="_blank" rel="noopener">Discord</a>
+      <a href="#faq">FAQ</a>
+      <a href="#reviews">Отзывы</a>
+    </div>
+  </div>
+  <div class="colophon">
+    <span>© 2026 LAW OFFICE · Ali_Arkham</span>
+    <span>шрифты: Fraunces · Manrope · JetBrains Mono</span>
+    <span>сделано вручную, без шаблонов</span>
+  </div>
+</footer>
+
+<button id="toTop" title="Наверх" aria-label="Наверх">
+  <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 14 V2 M3 7 L8 2 L13 7" stroke="currentColor" stroke-width="1.6"/></svg>
+</button>
+
+<!-- ============ МОДАЛКА ЗАКАЗА ============ -->
+<div class="modal-overlay" id="orderModal" style="display:none" role="dialog" aria-modal="true" aria-labelledby="orderTitle">
+  <div class="modal">
+    <button class="modal-close" id="orderClose" aria-label="Закрыть">✕</button>
+    <span class="kicker">Оформление заказа</span>
+    <h3 id="orderTitle">—</h3>
+    <p class="m-sub">Напишите разработчику в VK или Discord — укажите название услуги и удобный способ оплаты.</p>
+    <div class="m-btns">
+      <a id="orderVk" class="btn btn-vk" href="https://vk.ru/aliarkham" target="_blank" rel="noopener">Написать в VK</a>
+      <a id="orderDiscord" class="btn btn-ds" href="https://discord.com/users/wtkanaga" target="_blank" rel="noopener">Написать в Discord</a>
+    </div>
+    <div class="m-foot">🛡️ Гарантия: бесплатная доработка при формальном отказе суда.</div>
+    <div class="m-warn">⚠️ Услуга предназначена только для игры AMAZING ONLINE и не имеет юридической силы в реальной жизни.</div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<script type="text/babel">
+/* ============================================================
+   AnimatedLines — порт instruments/AnimatedLines.tsx
+   Редакционные линии: тонкие, золотые, с точками на концах.
+   ============================================================ */
+const { useRef, useState, useEffect, useCallback } = React;
+const { motion } = window.Motion;
+
+function AnimatedLines({ containerRef, originRef, targetRefs, colors, isInView, pattern='fan', strokeWidth=1.5, animationDelay=0.3, animationStagger=0.12 }) {
+  const [paths, setPaths] = useState([]);
+  const [originPoint, setOriginPoint] = useState({x:0,y:0});
+
+  const calculatePaths = useCallback(() => {
+    if (!originRef.current || !containerRef.current) return;
+    const cRect = containerRef.current.getBoundingClientRect();
+    const oRect = originRef.current.getBoundingClientRect();
+    const originX = oRect.left + oRect.width/2 - cRect.left;
+    const originY = oRect.top + oRect.height/2 - cRect.top;
+    setOriginPoint({x:originX, y:originY});
+    const next = [], radius = 20;
+    targetRefs.forEach((el, index) => {
+      if (!el) return;
+      const tRect = el.getBoundingClientRect();
+      const endX = tRect.left - cRect.left - 18;
+      const endY = tRect.top + tRect.height/2 - cRect.top;
+      let d;
+      if (pattern === 'straight') {
+        const cx = originX + (endX - originX)*0.5;
+        d = `M ${originX},${originY} C ${cx},${originY} ${cx},${endY} ${endX},${endY}`;
+      } else {
+        const tx = endX - 40;
+        const mid = Math.floor(targetRefs.length/2);
+        if (index < mid) d = `M ${originX},${originY} L ${tx-radius},${originY} Q ${tx},${originY} ${tx},${originY-radius} L ${tx},${endY+radius} Q ${tx},${endY} ${tx+radius},${endY} L ${endX},${endY}`;
+        else if (index === mid) { const cx = originX + (endX - originX)*0.5; d = `M ${originX},${originY} C ${cx},${originY} ${cx},${endY} ${endX},${endY}`; }
+        else d = `M ${originX},${originY} L ${tx-radius},${originY} Q ${tx},${originY} ${tx},${originY+radius} L ${tx},${endY-radius} Q ${tx},${endY} ${tx+radius},${endY} L ${endX},${endY}`;
+      }
+      next.push({ d:d.replace(/\s+/g,' ').trim(), color: colors[index%colors.length], delay: animationDelay + index*animationStagger, endX, endY });
+    });
+    setPaths(next);
+  }, [originRef, targetRefs, containerRef, colors, pattern, animationDelay, animationStagger]);
+
+  useEffect(() => {
+    const t = setTimeout(calculatePaths, 120);
+    const onResize = () => calculatePaths();
+    window.addEventListener('resize', onResize);
+    return () => { clearTimeout(t); window.removeEventListener('resize', onResize); };
+  }, [calculatePaths]);
+
+  if (paths.length === 0) return null;
+
+  return (
+    <svg className="alines">
+      <motion.circle cx={originPoint.x} cy={originPoint.y} r="3.5" fill="#0d0c0a" stroke={colors[0]} strokeWidth="1.5"
+        initial={{scale:0, opacity:0}} animate={isInView?{scale:1,opacity:1}:{}} transition={{duration:.3, delay:animationDelay-.1}}/>
+      {paths.map((p, i) => (
+        <g key={i}>
+          <motion.path d={p.d} fill="none" stroke={p.color} strokeWidth={strokeWidth} strokeLinecap="round"
+            strokeOpacity=".55" initial={{pathLength:0, opacity:0}} animate={isInView?{pathLength:1,opacity:1}:{}}
+            transition={{duration:.8, delay:p.delay}}/>
+          <motion.circle cx={p.endX} cy={p.endY} r="2.5" fill={p.color} initial={{scale:0,opacity:0}}
+            animate={isInView?{scale:1,opacity:1}:{}} transition={{duration:.3, delay:p.delay+.7}}/>
+        </g>
+      ))}
+    </svg>
+  );
+}
+
+const LINE_CONFIGS = [
+  { wrapId:'catsWrap', originId:'catsOrigin', gridId:'catsGrid', pattern:'straight', colors:['#d9a03f','#d9a03f','#d9a03f','#d9a03f'] },
+  { wrapId:'claimsWrap', originId:'claimsOrigin', gridId:'claimsGrid', pattern:'fan', colors:['#d9a03f'] },
+  { wrapId:'complaintsWrap', originId:'complaintsOrigin', gridId:'complaintsGrid', pattern:'fan', colors:['#d9a03f'] },
+  { wrapId:'consultWrap', originId:'consultOrigin', gridId:'consultGrid', pattern:'fan', colors:['#d9a03f'] },
+  { wrapId:'trainingWrap', originId:'trainingOrigin', gridId:'trainingGrid', pattern:'fan', colors:['#d9a03f'] },
+  { wrapId:'packsWrap', originId:'packsOrigin', gridId:'packsGrid', pattern:'fan', colors:['#d9a03f'] },
+];
+
+function LineGroup({ cfg, inView }) {
+  const wrapRef = useRef(null), originRef = useRef(null);
+  const [targets, setTargets] = useState([]);
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    const t = setTimeout(() => {
+      const wrap = document.getElementById(cfg.wrapId);
+      const origin = document.getElementById(cfg.originId);
+      const grid = document.getElementById(cfg.gridId);
+      if (!wrap || !origin || !grid) return;
+      wrapRef.current = wrap;
+      originRef.current = origin.querySelector('.emblem') || origin;
+      setTargets(Array.from(grid.querySelectorAll('.cat, .svc, .pack, .pack-featured')));
+      setReady(true);
+    }, 250);
+    return () => clearTimeout(t);
+  }, [cfg, inView]);
+  if (!ready || !wrapRef.current) return null;
+  return ReactDOM.createPortal(
+    <AnimatedLines containerRef={wrapRef} originRef={originRef} targetRefs={targets} colors={cfg.colors}
+      isInView={inView} pattern={cfg.pattern} strokeWidth={1.5} animationDelay={0.25} animationStagger={0.1}/>,
+    wrapRef.current
+  );
+}
+
+function App() {
+  const [visible, setVisible] = useState({});
+  useEffect(() => {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(en => { if (en.isIntersecting) { setVisible(v => ({...v, [en.target.id]: true})); io.unobserve(en.target); } });
+    }, {threshold:.15});
+    LINE_CONFIGS.forEach(cfg => { const el = document.getElementById(cfg.wrapId); if (el) io.observe(el); });
+    return () => io.disconnect();
+  }, []);
+  return (<>{LINE_CONFIGS.map(cfg => <LineGroup key={cfg.wrapId} cfg={cfg} inView={!!visible[cfg.wrapId]}/>)}</>);
+}
+
+const rootEl = document.createElement('div');
+rootEl.id = 'react-root';
+rootEl.style.display = 'none';
+document.body.appendChild(rootEl);
+ReactDOM.createRoot(rootEl).render(<App />);
+</script>
+
+<script>
+/* ============================================================
+   Обычный JS — прелоадер, тема, навигация, поиск, модалка, FAQ.
+   ============================================================ */
+/* Прелоадер */
+window.addEventListener('load', () => { setTimeout(() => document.getElementById('preloader').classList.add('hide'), 800); });
+setTimeout(() => document.getElementById('preloader').classList.add('hide'), 2200);
+
+/* Тема */
+const themeBtn = document.getElementById('themeBtn');
+(function initTheme(){
+  const saved = localStorage.getItem('lo-theme');
+  if (saved === 'light') { document.body.setAttribute('data-theme','light'); themeBtn.textContent = '☀'; }
+  else themeBtn.textContent = '☾';
+})();
+themeBtn.onclick = () => {
+  const b = document.body;
+  const isD = b.getAttribute('data-theme') === 'dark';
+  b.setAttribute('data-theme', isD ? 'light' : 'dark');
+  localStorage.setItem('lo-theme', isD ? 'light' : 'dark');
+  themeBtn.textContent = isD ? '☀' : '☾';
+};
+
+/* Бургер */
+const burger = document.getElementById('burger'), navLinks = document.getElementById('navLinks');
+burger.onclick = () => navLinks.classList.toggle('open');
+navLinks.querySelectorAll('a').forEach(a => a.onclick = () => navLinks.classList.remove('open'));
+
+/* Reveal */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+}, {threshold:.1});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* Скролл: header, прогресс, toTop, активная навигация */
+const header = document.getElementById('header'), toTop = document.getElementById('toTop'), progress = document.getElementById('progress');
+const secs = document.querySelectorAll('section[id]');
+const navA = document.querySelectorAll('.nav-links a');
+let lastY = 0;
+addEventListener('scroll', () => {
+  const y = scrollY;
+  if (y > lastY && y > 220) header.classList.add('hidden'); else header.classList.remove('hidden');
+  lastY = y;
+  const h = document.documentElement.scrollHeight - innerHeight;
+  progress.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
+  toTop.classList.toggle('show', y > 600);
+  let cur = '';
+  secs.forEach(s => { if (y >= s.offsetTop - 180) cur = s.id; });
+  navA.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
+});
+toTop.onclick = () => scrollTo({ top: 0, behavior: 'smooth' });
+
+/* Категории — переход к разделу */
+document.querySelectorAll('.cat').forEach(cat => {
+  const go = () => {
+    const target = cat.dataset.target;
+    if (target) document.getElementById(target)?.scrollIntoView({behavior:'smooth', block:'start'});
+  };
+  cat.addEventListener('click', go);
+  cat.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+});
+
+/* Модалка заказа */
+const orderModal = document.getElementById('orderModal'), orderTitle = document.getElementById('orderTitle');
+const orderClose = document.getElementById('orderClose'), orderVk = document.getElementById('orderVk'), orderDiscord = document.getElementById('orderDiscord');
+function openOrder(name){
+  orderTitle.textContent = name;
+  orderModal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  orderVk.focus();
+}
+function closeOrder(){ orderModal.style.display = 'none'; document.body.style.overflow = ''; }
+document.querySelectorAll('.order').forEach(btn => {
+  btn.addEventListener('click', () => openOrder(btn.dataset.order || 'Услуга'));
+});
+orderClose.onclick = closeOrder;
+orderModal.addEventListener('click', e => { if (e.target === orderModal) closeOrder(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeOrder(); });
+
+/* ============================================================
+   Поиск и фильтр по услугам
+   ============================================================ */
+const serviceSearch = document.getElementById('serviceSearch');
+const searchCount = document.getElementById('searchCount');
+const chips = document.querySelectorAll('.chip');
+let activeFilter = 'all';
+const SECTIONS_MAP = { claims:'claimsGrid', complaints:'complaintsGrid', consult:'consultGrid', training:'trainingGrid' };
+
+function getAllCards(){
+  const cards = [];
+  Object.values(SECTIONS_MAP).forEach(id => {
+    const grid = document.getElementById(id);
+    if (grid) grid.querySelectorAll('.svc').forEach(c => cards.push(c));
+  });
+  return cards;
+}
+
+function applySearchFilter(){
+  const q = (serviceSearch.value || '').trim().toLowerCase();
+  let matched = 0;
+  getAllCards().forEach(card => {
+    const text = card.textContent.toLowerCase();
+    const mq = !q || text.indexOf(q) !== -1;
+    const inSec = activeFilter === 'all' || card.closest('#' + SECTIONS_MAP[activeFilter]) !== null;
+    const show = mq && inSec;
+    card.classList.toggle('hidden-row', !show);
+    if (show) matched++;
+  });
+  const label = q ? ' найдено по запросу «' + q + '»' : (activeFilter !== 'all' ? ' в выбранной категории' : ' услуг доступно');
+  searchCount.innerHTML = '<b>' + matched + '</b>' + label;
+}
+
+chips.forEach(chip => chip.addEventListener('click', () => {
+  chips.forEach(c => c.classList.remove('active'));
+  chip.classList.add('active');
+  activeFilter = chip.dataset.filter;
+  applySearchFilter();
+}));
+serviceSearch.addEventListener('input', applySearchFilter);
+
+/* FAQ */
+document.querySelectorAll('.faq-item').forEach(item => {
+  const head = item.querySelector('.faq-head'), body = item.querySelector('.faq-body');
+  head.addEventListener('click', () => {
+    const open = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(o => { o.classList.remove('open'); o.querySelector('.faq-body').style.maxHeight = null; });
+    if (!open) { item.classList.add('open'); body.style.maxHeight = body.scrollHeight + 'px'; }
+  });
+});
+</script>
+</body>
+</html>
+

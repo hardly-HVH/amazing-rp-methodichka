@@ -1,0 +1,1767 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazing RP — Государственная методичка</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================
+   ДИЗАЙН: "Чернила и Золото" — премиальная тема юриспруденции
+   ========================================================== */
+:root {
+  --bg: #0b0d12;
+  --bg-soft: #11141c;
+  --bg-card: #151925;
+  --bg-elevated: #1a1f2e;
+  --surface: rgba(255,255,255,.03);
+  --border: rgba(255,255,255,.08);
+  --border-strong: rgba(212,175,55,.28);
+  --text: #eef1f7;
+  --text-2: #b9c0ce;
+  --muted: #7d8596;
+  --gold: #d4af37;
+  --gold-2: #f0d58c;
+  --gold-grad: linear-gradient(135deg, #f0d58c 0%, #d4af37 50%, #a8842a 100%);
+  --blue: #5b8def;
+  --green: #3ecf8e;
+  --shadow: 0 10px 34px rgba(0,0,0,.35);
+  --radius: 16px;
+  --font-body: 'Manrope', sans-serif;
+  --font-display: 'Playfair Display', serif;
+  --transition: .28s cubic-bezier(.4,0,.2,1);
+}
+
+[data-theme="light"] {
+  --bg: #f6f4ee;
+  --bg-soft: #efece3;
+  --bg-card: #ffffff;
+  --bg-elevated: #ffffff;
+  --surface: rgba(0,0,0,.03);
+  --border: rgba(20,24,35,.1);
+  --border-strong: rgba(168,132,42,.45);
+  --text: #1c212b;
+  --text-2: #3c4350;
+  --muted: #6b7280;
+  --gold: #a8842a;
+  --gold-2: #d4af37;
+  --gold-grad: linear-gradient(135deg, #d4af37 0%, #a8842a 100%);
+  --blue: #3b6fd4;
+  --green: #1fa971;
+  --shadow: 0 10px 30px rgba(40,50,70,.12);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior:smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height:1.6;
+  transition: background var(--transition), color var(--transition);
+  overflow-x:hidden;
+}
+
+/* --- декоративный фон --- */
+.bg-ornament {
+  position: fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  overflow:hidden;
+}
+.bg-ornament::before {
+  content:'';
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(900px 500px at 85% -10%, rgba(212,175,55,.09), transparent 60%),
+    radial-gradient(700px 500px at -10% 30%, rgba(212,175,55,.05), transparent 60%),
+    radial-gradient(600px 600px at 60% 110%, rgba(212,175,55,.06), transparent 60%);
+}
+.bg-ornament::after {
+  content:'';
+  position:absolute;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(212,175,55,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212,175,55,.035) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse at 50% 0%, black 10%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 0%, black 10%, transparent 75%);
+}
+[data-theme="light"] .bg-ornament::after {
+  background-image:
+    linear-gradient(rgba(168,132,42,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(168,132,42,.06) 1px, transparent 1px);
+}
+
+/* --- скроллбар --- */
+::-webkit-scrollbar { width:9px; height:9px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--gold-2), var(--gold)); border-radius:8px; }
+
+.container { max-width:1180px; margin:0 auto; padding:0 24px; }
+
+/* ================= ШАПКА ================= */
+header {
+  position: sticky;
+  top:0;
+  z-index:100;
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom:1px solid var(--border);
+  transition: background var(--transition), border-color var(--transition);
+}
+.header-inner {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:16px 24px;
+  max-width:1180px;
+  margin:0 auto;
+}
+.brand { display:flex; align-items:center; gap:14px; }
+.seal {
+  width:52px; height:52px;
+  border-radius:50%;
+  background: var(--gold-grad);
+  display:grid;
+  place-items:center;
+  font-size:24px;
+  color:#14100a;
+  box-shadow:0 4px 18px rgba(212,175,55,.4);
+  position:relative;
+  flex-shrink:0;
+}
+.seal::after {
+  content:'';
+  position:absolute;
+  inset:-4px;
+  border-radius:50%;
+  border:1px dashed rgba(212,175,55,.5);
+  animation: spin 24s linear infinite;
+}
+@keyframes spin { to { transform:rotate(360deg); } }
+.brand-name { line-height:1.15; }
+.brand-name h1 {
+  font-family: var(--font-display);
+  font-size:22px;
+  font-weight:800;
+  letter-spacing:.02em;
+}
+.brand-name h1 em { font-style:italic; background:var(--gold-grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.brand-name span {
+  font-size:12.5px;
+  color:var(--muted);
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+.header-actions { display:flex; align-items:center; gap:12px; }
+.serve-badge {
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  padding:7px 16px;
+  border-radius:100px;
+  font-size:12.5px;
+  font-weight:600;
+  letter-spacing:.03em;
+  background: var(--surface);
+  border:1px solid var(--border-strong);
+  color: var(--gold);
+  white-space:nowrap;
+}
+.theme-btn {
+  width:44px; height:44px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size:19px;
+  cursor:pointer;
+  display:grid;
+  place-items:center;
+  transition:all var(--transition);
+}
+.theme-btn:hover { border-color:var(--gold); transform:translateY(-2px) rotate(12deg); box-shadow:0 6px 18px rgba(212,175,55,.2); }
+
+/* ================= HERO ================= */
+.hero {
+  padding:72px 0 30px;
+  text-align:center;
+  position:relative;
+}
+.hero-kicker {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:6px 18px;
+  border-radius:100px;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--gold);
+  border:1px solid var(--border-strong);
+  background:var(--surface);
+  margin-bottom:22px;
+}
+.hero h2 {
+  font-family:var(--font-display);
+  font-size:clamp(34px,5vw,54px);
+  font-weight:800;
+  line-height:1.12;
+  letter-spacing:-.01em;
+  max-width:820px;
+  margin:0 auto 18px;
+}
+.hero h2 .hl {
+  background:var(--gold-grad);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  font-style:italic;
+}
+.hero p {
+  color:var(--muted);
+  font-size:16.5px;
+  max-width:620px;
+  margin:0 auto 34px;
+}
+.hero-stats {
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+}
+.hstat {
+  padding:16px 30px;
+  border-radius:14px;
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+  min-width:150px;
+}
+.hstat b {
+  display:block;
+  font-family:var(--font-display);
+  font-size:26px;
+  font-weight:800;
+  background:var(--gold-grad);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  line-height:1.1;
+}
+.hstat span { font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.05em; }
+
+/* ================= ТУЛБАР ================= */
+.toolbar-wrap { padding:26px 0 10px; }
+.toolbar {
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  align-items:center;
+  padding:16px;
+  border-radius:18px;
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+  position:sticky;
+  top:78px;
+  z-index:50;
+  transition:all var(--transition);
+}
+.search-wrap { flex:1; min-width:220px; position:relative; }
+.search-wrap .icon {
+  position:absolute;
+  left:16px; top:50%;
+  transform:translateY(-50%);
+  color:var(--muted);
+  font-size:17px;
+  pointer-events:none;
+  transition:color var(--transition);
+}
+.search-wrap input {
+  width:100%;
+  padding:13px 18px 13px 46px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:var(--bg);
+  color:var(--text);
+  font-size:14.5px;
+  font-family:inherit;
+  outline:none;
+  transition:all var(--transition);
+}
+.search-wrap input::placeholder { color:var(--muted); }
+.search-wrap input:focus {
+  border-color:var(--gold);
+  box-shadow:0 0 0 4px rgba(212,175,55,.13);
+}
+.search-wrap input:focus ~ .icon, .search-wrap:focus-within .icon { color:var(--gold); }
+
+.tabs {
+  display:flex;
+  gap:4px;
+  padding:5px;
+  border-radius:14px;
+  background:var(--bg);
+  border:1px solid var(--border);
+  flex-wrap:wrap;
+}
+.tabs button {
+  padding:9px 18px;
+  border:none;
+  border-radius:10px;
+  background:transparent;
+  color:var(--muted);
+  font-size:13.5px;
+  font-weight:600;
+  cursor:pointer;
+  font-family:inherit;
+  transition:all var(--transition);
+  position:relative;
+}
+.tabs button:hover { color:var(--text); }
+.tabs button.active {
+  background:var(--gold-grad);
+  color:#14100a;
+  box-shadow:0 4px 14px rgba(212,175,55,.35);
+}
+
+/* ================= СЧЁТЧИК ================= */
+.counter-row {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:18px 4px 12px;
+  color:var(--muted);
+  font-size:14px;
+}
+.counter-row b { color:var(--gold); font-weight:800; font-size:16px; }
+.counter-row .hint { font-size:12.5px; color:var(--muted); opacity:.8; }
+
+/* ================= СЕТКА ================= */
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+  gap:18px;
+  padding-bottom:20px;
+}
+.card {
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:22px 22px 18px;
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  box-shadow:0 4px 16px rgba(0,0,0,.18);
+  transition:all var(--transition);
+  animation:cardIn .5s cubic-bezier(.22,.61,.36,1) backwards;
+}
+@keyframes cardIn {
+  from { opacity:0; transform:translateY(24px) scale(.98); }
+  to { opacity:1; transform:translateY(0) scale(1); }
+}
+.card::before {
+  content:'';
+  position:absolute;
+  top:0; left:0; right:0;
+  height:3px;
+  background:var(--gold-grad);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform var(--transition);
+}
+.card::after {
+  content:'';
+  position:absolute;
+  inset:0;
+  background:radial-gradient(600px 200px at 100% 0%, rgba(212,175,55,.08), transparent 60%);
+  opacity:0;
+  transition:opacity var(--transition);
+}
+.card:hover {
+  transform:translateY(-5px);
+  border-color:var(--border-strong);
+  box-shadow:0 18px 44px rgba(0,0,0,.4);
+}
+.card:hover::before { transform:scaleX(1); }
+.card:hover::after { opacity:1; }
+
+.card-top { display:flex; justify-content:space-between; align-items:flex-start; gap:10px; position:relative; z-index:1; }
+.card-title {
+  font-size:15px;
+  font-weight:700;
+  color:var(--text);
+  line-height:1.35;
+  flex:1;
+}
+.pill {
+  flex-shrink:0;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  padding:4px 12px;
+  border-radius:100px;
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+}
+.pill .dot { width:6px; height:6px; border-radius:50%; background:currentColor; }
+.pill.npa { background:rgba(212,175,55,.14); color:var(--gold); border:1px solid rgba(212,175,55,.3); }
+.pill.article { background:rgba(91,141,239,.13); color:var(--blue); border:1px solid rgba(91,141,239,.3); }
+.pill.case { background:rgba(62,207,142,.13); color:var(--green); border:1px solid rgba(62,207,142,.3); }
+
+.card-preview {
+  font-size:13.5px;
+  color:var(--muted);
+  line-height:1.6;
+  display:-webkit-box;
+  -webkit-line-clamp:3;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+  position:relative;
+  z-index:1;
+}
+.card-bottom {
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  align-items:center;
+  margin-top:2px;
+  position:relative;
+  z-index:1;
+}
+.cat-chip {
+  font-size:11px;
+  font-weight:600;
+  color:var(--text-2);
+  background:var(--bg);
+  border:1px solid var(--border);
+  padding:3px 11px;
+  border-radius:100px;
+}
+.tag-chip {
+  font-size:11px;
+  color:var(--muted);
+  background:var(--surface);
+  border:1px solid var(--border);
+  padding:3px 10px;
+  border-radius:100px;
+}
+.card-arrow {
+  margin-left:auto;
+  color:var(--gold);
+  font-size:15px;
+  opacity:0;
+  transform:translateX(-6px);
+  transition:all var(--transition);
+}
+.card:hover .card-arrow { opacity:1; transform:translateX(0); }
+
+/* ================= ПУСТО ================= */
+.empty {
+  text-align:center;
+  padding:70px 20px;
+  color:var(--muted);
+  font-size:16px;
+  grid-column:1 / -1;
+}
+.empty .big {
+  display:block;
+  font-size:52px;
+  margin-bottom:14px;
+  opacity:.5;
+}
+.empty b { color:var(--text); }
+
+/* ================= ОСНОВАТЕЛИ ================= */
+.founders {
+  margin:44px 0 26px;
+  padding:30px 34px;
+  border-radius:20px;
+  background:
+    linear-gradient(135deg, rgba(212,175,55,.07), transparent 55%),
+    var(--bg-card);
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  align-items:center;
+  gap:22px;
+  position:relative;
+  overflow:hidden;
+}
+.founders::before {
+  content:'⚖';
+  position:absolute;
+  right:-20px; bottom:-40px;
+  font-size:170px;
+  opacity:.05;
+  transform:rotate(-12deg);
+  pointer-events:none;
+}
+.founders-title {
+  width:100%;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:-6px;
+}
+.founders-left { display:flex; flex-wrap:wrap; gap:20px 42px; }
+.founder { display:flex; align-items:center; gap:14px; }
+.founder-avatar {
+  width:52px; height:52px;
+  border-radius:14px;
+  overflow:hidden;
+  border:2px solid var(--gold);
+  box-shadow:0 4px 14px rgba(212,175,55,.25);
+  flex-shrink:0;
+}
+.founder-avatar img { width:100%; height:100%; object-fit:cover; }
+.founder-info .f-name { font-size:15.5px; font-weight:800; font-family:var(--font-display); letter-spacing:.01em; }
+.founder-socials { display:flex; gap:8px; margin-top:3px; }
+.founder-socials a {
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  font-size:12.5px;
+  font-weight:600;
+  color:var(--muted);
+  text-decoration:none;
+  padding:4px 11px;
+  border-radius:100px;
+  border:1px solid var(--border);
+  background:var(--surface);
+  transition:all var(--transition);
+}
+.founder-socials a:hover { color:var(--gold); border-color:var(--border-strong); transform:translateY(-2px); }
+
+.action-buttons { display:flex; gap:12px; flex-wrap:wrap; }
+.btn {
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  padding:12px 24px;
+  border-radius:12px;
+  font-size:14px;
+  font-weight:700;
+  text-decoration:none;
+  cursor:pointer;
+  border:1px solid var(--border);
+  transition:all var(--transition);
+  font-family:inherit;
+}
+.btn-discord { background:var(--gold-grad); color:#14100a; border:none; box-shadow:0 6px 20px rgba(212,175,55,.35); }
+.btn-discord:hover { transform:translateY(-3px); box-shadow:0 12px 30px rgba(212,175,55,.5); }
+.btn-discord .new {
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:.08em;
+  background:#14100a;
+  color:var(--gold-2);
+  padding:2px 9px;
+  border-radius:100px;
+}
+.btn-donate { background:var(--surface); color:var(--text); }
+.btn-donate:hover { transform:translateY(-3px); border-color:var(--border-strong); box-shadow:var(--shadow); }
+.btn-donate .heart { color:var(--gold); transition:transform var(--transition); }
+.btn-donate:hover .heart { transform:scale(1.25); }
+
+/* ================= ПОДВАЛ ================= */
+footer {
+  border-top:1px solid var(--border);
+  margin-top:20px;
+  padding:30px 0 34px;
+  background:var(--bg-soft);
+  transition:background var(--transition);
+}
+.footer-inner {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  align-items:center;
+  gap:14px;
+  font-size:13px;
+  color:var(--muted);
+}
+.footer-inner .made strong { color:var(--text); font-weight:700; }
+.footer-inner .made .g { color:var(--gold); }
+.version {
+  font-size:11px;
+  border:1px solid var(--border);
+  padding:3px 14px;
+  border-radius:100px;
+  letter-spacing:.04em;
+}
+
+/* ================= МОДАЛКА ================= */
+.modal-overlay {
+  position:fixed;
+  inset:0;
+  background:rgba(6,8,12,.68);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  z-index:1000;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  animation:fadeIn .25s ease;
+}
+.modal-overlay.open { display:flex; }
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+.modal {
+  background:var(--bg-card);
+  border:1px solid var(--border-strong);
+  border-radius:22px;
+  max-width:720px;
+  width:100%;
+  max-height:88vh;
+  overflow-y:auto;
+  padding:34px 38px;
+  position:relative;
+  box-shadow:0 30px 90px rgba(0,0,0,.6);
+  animation:modalIn .4s cubic-bezier(.22,.61,.36,1);
+}
+@keyframes modalIn {
+  from { opacity:0; transform:scale(.94) translateY(26px); }
+  to { opacity:1; transform:scale(1) translateY(0); }
+}
+.modal-close {
+  position:absolute;
+  top:18px; right:18px;
+  width:38px; height:38px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:var(--surface);
+  color:var(--muted);
+  font-size:16px;
+  cursor:pointer;
+  display:grid;
+  place-items:center;
+  transition:all var(--transition);
+}
+.modal-close:hover { color:var(--text); border-color:var(--gold); transform:rotate(90deg); }
+.modal-top { margin-bottom:16px; padding-right:44px; }
+.modal-title {
+  font-family:var(--font-display);
+  font-size:25px;
+  font-weight:800;
+  line-height:1.25;
+  letter-spacing:-.01em;
+}
+.modal-badge {
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  margin-top:12px;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  padding:5px 14px;
+  border-radius:100px;
+}
+.modal-badge .dot { width:6px; height:6px; border-radius:50%; background:currentColor; }
+.modal-badge.npa { background:rgba(212,175,55,.14); color:var(--gold); }
+.modal-badge.article { background:rgba(91,141,239,.13); color:var(--blue); }
+.modal-badge.case { background:rgba(62,207,142,.13); color:var(--green); }
+.modal-divider { height:1px; background:var(--border); margin:18px 0; }
+.modal-body {
+  font-size:15px;
+  line-height:1.75;
+  color:var(--text-2);
+  white-space:pre-wrap;
+  word-break:break-word;
+}
+.modal-tags {
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:22px;
+  padding-top:18px;
+  border-top:1px solid var(--border);
+}
+.modal-tag {
+  font-size:12px;
+  color:var(--muted);
+  background:var(--surface);
+  border:1px solid var(--border);
+  padding:5px 13px;
+  border-radius:100px;
+}
+
+/* ================= АДАПТИВ ================= */
+@media (max-width: 860px) {
+  .toolbar { position:static; }
+  .serve-badge { display:none; }
+  .hero-stats { gap:10px; }
+  .hstat { padding:13px 22px; min-width:130px; }
+}
+@media (max-width: 640px) {
+  .container { padding:0 16px; }
+  .header-inner { padding:14px 16px; }
+  .brand-name h1 { font-size:19px; }
+  .seal { width:44px; height:44px; font-size:20px; }
+  .tabs { width:100%; justify-content:stretch; }
+  .tabs button { flex:1; padding:9px 8px; font-size:12.5px; }
+  .grid { grid-template-columns:1fr; }
+  .founders { padding:24px; }
+  .founders-left { width:100%; flex-direction:column; gap:16px; }
+  .action-buttons { width:100%; flex-direction:column; }
+  .action-buttons .btn { justify-content:center; }
+  .modal { padding:26px 20px; }
+  .modal-title { font-size:20px; }
+  .footer-inner { flex-direction:column; text-align:center; }
+  .counter-row { flex-direction:column; align-items:flex-start; }
+}
+</style>
+</head>
+<body>
+
+<div class="bg-ornament"></div>
+
+<!-- ===== ШАПКА ===== -->
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <div class="seal">⚖</div>
+      <div class="brand-name">
+        <h1>Amazing <em>RP</em></h1>
+        <span>Государственная методичка</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <div class="serve-badge">⚖️ Служим Закону</div>
+      <button class="theme-btn" id="themeToggle" aria-label="Переключить тему">
+        <span id="themeIcon">🌙</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+  <div class="container">
+    <div class="hero-kicker"><span>⚜</span> Официальная база знаний</div>
+    <h2>Полный свод <span class="hl">законов и регламентов</span> государства</h2>
+    <p>Конституция, Уголовный кодекс, КоАП, федеральные законы, ПДД, уставы и практические кейсы — всё в одном месте. Поиск, фильтры и быстрый доступ к любому документу.</p>
+    <div class="hero-stats">
+      <div class="hstat"><b id="statDocs">0</b><span>документов</span></div>
+      <div class="hstat"><b id="statReg">0</b><span>НПА</span></div>
+      <div class="hstat"><b id="statCase">0</b><span>кейсов</span></div>
+      <div class="hstat"><b id="statCat">0</b><span>категорий</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== ПОИСК И ФИЛЬТРЫ ===== -->
+<div class="toolbar-wrap">
+  <div class="container">
+    <div class="toolbar">
+      <div class="search-wrap">
+        <span class="icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Поиск по статьям, законам, тегам..." autocomplete="off">
+      </div>
+      <div class="tabs" id="tabs">
+        <button class="active" data-filter="all">Все</button>
+        <button data-filter="article">Статьи</button>
+        <button data-filter="regulation">НПА</button>
+        <button data-filter="case">Кейсы</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== СЧЁТЧИК ===== -->
+<div class="container">
+  <div class="counter-row">
+    <div>Найдено документов: <b id="countNum">0</b></div>
+    <div class="hint">Кликните по карточке, чтобы открыть полный текст</div>
+  </div>
+</div>
+
+<!-- ===== СЕТКА ===== -->
+<div class="container">
+  <div class="grid" id="grid"></div>
+</div>
+
+<!-- ===== ОСНОВАТЕЛИ ===== -->
+<div class="container">
+  <div class="founders">
+    <div class="founders-title">Основатели проекта</div>
+    <div class="founders-left">
+      <div class="founder">
+        <div class="founder-avatar">
+          <img src="https://i.pinimg.com/736x/3c/45/0a/3c450aa81d2ba5a2cb375afb2aea69c1.jpg" alt="ARKHAM">
+        </div>
+        <div class="founder-info">
+          <div class="f-name">ARKHAM</div>
+          <div class="founder-socials">
+            <a href="https://vk.ru/aliarkham" target="_blank" rel="noopener">📘 VK</a>
+            <a href="https://discord.com/users/wtkanaga" target="_blank" rel="noopener">💬 Discord</a>
+          </div>
+        </div>
+      </div>
+      <div class="founder">
+        <div class="founder-avatar">
+          <img src="https://i.pinimg.com/736x/2b/e8/25/2be825ede8a799d5bd046ff03a500347.jpg" alt="ZIZKEZ">
+        </div>
+        <div class="founder-info">
+          <div class="f-name">ZIZKEZ</div>
+          <div class="founder-socials">
+            <a href="https://vk.ru/zizkez" target="_blank" rel="noopener">📘 VK</a>
+            <a href="https://discord.com/users/zizkez" target="_blank" rel="noopener">💬 Discord</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="action-buttons">
+      <a href="https://discord.gg/ebpqkrB2X" target="_blank" rel="noopener" class="btn btn-discord">
+        💬 Наш Discord <span class="new">NEW</span>
+      </a>
+      <a href="https://www.donationalerts.com/r/arkhamamz" target="_blank" rel="noopener" class="btn btn-donate">
+        <span class="heart">❤️</span> Поддержать
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== ПОДВАЛ ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>© 2026 Amazing RP · Государственная методичка</div>
+      <div class="made">Сделано с <span class="g">⚖</span> <strong>ARKHAM</strong> &amp; <strong>ZIZKEZ</strong></div>
+      <div class="version">v3.1 · Все права защищены</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== МОДАЛКА ===== -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div class="modal-top">
+      <div class="modal-title" id="modalTitle"></div>
+      <div class="modal-badge" id="modalBadge"></div>
+    </div>
+    <div class="modal-divider"></div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-tags" id="modalTags"></div>
+  </div>
+</div>
+
+<script>
+// ============================================================
+//  1. ПЕРЕКЛЮЧАТЕЛЬ ТЕМЫ
+// ============================================================
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon = document.getElementById('themeIcon');
+const savedTheme = localStorage.getItem('theme') || 'dark';
+document.documentElement.setAttribute('data-theme', savedTheme);
+themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+themeToggle.addEventListener('click', () => {
+  const cur = document.documentElement.getAttribute('data-theme');
+  const next = cur === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+  themeIcon.textContent = next === 'dark' ? '☀️' : '🌙';
+});
+
+// ============================================================
+//  2. БАЗА ДОКУМЕНТОВ (полный свод — Конституция, УК, КоАП,
+//     ФЗ, УИК, ПДД, Устав ОВД, ОУР, ОСН «Гром», регламенты, кейсы)
+// ============================================================
+const DOCUMENTS = [
+  // ---- КОНСТИТУЦИЯ ----
+  { id: 'const-1', title: 'Статья 1. Основы конституционного строя', type: 'regulation',
+    category: 'Конституция', tags: ['конституция', 'права', 'свободы'],
+    content: '1. Человек, его права и свободы являются высшей ценностью. Признание, соблюдение и защита прав и свобод человека и гражданина – обязанность государства.' },
+  { id: 'const-2', title: 'Статья 2. Народ — источник власти', type: 'regulation', category: 'Конституция',
+    tags: ['конституция', 'выборы', 'власть'],
+    content: '1. Народ является единственным источником власти.\n2. Высшим непосредственным выражением власти народа являются выборы.\n3. Народ осуществляет свою власть самостоятельно, а также через государственные органы власти.' },
+  { id: 'const-3', title: 'Статья 3. Разделение властей', type: 'regulation', category: 'Конституция',
+    tags: ['конституция', 'власть'],
+    content: '1. Государственная власть осуществляется на основе разделения на законодательную, исполнительную и судебную.\n2. Органы законодательной, исполнительной и судебной власти самостоятельны.' },
+  { id: 'const-4', title: 'Статья 4. Верховенство Конституции', type: 'regulation', category: 'Конституция',
+    tags: ['конституция', 'законы'],
+    content: '1. Конституция имеет высшую юридическую силу, прямое действие и применяется на всей территории государства. Законы и иные правовые акты не должны противоречить Конституции.\n2. Органы государственной власти, их должностные лица и граждане, а также их объединения обязаны соблюдать всё действующее законодательство.\n3. Законы подлежат официальному опубликованию. Законы и иные правовые акты, которые не были опубликованы - не применяются и не имеют юридической силы.' },
+  { id: 'const-5', title: 'Статья 5. Права и свободы человека', type: 'regulation', category: 'Конституция',
+    tags: ['конституция', 'права'],
+    content: '1. В государстве признаются и гарантируются права и свободы человека и гражданина.\n2. Основные права и свободы человека неотчуждаемы и принадлежат ему от рождения.\n3. Осуществление прав и свобод человека и гражданина не должно нарушать права и свободы других лиц.\n4. Права и свободы человека и гражданина могут быть ограничены федеральными конституционными законами, федеральными законами и порядком надзора в сфере безопасности дорожного движения только в той мере, в какой это необходимо в целях защиты основ конституционного строя, нравственности, здоровья, прав и законных интересов других лиц.' },
+  { id: 'const-6', title: 'Статья 6. Равенство перед законом', type: 'regulation', category: 'Конституция',
+    tags: ['конституция', 'равенство'],
+    content: '1. Все равны перед законом и судом.\n2. Гарантируется равенство прав и свобод человека и гражданина независимо от пола, расы, национальности, языка, происхождения, имущественного и должностного положения, места жительства, отношения к религии, убеждений, а также других обстоятельств. Запрещается любая форма ограничения прав по ранее указанным признакам.\n3. Мужчина и женщина имеют равные права и свободы.' },
+  { id: 'const-7', title: 'Статья 7. Право на жизнь', type: 'regulation', category: 'Конституция',
+    tags: ['конституция', 'жизнь'],
+    content: '1. Каждый имеет право на жизнь.\n2. Никто не может быть подвержен пыткам, насилию, либо другому жестокому обращению.' },
+  { id: 'const-8', title: 'Статья 8. Свобода и личная неприкосновенность', type: 'regulation',
+    category: 'Конституция', tags: ['конституция', 'свобода', 'задержание'],
+    content: '1. Каждый имеет право на свободу и личную неприкосновенность.\n2. Арест, заключение под стражу и содержание под стражей допускаются только по судебному решению. До судебного решения лицо не может быть подвергнуто задержанию на срок более 2 часов.' },
+  { id: 'const-9', title: 'Статья 9. Свобода передвижения', type: 'regulation', category: 'Конституция',
+    tags: ['конституция', 'передвижение'],
+    content: '1. Каждое лицо, законно находящееся на территории страны, обладает правом свободно перемещаться, выбирать место пребывания и жительства в пределах государства.\n2. Ограничение указанного права допускается исключительно в случаях, предусмотренных законом, в отношении территорий с особым режимом доступа.' },
+  { id: 'const-10', title: 'Статья 10. Неприкосновенность частной жизни', type: 'regulation',
+    category: 'Конституция', tags: ['конституция', 'частная жизнь'],
+    content: '1. Каждый имеет право на неприкосновенность частной жизни, личную тайну, защиту своей чести и достоинства.\n2. Каждый имеет право на тайну переписки, телефонных разговоров и иных сообщений. Ограничение данного права осуществляется только на основании судебного решения.' },
+  { id: 'const-11', title: 'Статья 11. Информация о частной жизни', type: 'regulation', category: 'Конституция',
+    tags: ['конституция', 'информация'],
+    content: '1. Сбор, хранение и распространение информации о частной жизни лица не допускается без его согласия.\n2. Органы государственной власти, их должностные лица обязаны обеспечить каждому возможность ознакомления с документами и материалами, непосредственно затрагивающих его права и свободы, если иное не предусмотрено законом. Исключение: материалы с видео- и аудиофиксациями правонарушений или преступлений не предоставляются сотрудниками органов внутренних дел и федеральной службы безопасности в момент задержания, дальнейшее ознакомление с фиксациями происходит в судебном разбирательстве.' },
+  { id: 'const-12', title: 'Статья 12. Неприкосновенность жилища', type: 'regulation', category: 'Конституция',
+    tags: ['конституция', 'жилище'],
+    content: '1. Жилище неприкосновенно. Никто не вправе проникать в жилище против воли проживающих в нем лиц, за исключением случаев установленных федеральными законами, или на основании судебного решения.' },
+  { id: 'const-13', title: 'Статья 13. Свобода мысли и слова', type: 'regulation', category: 'Конституция',
+    tags: ['конституция', 'свобода слова'],
+    content: '1. Каждому гарантируется свобода мысли и слова.\n2. Не допускаются высказывания, пропаганда или агитация, возбуждающие социальную, национальную или религиозную ненависть и вражду.\n3. Никто не может быть принужден к выражению своих мнений и убеждений или отказу от таковых.\n4. Каждый имеет право на сбор, хранение и распространение информации любым законным способом. Перечень сведений составляющих государственную тайну определяется законом.\n5. Гарантируется свобода массовой информации. Цензура запрещена.' },
+  { id: 'const-14', title: 'Статья 14. Право на собрания', type: 'regulation', category: 'Конституция',
+    tags: ['конституция', 'собрания'],
+    content: '1. Граждане могут собираться мирно, без оружия, проводить собрания, митинги, демонстрации в рамках действующего законодательства.\n2. Организовывать подобные мероприятия и участвовать в подобных мероприятиях разрешено с 10:00 до 20:00 по местному времени.' },
+  { id: 'const-15', title: 'Статья 15. Право на участие в управлении', type: 'regulation',
+    category: 'Конституция', tags: ['конституция', 'выборы'],
+    content: '1. Граждане имеют право на участие в управление делами государства как непосредственно, так и через представителей.\n2. Граждане имеют право избирать и быть избранными в органы государственной власти.\n3. Не имеют права избирать и быть избранными граждане находящиеся в местах лишения свободы по приговору суда.' },
+  { id: 'const-16', title: 'Статья 16. Право на обращения', type: 'regulation', category: 'Конституция',
+    tags: ['конституция', 'обращения'],
+    content: '1. Граждане имеют право обращаться лично, а также коллективно в органы государственной власти.' },
+  { id: 'const-17', title: 'Статья 17. Право собственности', type: 'regulation', category: 'Конституция',
+    tags: ['конституция', 'собственность'],
+    content: '1. Право собственности охраняется законом.\n2. Каждый вправе иметь имущество в собственности, владеть и пользоваться им как единолично, так и совместно с другими лицами.\n3. Никто не может быть лишен имущества не иначе как по решению суда.' },
+  { id: 'const-18', title: 'Статья 18. Свобода труда', type: 'regulation', category: 'Конституция',
+    tags: ['конституция', 'труд'],
+    content: '1. Труд свободен. Каждый имеет право свободно распоряжаться своими способностями к труду, выбирать род деятельности и профессию.\n2. Принудительный труд запрещен.\n3. Каждый имеет право на отдых.' },
+  { id: 'const-19', title: 'Статья 19. Право на жилище', type: 'regulation', category: 'Конституция',
+    tags: ['конституция', 'жилище'],
+    content: '1. Каждый имеет право на жилище. Никто не может быть произвольно лишен жилища.' },
+  { id: 'const-20', title: 'Статья 20. Право на медицинскую помощь', type: 'regulation', category: 'Конституция',
+    tags: ['конституция', 'медицина'],
+    content: '1. Каждый имеет право на охрану здоровья и медицинскую помощь.' },
+  { id: 'const-21', title: 'Статья 21. Защита прав', type: 'regulation', category: 'Конституция',
+    tags: ['конституция', 'защита'],
+    content: '1. Каждый вправе защищать свои права и свободы всеми способами, не запрещенными законом.' },
+  { id: 'const-22', title: 'Статья 22. Судебная защита', type: 'regulation', category: 'Конституция',
+    tags: ['конституция', 'суд'],
+    content: '1. Каждому гарантируется судебная защита его прав и свобод.\n2. Решение и действия (либо бездействия) органов государственной власти, их должностных лиц и общественных объединений могут быть обжалованы в суде.' },
+  { id: 'const-23', title: 'Статья 23. Право на юридическую помощь', type: 'regulation', category: 'Конституция',
+    tags: ['конституция', 'адвокат'],
+    content: '1. Каждому гарантируется право на получение квалифицированной юридической помощи. В случаях, предусмотренных законом, юридическая помощь оказывается бесплатно.\n2. Каждый задержанный, заключенный под стражу, обвиняемый в совершении преступления имеет право пользоваться помощью адвоката (защитника) с момента соответственно доставления в изолятор временного содержания, заключения под стражу или предъявления обвинения, если в отношении данного лица было возбуждено уголовное дело.' },
+  { id: 'const-24', title: 'Статья 24. Презумпция невиновности', type: 'regulation', category: 'Конституция',
+    tags: ['конституция', 'невиновность'],
+    content: '1. Каждый обвиняемый в совершении преступления считается невиновным, пока его виновность не будет доказана в предусмотренном федеральным законом порядке и установлена вступившим в законную силу приговором суда.\n2. Обвиняемый не обязан доказывать свою невиновность.\n3. Неустранимые сомнения в виновности лица толкуются в пользу обвиняемого.' },
+  { id: 'const-25', title: 'Статья 25. Право на обжалование приговора', type: 'regulation',
+    category: 'Конституция', tags: ['конституция', 'суд'],
+    content: '1. Никто не может быть повторно осужден за одно и тоже преступление.\n2. Каждый осужденный имеет право на обжалование приговора суда.' },
+  { id: 'const-26', title: 'Статья 26. Право не свидетельствовать против себя', type: 'regulation',
+    category: 'Конституция', tags: ['конституция', 'свидетель'],
+    content: '1. Никто не обязан свидетельствовать против самого себя, своего супруга и близких родственников, круг которых определен федеральным законом.' },
+  { id: 'const-27', title: 'Статья 27. Возмещение вреда', type: 'regulation', category: 'Конституция',
+    tags: ['конституция', 'вред'],
+    content: '1. Каждый имеет право на возмещение государством вреда, причиненного незаконными действиями (бездействиями) органов государственной власти и их должностными лицами.' },
+  { id: 'const-28', title: 'Статья 28. Ограничения при ЧП и КТО', type: 'regulation', category: 'Конституция',
+    tags: ['конституция', 'чп', 'кто'],
+    content: '1. В условиях чрезвычайного положения, режима контртеррористической операции и военного положения могут вводиться отдельные ограничения прав граждан с указаниями пределов и срока их действия.\n2. Не подлежат ограничению права и свободы, предусмотренные ст. 7, 11, 19, 21-27 Конституции.' },
+  { id: 'const-29', title: 'Статья 29. Правосудие', type: 'regulation', category: 'Конституция',
+    tags: ['конституция', 'суд'],
+    content: '1. Правосудие осуществляется только судом.\n2. Судебная власть осуществляется посредствам административного и уголовного судопроизводства.' },
+  { id: 'const-30', title: 'Статья 30. Требования к судьям', type: 'regulation', category: 'Конституция',
+    tags: ['конституция', 'судья'],
+    content: '1. Судьями могут стать граждане, достигшие 10 лет проживания в государстве, имеющие высшее юридическое образование и стаж работы по юридической профессии не менее трех лет. Федеральным законом могут быть установлены дополнительные требования к судьям.\n2. Судьи независимы и подчиняются только Конституции и Закону.' },
+  { id: 'const-31', title: 'Статья 31. Неприкосновенность судей', type: 'regulation', category: 'Конституция',
+    tags: ['конституция', 'судья'],
+    content: '1. Судьи неприкосновенны. Судья не может быть привлечен к уголовной ответственности не иначе как в порядке, определяемом федеральным законом.' },
+  { id: 'const-32', title: 'Статья 32. Открытость судебных заседаний', type: 'regulation', category: 'Конституция',
+    tags: ['конституция', 'суд'],
+    content: '1. Разбирательство во всех судах открытое. Слушание в закрытом заседании допускается в случаях, предусмотренных федеральным законом.' },
+
+  // ---- УГОЛОВНЫЙ КОДЕКС ----
+  { id: 'uk-1', title: 'Статья 1. Убийство', type: 'regulation', category: 'УК', tags: ['ук', 'убийство'],
+    content: 'Убийство, то есть умышленное причинение смерти другому человеку, — наказывается лишением свободы на срок до 10 лет' },
+  { id: 'uk-2', title: 'Статья 2. Убийство при превышении пределов необходимой обороны', type: 'regulation',
+    category: 'УК', tags: ['ук', 'убийство', 'оборона'],
+    content: 'Убийство, совершенное при превышении пределов необходимой обороны, — наказывается лишением свободы на срок до 8 лет' },
+  { id: 'uk-3', title: 'Статья 3. Причинение смерти по неосторожности', type: 'regulation', category: 'УК',
+    tags: ['ук', 'смерть'],
+    content: 'Причинение смерти по неосторожности, — наказывается лишением свободы на срок до 8 лет' },
+  { id: 'uk-4', title: 'Статья 4. Умышленное причинение тяжкого вреда здоровью', type: 'regulation',
+    category: 'УК', tags: ['ук', 'здоровье'],
+    content: 'Умышленное причинение тяжкого вреда здоровью, опасного для жизни человека, повлекшего за собой потерю зрения, речи, слуха либо какого-либо органа или утрату органом его функций, психическое расстройство, полную утрату профессиональной трудоспособности, — наказывается лишением свободы на срок до 6 лет' },
+  { id: 'uk-5', title: 'Статья 5. Умышленное причинение средней тяжести вреда здоровью', type: 'regulation',
+    category: 'УК', tags: ['ук', 'здоровье'],
+    content: 'Умышленное причинение средней тяжести вреда здоровью, не опасного для жизни человека, повлекшего за собой частичную утрату органом его функций, перелом, вывих конечностей, — наказывается лишением свободы на срок до 4 лет' },
+  { id: 'uk-6', title: 'Статья 6. Умышленное причинение лёгкого вреда здоровью', type: 'regulation',
+    category: 'УК', tags: ['ук', 'здоровье'],
+    content: 'Умышленное причинение лёгкого вреда здоровью, вызвавшего кратковременное расстройство здоровья или незначительную стойкую утрату общей трудоспособности, — наказывается лишением свободы на срок до 2 лет' },
+  { id: 'uk-7', title: 'Статья 7. Побои', type: 'regulation', category: 'УК', tags: ['ук', 'побои'],
+    content: 'Побои, а равно причинение телесных повреждений, не влекущих вреда здоровью пострадавшего, посредством неоднократного нанесения ударов или иные насильственные действия, причинившие физическую боль и поверхностные повреждения: ушибы, синяки, ссадины, кровоподтеки, но не повлекшие последствий, указанных в ст.ст. 4-6, — наказывается судебным штрафом в размере от 50.000 до 200.000 рублей или лишением свободы на срок до 2 лет' },
+  { id: 'uk-8', title: 'Статья 8. Угроза убийством или причинением тяжкого вреда здоровью', type: 'regulation',
+    category: 'УК', tags: ['ук', 'угроза'],
+    content: 'Угроза убийством или причинением тяжкого вреда здоровью, выраженная в устной или письменной форме, если имелись основания опасаться осуществления этой угрозы, — наказывается лишением свободы на срок до 2 лет' },
+  { id: 'uk-9', title: 'Статья 9. Неоказание помощи больному', type: 'regulation', category: 'УК',
+    tags: ['ук', 'помощь'],
+    content: 'Неоказание помощи больному без уважительных причин лицом, обязанным ее оказывать, — наказывается лишением свободы на срок до 4 лет' },
+  { id: 'uk-10', title: 'Статья 10. Воспрепятствование оказанию медицинской помощи', type: 'regulation',
+    category: 'УК', tags: ['ук', 'медицина'],
+    content: 'Воспрепятствование в какой бы то ни было форме законной деятельности медицинского работника по оказанию медицинской помощи, — наказывается лишением свободы на срок до 3 лет' },
+  { id: 'uk-11', title: 'Статья 11. Оставление в опасности', type: 'regulation', category: 'УК',
+    tags: ['ук', 'опасность'],
+    content: 'Заведомое оставление без помощи лица, находящегося в опасном для жизни или здоровья состоянии и лишенного возможности принять меры к самосохранению по малолетству, старости, болезни или вследствие своей беспомощности, в случаях, если виновный имел возможность оказать помощь этому лицу и был обязан иметь о нем заботу либо сам поставил его в опасное для жизни или здоровья состояние, — наказывается лишением свободы на срок до 2 лет' },
+  { id: 'uk-12', title: 'Статья 12. Похищение человека', type: 'regulation', category: 'УК',
+    tags: ['ук', 'похищение'],
+    content: 'Похищение человека, — наказывается лишением свободы на срок до 4 лет' },
+  { id: 'uk-13', title: 'Статья 13. Незаконное лишение свободы', type: 'regulation', category: 'УК',
+    tags: ['ук', 'свобода'],
+    content: 'Незаконное лишение свободы, не связанное с похищением человека, — наказывается лишением свободы на срок до 4 лет' },
+  { id: 'uk-14', title: 'Статья 14. Клевета (УК)', type: 'regulation', category: 'УК', tags: ['ук', 'клевета'],
+    content: 'Клевета, то есть распространение заведомо ложных сведений, порочащих честь и достоинство другого лица или подрывающих его репутацию, — наказывается судебным штрафом в размере от 50.000 до 100.000 рублей или лишением свободы на срок до 2 лет' },
+  { id: 'uk-15', title: 'Статья 15. Изнасилование', type: 'regulation', category: 'УК',
+    tags: ['ук', 'изнасилование'],
+    content: 'Изнасилование, то есть половое сношение с применением насилия или с угрозой его применения к потерпевшей или к другим лицам либо с использованием беспомощного состояния потерпевшей, — наказывается лишением свободы на срок до 5 лет' },
+  { id: 'uk-16', title: 'Статья 16. Насильственные действия сексуального характера', type: 'regulation',
+    category: 'УК', tags: ['ук', 'секс'],
+    content: 'Мужеложство, лесбиянство или иные действия сексуального характера с применением насилия или с угрозой его применения к потерпевшему (потерпевшей) или к другим лицам либо с использованием беспомощного состояния потерпевшего (потерпевшей), — наказывается лишением свободы на срок до 4 лет' },
+  { id: 'uk-17', title: 'Статья 17. Нарушение равенства прав и свобод', type: 'regulation', category: 'УК',
+    tags: ['ук', 'дискриминация'],
+    content: 'Дискриминация, то есть нарушение прав, свобод и законных интересов человека и гражданина в зависимости от его пола, расы, национальности, языка, происхождения, имущественного и должностного положения, места жительства, отношения к религии, убеждений, принадлежности к общественным объединениям или каким-либо социальным группам, совершенное лицом с использованием своего служебного положения, — наказывается лишением свободы на срок до 2 лет' },
+  { id: 'uk-18', title: 'Статья 18. Нарушение неприкосновенности частной жизни', type: 'regulation',
+    category: 'УК', tags: ['ук', 'частная жизнь'],
+    content: 'Незаконное собирание или распространение сведений о частной жизни лица, составляющих его личную или семейную тайну, без его согласия либо распространение этих сведений в публичном выступлении, публично демонстрирующемся произведении или средствах массовой информации, — наказывается лишением свободы на срок до 2 лет' },
+  { id: 'uk-19', title: 'Статья 19. Нарушение тайны переписки', type: 'regulation', category: 'УК',
+    tags: ['ук', 'тайна'],
+    content: 'Нарушение тайны переписки, телефонных переговоров или иных сообщений граждан, — наказывается лишением свободы на срок до 2 лет' },
+  { id: 'uk-20', title: 'Статья 20. Нарушение неприкосновенности жилища', type: 'regulation', category: 'УК',
+    tags: ['ук', 'жилище'],
+    content: 'Незаконное проникновение в жилище, совершенное против воли проживающего в нем лица, — наказывается лишением свободы на срок до 2 лет' },
+  { id: 'uk-21', title: 'Статья 21. Отказ в предоставлении информации', type: 'regulation', category: 'УК',
+    tags: ['ук', 'информация'],
+    content: 'Неправомерный отказ должностного лица в предоставлении собранных в установленном порядке документов и материалов, непосредственно затрагивающих права и свободы гражданина, либо предоставление гражданину неполной или заведомо ложной информации, если эти деяния причинили вред правам и законным интересам граждан, — наказывается судебным штрафом в размере от 50.000 до 100.000 рублей или лишением свободы на срок до 1 года' },
+  { id: 'uk-22', title: 'Статья 22. Кража', type: 'regulation', category: 'УК', tags: ['ук', 'кража'],
+    content: 'Кража, то есть тайное хищение чужого имущества, — наказывается лишением свободы на срок до 6 лет' },
+  { id: 'uk-23', title: 'Статья 23. Грабёж', type: 'regulation', category: 'УК', tags: ['ук', 'грабеж'],
+    content: 'Грабеж, то есть открытое хищение чужого имущества, — наказывается лишением свободы на срок до 8 лет' },
+  { id: 'uk-24', title: 'Статья 24. Разбой', type: 'regulation', category: 'УК', tags: ['ук', 'разбой'],
+    content: 'Разбой, то есть нападение в целях хищения чужого имущества, совершенное с применением насилия, опасного для жизни или здоровья, либо с угрозой применения такого насилия, — наказывается лишением свободы на срок до 4 лет' },
+  { id: 'uk-25', title: 'Статья 25. Мошенничество', type: 'regulation', category: 'УК',
+    tags: ['ук', 'мошенничество'],
+    content: 'Мошенничество, то есть хищение чужого имущества или приобретение права на чужое имущество путем обмана или злоупотребления доверием, — наказывается лишением свободы на срок до 4 лет' },
+  { id: 'uk-26', title: 'Статья 26. Вымогательство', type: 'regulation', category: 'УК',
+    tags: ['ук', 'вымогательство'],
+    content: 'Вымогательство, то есть требование передачи чужого имущества или права на имущество или совершения других действий имущественного характера под угрозой применения насилия либо уничтожения или повреждения чужого имущества, — наказывается лишением свободы на срок до 4 лет' },
+  { id: 'uk-27', title: 'Статья 27. Умышленное уничтожение или повреждение имущества', type: 'regulation',
+    category: 'УК', tags: ['ук', 'имущество'],
+    content: 'Умышленные уничтожение или повреждение чужого имущества, либо те же деяния, совершенные из хулиганских побуждений, путем поджога, взрыва или иным общеопасным способом, — наказывается лишением свободы на срок до 2 лет' },
+  { id: 'uk-28', title: 'Статья 28. Террористический акт', type: 'regulation', category: 'УК',
+    tags: ['ук', 'терроризм'],
+    content: 'Совершение взрыва, поджога или иных действий, устрашающих население и создающих опасность гибели человека, причинения значительного имущественного ущерба либо наступления иных тяжких последствий, в целях дестабилизации деятельности органов власти или международных организаций либо воздействия на принятие ими решений, а также угроза совершения указанных действий в целях воздействия на принятие решений органами власти или международными организациями, — наказывается лишением свободы на срок до 10 лет' },
+  { id: 'uk-29', title: 'Статья 29. Содействие террористической деятельности', type: 'regulation',
+    category: 'УК', tags: ['ук', 'терроризм'],
+    content: 'Склонение, вербовка или иное вовлечение лица в совершение хотя бы одного из преступлений, предусмотренных ст. 28, 31, 32, 34 настоящего Кодекса, добровольное участие в совершении или оказание какой бы то ни было помощи в совершении данных преступлений, — наказывается лишением свободы на срок до 8 лет' },
+  { id: 'uk-30', title: 'Статья 30. Несообщение о преступлении', type: 'regulation', category: 'УК',
+    tags: ['ук', 'преступление'],
+    content: 'Несообщение в органы власти, уполномоченные рассматривать сообщения о преступлении, о лице (лицах), которое по достоверно известным сведениям готовит, совершает или совершило хотя бы одно из преступлений, предусмотренных ст. 1, 4, 12, 28, 29, 31, 33, 34, 47, 48, 63 настоящего Кодекса, — наказывается лишением свободы на срок до 5 лет' },
+  { id: 'uk-31', title: 'Статья 31. Захват заложника', type: 'regulation', category: 'УК',
+    tags: ['ук', 'заложник'],
+    content: 'Захват или удержание лица в качестве заложника, совершенные в целях понуждения государства, организации или гражданина совершить какое-либо действие или воздержаться от совершения какого-либо действия как условия освобождения заложника, — наказываются лишением свободы на срок до 8 лет' },
+  { id: 'uk-32', title: 'Статья 32. Заведомо ложное сообщение об акте терроризма', type: 'regulation',
+    category: 'УК', tags: ['ук', 'терроризм'],
+    content: 'Заведомо ложное сообщение о готовящихся взрыве, поджоге или иных действиях, создающих опасность гибели людей, причинения значительного имущественного ущерба либо наступления иных общественно опасных последствий, совершенное из хулиганских побуждений, — наказываются лишением свободы на срок до 5 лет' },
+  { id: 'uk-33', title: 'Статья 33. Бандитизм', type: 'regulation', category: 'УК', tags: ['ук', 'бандитизм'],
+    content: 'Создание устойчивой вооруженной группы (банды) в целях нападения на граждан или организации с целью совершения тяжких или особо-тяжких преступлений, а равно участие и руководство такой группой (бандой), — наказываются лишением свободы на срок до 4 лет' },
+  { id: 'uk-34', title: 'Статья 34. Организация преступного сообщества', type: 'regulation', category: 'УК',
+    tags: ['ук', 'преступное сообщество'],
+    content: '1. Создание преступного сообщества (преступной организации) в целях совершения одного или нескольких тяжких или особо тяжких преступлений либо руководство преступным сообществом (преступной организацией) или входящими в него (нее) структурными подразделениями, а равно координация действий организованных групп, создание устойчивых связей между ними, разработка планов и создание условий для совершения преступлений организованными группами, раздел сфер преступного влияния и (или) преступных доходов между такими группами, — наказываются лишением свободы на срок до 6 лет\n2. Участие в преступном сообществе (преступной организации), — наказываются лишением свободы на срок до 6 лет' },
+  { id: 'uk-35', title: 'Статья 35. Занятие высшего положения в преступной иерархии', type: 'regulation',
+    category: 'УК', tags: ['ук', 'иерархия'],
+    content: 'Занятие высшего положения в преступной иерархии, — наказывается лишением свободы на срок до 10 лет' },
+  { id: 'uk-36', title: 'Статья 36. Массовые беспорядки', type: 'regulation', category: 'УК',
+    tags: ['ук', 'беспорядки'],
+    content: 'Организация и участие в массовых беспорядков, то есть грубого нарушения общественного порядка, сопровождавшегося насилием, погромами, поджогами, уничтожением имущества, применением оружия, взрывных устройств, взрывчатых веществ и предметов, представляющих опасность для окружающих, а также оказанием вооруженного сопротивления представителям власти, подготовка лица для организации таких массовых беспорядков или участия в них, а также участие в массовых беспорядках, — наказывается лишением свободы на срок до 4 лет' },
+  { id: 'uk-37', title: 'Статья 37. Хулиганство (УК)', type: 'regulation', category: 'УК',
+    tags: ['ук', 'хулиганство'],
+    content: 'Хулиганство, то есть грубое нарушение общественного порядка, выражающее явное неуважение к обществу, — наказывается лишением свободы на срок до 2 лет' },
+  { id: 'uk-38', title: 'Статья 38. Вандализм', type: 'regulation', category: 'УК', tags: ['ук', 'вандализм'],
+    content: 'Вандализм, то есть осквернение зданий или иных сооружений, памятников, порча имущества на общественном транспорте или в иных общественных местах, — наказывается лишением свободы на срок до 2 лет' },
+  { id: 'uk-39', title: 'Статья 39. Незаконное проникновение на охраняемый объект', type: 'regulation',
+    category: 'УК', tags: ['ук', 'проникновение'],
+    content: 'Незаконное проникновение на охраняемый объект, а равно на территорию воинской части или иных военных стратегических объектов, исправительной колонии, территориального органа Федеральной службы безопасности, парковок правоохранительных органов и на любую территорию, оцепленную сотрудниками правоохранительных органов или военнослужащими, — наказывается лишением свободы на срок до 8 лет' },
+  { id: 'uk-40', title: 'Статья 40. Незаконное приобретение оружия', type: 'regulation', category: 'УК',
+    tags: ['ук', 'оружие'],
+    content: 'Незаконное, а равно совершенное без официальной лицензии приобретение, передача, изготовления оружия и боеприпасов к нему, — наказывается лишением свободы на срок до 4 лет' },
+  { id: 'uk-41', title: 'Статья 41. Незаконное использование или ношение оружия', type: 'regulation',
+    category: 'УК', tags: ['ук', 'оружие'],
+    content: '1. Незаконное использование, то есть использование или применение оружия и боеприпасов к нему для противоправных действий, а равно не в целях необходимой самообороны или крайней необходимости, либо не для задержания лица, совершившего преступление, в случаях, предусмотренных законодательством, — наказывается лишением свободы на срок до 4 лет\n2. Незаконное ношение и хранение огнестрельного оружия и боеприпасов к нему, а равно ношение оружия в открытом виде, с нарушением правил хранения или без надлежащей лицензии, — наказывается лишением свободы на срок до 4 лет\n3. Незаконное ношение, хранение, перевозка либо иное обращение с составными частями оружия одним лицом, в количестве, превышающем установленные федеральным законодательством ограничения, — наказывается лишением свободы на срок до 4 лет' },
+  { id: 'uk-42', title: 'Статья 42. Ношение оружия в открытом виде', type: 'regulation', category: 'УК',
+    tags: ['ук', 'оружие'],
+    content: 'Ношение оружия в открытом виде в общественных местах, городе, — наказывается лишением свободы на срок до 4 лет' },
+  { id: 'uk-43', title: 'Статья 43. Нарушение ПДД, повлекшее тяжкий вред здоровью', type: 'regulation',
+    category: 'УК', tags: ['ук', 'пдд'],
+    content: 'Нарушение правил дорожного движения, повлекшее обстоятельства, указанные в ст. 4 настоящего Кодекса, — наказывается лишением свободы на срок до 7 лет' },
+  { id: 'uk-44', title: 'Статья 44. Нарушение ПДД, повлекшее смерть', type: 'regulation', category: 'УК',
+    tags: ['ук', 'пдд', 'смерть'],
+    content: 'Нарушение правил дорожного движения, повлекшее смерть человека, — наказывается лишением свободы на срок до 7 лет' },
+  { id: 'uk-45', title: 'Статья 45. Незаконный оборот наркотиков', type: 'regulation', category: 'УК',
+    tags: ['ук', 'наркотики'],
+    content: 'Незаконное изготовление, приобретение, продажа, хранение наркотических средств в значительном размере, — наказывается лишением свободы на срок до 7 лет' },
+  { id: 'uk-46', title: 'Статья 46. Вовлечение в занятие проституцией', type: 'regulation', category: 'УК',
+    tags: ['ук', 'проституция'],
+    content: 'Вовлечение в занятие проституцией или принуждение к продолжению занятия проституцией, — наказывается лишением свободы на срок до 2 лет' },
+  { id: 'uk-47', title: 'Статья 47. Надругательство над телами умерших', type: 'regulation', category: 'УК',
+    tags: ['ук', 'смерть'],
+    content: 'Надругательство над телами умерших либо уничтожение, повреждение или осквернение мест захоронения, надмогильных сооружений или кладбищенских зданий, предназначенных для церемоний в связи с погребением умерших или их поминовением, — наказывается лишением свободы на срок до 2 лет' },
+  { id: 'uk-48', title: 'Статья 48. Посягательство на жизнь государственного деятеля', type: 'regulation',
+    category: 'УК', tags: ['ук', 'госдеятель'],
+    content: 'Посягательство на жизнь государственного или общественного деятеля, совершенное в целях прекращения его государственной или иной политической деятельности либо из мести за такую деятельность, — наказывается лишением свободы на срок до 7 лет' },
+  { id: 'uk-49', title: 'Статья 49. Вооружённый мятеж', type: 'regulation', category: 'УК',
+    tags: ['ук', 'мятеж'],
+    content: 'Организация вооруженного мятежа либо активное участие в нем в целях свержения или насильственного изменения конституционного строя государства, либо нарушения территориальной целостности, либо с целью свержения представителя регионального органа исполнительной власти (губернатора), — наказывается лишением свободы на срок до 10 лет' },
+  { id: 'uk-50', title: 'Статья 50. Публичные призывы к экстремистской деятельности', type: 'regulation',
+    category: 'УК', tags: ['ук', 'экстремизм'],
+    content: 'Публичные призывы к осуществлению экстремистской деятельности, — наказывается лишением свободы на срок до 5 лет' },
+  { id: 'uk-51', title: 'Статья 51. Превышение должностных полномочий', type: 'regulation', category: 'УК',
+    tags: ['ук', 'должностные'],
+    content: 'Совершение должностным лицом действий, явно выходящих за пределы его полномочий и повлекших существенное нарушение прав и законных интересов граждан или организаций либо охраняемых законом интересов общества или государства, — наказывается лишением свободы на срок до 4 лет' },
+  { id: 'uk-51-1', title: 'Статья 51.1. Злоупотребление должностными полномочиями', type: 'regulation',
+    category: 'УК', tags: ['ук', 'должностные'],
+    content: 'Использование должностным лицом своих служебных полномочий вопреки интересам службы, если это деяние совершено из корыстной или иной личной заинтересованности и повлекло существенное нарушение прав и законных интересов граждан или организаций либо охраняемых законом интересов общества или государства, — наказывается лишением свободы на срок до 4 лет' },
+  { id: 'uk-52', title: 'Статья 52. Нецелевое расходование бюджетных средств', type: 'regulation', category: 'УК',
+    tags: ['ук', 'бюджет'],
+    content: 'Расходование бюджетных средств должностным лицом на цели, не соответствующие условиям их получения, а равно использование бюджетных средств органами местного самоуправления в личных целях, — наказывается лишением свободы на срок до 6 лет' },
+  { id: 'uk-53', title: 'Статья 53. Присвоение полномочий должностного лица', type: 'regulation',
+    category: 'УК', tags: ['ук', 'должностные'],
+    content: '1. Присвоение гражданским лицом, не являющимся должностным лицом, полномочий должностного лица и совершение им, в связи с этим действий от лица должностного лица, а равно фальсификация удостоверений или иных документов, подтверждающих его должность, — наказывается судебным штрафом в размере от 100.000 до 300.000 рублей или лишением свободы на срок до 3 лет\n2. Присвоение государственным служащим или муниципальным служащим, не являющимся должностным лицом, полномочий должностного лица и совершение им, в связи с этим действий от лица должностного лица, — наказывается судебным штрафом в размере от 100.000 до 300.000 рублей или лишением свободы на срок до 3 лет' },
+  { id: 'uk-54', title: 'Статья 54. Получение взятки', type: 'regulation', category: 'УК',
+    tags: ['ук', 'взятка'],
+    content: '1. Получение должностным лицом материальные ценности (предметы, деньги, услуги, иная имущественная выгода) за действия либо бездействие в интересах взяткодателя или третьего лица, которые должностное лицо имеет право либо обязано совершить, с целью ускорить решение вопроса или решить его в положительном ключе, либо за совершение незаконных действий, то есть действий или бездействия, которые это лицо не может или не должно совершить в силу закона или своего служебного положения, — наказывается денежным взысканием, равным полученной сумме и штрафом в размере ста процентов от полученной суммы, а также выговором с занесением в личное дело или понижением в звании, должности\n2. Те же деяния, совершенные высокопоставленным государственным или муниципальным должностным лицом, — наказывается денежным взысканием, равным полученной сумме и штрафом в размере двухсот процентов от полученной суммы, а также выговором с занесением в личное дело или понижением в звании, должности\n3. Те же деяния, совершенные должностным лицом, ранее судимым за получение взятки (рецидив), — наказывается денежным взысканием, равным полученной сумме и штрафом в размере двухсот процентов от полученной суммы, а также увольнением с работы (места несения службы) и лишением свободы сроком на 5 лет' },
+  { id: 'uk-55', title: 'Статья 55. Дача взятки', type: 'regulation', category: 'УК', tags: ['ук', 'взятка'],
+    content: 'Передача должностному лицу материальные ценности (предметы, деньги, услуги, иная имущественная выгода) за действия либо бездействие в интересах взяткодателя или третьего лица, которые должностное лицо имеет право либо обязано совершить, с целью ускорить решение вопроса или решить его в положительном ключе, либо за совершение незаконных действий, то есть действий или бездействия, которые это лицо не может или не должно совершить в силу закона или своего служебного положения, — наказывается лишением свободы на срок до 5 лет' },
+  { id: 'uk-56', title: 'Статья 56. Халатность', type: 'regulation', category: 'УК', tags: ['ук', 'халатность'],
+    content: 'Халатность, то есть неисполнение или ненадлежащее исполнение должностным лицом своих обязанностей вследствие недобросовестного или небрежного отношения к службе либо обязанностей по должности, либо неисполнение или ненадлежащее исполнение гражданским лицом своих гражданских обязанностей, если это повлекло причинение ущерба или нарушение прав и законных интересов граждан или организаций либо охраняемых законом интересов общества или государства, — наказывается судебным штрафом в размере от 150.000 до 1.000.000 рублей или лишением свободы на срок до 4 лет' },
+  { id: 'uk-56-1', title: 'Статья 56.1. Разглашение государственной тайны', type: 'regulation', category: 'УК',
+    tags: ['ук', 'тайна'],
+    content: 'Разглашение сведений, составляющих государственную тайну, лицом, которому она была доверена или стала известна во время несения им службы, работы или иным способом, — наказывается лишением свободы на срок до 4 лет' },
+  { id: 'uk-57', title: 'Статья 57. Воспрепятствование осуществлению правосудия', type: 'regulation',
+    category: 'УК', tags: ['ук', 'правосудие'],
+    content: '1. Вмешательство в какой бы то ни было форме в деятельность суда в целях воспрепятствования осуществлению правосудия; в деятельность следователя в целях воспрепятствования всестороннему, полному и объективному расследованию дела, — наказывается лишением свободы на срок до 5 лет\n2. Невыполнение требований следователя и суда, вытекающие из их полномочий, установленных законодательством, а равно законных требований следователя или суда, а также игнорирование требований следователя или суда выдвинутых в виде официальных запросов, — наказывается судебным штрафом в размере от 250.000 до 300.000 рублей или лишением свободы на срок до 5 лет' },
+  { id: 'uk-57-1', title: 'Статья 57.1. Вынесение заведомо неправосудного приговора', type: 'regulation',
+    category: 'УК', tags: ['ук', 'суд'],
+    content: '1. Вынесение судьей (судьями) заведомо неправосудных приговора, решения или иного судебного акта, — наказывается лишением свободы на срок до 5 лет\n2. То же деяние, связанное с вынесением незаконного приговора суда к лишению свободы или повлекшее иные тяжкие последствия, — наказывается лишением свободы на срок до 5 лет' },
+  { id: 'uk-58', title: 'Статья 58. Незаконное возбуждение уголовного дела', type: 'regulation',
+    category: 'УК', tags: ['ук', 'уголовное дело'],
+    content: 'Привлечение заведомо невиновного к уголовной ответственности, — наказывается лишением свободы на срок до 5 лет' },
+  { id: 'uk-59', title: 'Статья 59. Незаконное освобождение от уголовной ответственности', type: 'regulation',
+    category: 'УК', tags: ['ук', 'ответственность'],
+    content: 'Незаконное освобождение от уголовной ответственности лица, подозреваемого или обвиняемого в совершении преступления следователем или иным лицом, осуществляющим правоохранительную деятельность, — наказывается лишением свободы на срок до 5 лет' },
+  { id: 'uk-60', title: 'Статья 60. Незаконные задержание, заключение под стражу', type: 'regulation',
+    category: 'УК', tags: ['ук', 'задержание'],
+    content: 'Незаконные задержание, заключение под стражу или содержание под стражей, а равно те же деяния, совершенных вопреки федеральным законам, — наказывается судебным штрафом в размере от 200.000 до 500.000 рублей или лишением свободы на срок до 5 лет' },
+  { id: 'uk-61', title: 'Статья 61. Заведомо ложный донос', type: 'regulation', category: 'УК',
+    tags: ['ук', 'донос'],
+    content: '1. Заведомо ложный донос о совершении преступления, — наказывается лишением свободы на срок до 2 лет\n2. Заведомо ложные показания свидетеля, потерпевшего либо заключение или показание эксперта, показание специалиста, а равно заведомо неправильный перевод в суде либо в ходе досудебного производства, — наказывается лишением свободы на срок до 2 лет' },
+  { id: 'uk-62', title: 'Статья 62. Неисполнение приговора суда', type: 'regulation', category: 'УК',
+    tags: ['ук', 'суд'],
+    content: 'Неисполнение вступивших в законную силу приговора суда, решения суда или иного судебного акта, а равно воспрепятствование их исполнению лицом, подвергнутым такому наказанию, — наказывается лишением свободы на срок до 5 лет' },
+  { id: 'uk-63', title: 'Статья 63. Укрывательство преступлений', type: 'regulation', category: 'УК',
+    tags: ['ук', 'укрывательство'],
+    content: 'Укрывательство преступления, орудий преступления или иных улик; сокрытие лица, совершившего преступление или помощь такому лицу в сокрытии от сотрудников правоохранительных органов, — наказывается лишением свободы на срок до 4 лет' },
+  { id: 'uk-64', title: 'Статья 64. Побег из места лишения свободы', type: 'regulation', category: 'УК',
+    tags: ['ук', 'побег'],
+    content: 'Побег из места лишения свободы, из-под ареста, во время задержания или из-под стражи, совершенный задержанным лицом, лицом, отбывающим наказание, или находящимся в предварительном заключении, — наказывается лишением на срок до 4 лет' },
+  { id: 'uk-65', title: 'Статья 65. Посягательство на жизнь сотрудника правоохранительного органа',
+    type: 'regulation', category: 'УК', tags: ['ук', 'правоохранители'],
+    content: 'Посягательство на жизнь сотрудника правоохранительного органа, находящегося при исполнении обязанностей в целях воспрепятствования законной деятельности указанных лиц по охране общественного порядка, обеспечению общественной безопасности или иной деятельности, либо из мести за такую деятельность, — наказывается лишением свободы на срок до 6 лет' },
+  { id: 'uk-66', title: 'Статья 66. Применение насилия в отношении представителя власти', type: 'regulation',
+    category: 'УК', tags: ['ук', 'насилие'],
+    content: 'Применение насилия в отношении представителя власти, опасного для его жизни и здоровья, — наказывается лишением свободы на срок до 5 лет' },
+  { id: 'uk-67', title: 'Статья 67. Оскорбление представителя власти', type: 'regulation', category: 'УК',
+    tags: ['ук', 'оскорбление'],
+    content: 'Оскорбление, а равно публичное умышленное унижение чести и достоинства личности, выраженное как в устной форме, так и в виде действия, в отношении представителя власти, — наказывается лишением свободы на срок до 2 лет' },
+  { id: 'uk-68', title: 'Статья 68. Неисполнение воинского приказа', type: 'regulation', category: 'УК',
+    tags: ['ук', 'военная'],
+    content: 'Неисполнение подчиненным приказа начальника, отданного в установленном порядке, причинившее существенный вред интересам службы, — наказывается лишением свободы на срок до 4 лет' },
+  { id: 'uk-69', title: 'Статья 69. Сопротивление начальнику', type: 'regulation', category: 'УК',
+    tags: ['ук', 'военная'],
+    content: 'Сопротивление начальнику, а равно иному лицу, исполняющему возложенные на него обязанности военной службы, или принуждение его к нарушению этих обязанностей, — наказывается лишением свободы на срок до 4 лет' },
+  { id: 'uk-70', title: 'Статья 70. Оскорбление военнослужащего', type: 'regulation', category: 'УК',
+    tags: ['ук', 'военная'],
+    content: 'Оскорбление одним военнослужащим другого во время исполнения обязанностей военной службы, а также оскорбление подчиненным начальника, а равно начальником подчиненного во время исполнения обязанностей военной службы, — наказывается лишением свободы на срок до 2 лет' },
+  { id: 'uk-71', title: 'Статья 71. Самовольное оставление части', type: 'regulation', category: 'УК',
+    tags: ['ук', 'военная'],
+    content: 'Самовольное оставление части или места службы, а равно неявка в установленный срок после отпуска или увольнительной, а также оставление части или места несения службы для совершения каких бы то ни было личных целей за пределами части, места несения службы без разрешения начальника, — наказывается лишением свободы на срок до 5 лет' },
+  { id: 'uk-72', title: 'Статья 72. Дезертирство', type: 'regulation', category: 'УК', tags: ['ук', 'военная'],
+    content: 'Дезертирство, то есть самовольное оставление части или места службы в целях уклонения от прохождения военной службы, — наказывается лишением свободы на срок до 8 лет' },
+  { id: 'uk-73', title: 'Статья 73. Уничтожение военного имущества', type: 'regulation', category: 'УК',
+    tags: ['ук', 'военная'],
+    content: 'Умышленные уничтожение или повреждение оружия, боеприпасов или предметов военной техники военнослужащим, — наказывается лишением свободы на срок до 3 лет' },
+
+  // ---- КОДЕКС ОБ АДМИНИСТРАТИВНЫХ ПРАВОНАРУШЕНИЯХ ----
+  { id: 'koap-1-1', title: 'Статья 1.1. Эксплуатация ТС с 3+ неоплаченными штрафами', type: 'regulation',
+    category: 'КоАП', tags: ['коап', 'штрафы', 'тс'],
+    content: 'Эксплуатация транспортного средства с наличием трех и более неоплаченных административных штрафов, превышающих срок 24 часа, - влечет наложение административного штрафа в размере 25.000 рублей.' },
+  { id: 'koap-1-2', title: 'Статья 1.2. Управление ТС без регистрации', type: 'regulation', category: 'КоАП',
+    tags: ['коап', 'тс', 'регистрация'],
+    content: 'Управление транспортным средством, не зарегистрированным в установленном порядке, - влечёт наложение административного штрафа в размере 20.000 рублей.' },
+  { id: 'koap-2-1', title: 'Статья 2.1. Использование спецсигналов на гражданском ТС', type: 'regulation',
+    category: 'КоАП', tags: ['коап', 'спецсигналы', 'тс'],
+    content: 'Использование специальных световых и звуковых сигналов, закрепленных на гражданских транспортных средствах, — влечёт наложение административного штрафа в размере 50.000 рублей, а также лишение права управления транспортными средствами и эвакуация транспортного средства' },
+  { id: 'koap-2-2', title: 'Статья 2.2. Неисправные световые приборы', type: 'regulation', category: 'КоАП',
+    tags: ['коап', 'тс', 'свет'],
+    content: 'Управление транспортным средством, с двумя неисправными световыми приборами, — влечёт наложение административного штрафа в размере 5.000 рублей' },
+  { id: 'koap-2-3', title: 'Статья 2.3. Неисправный двигатель', type: 'regulation', category: 'КоАП',
+    tags: ['коап', 'тс', 'двигатель'],
+    content: 'Управление транспортным средством с неисправным двигателем, — влечёт наложение административного штрафа в размере 10.000 рублей' },
+  { id: 'koap-2-4', title: 'Статья 2.4. Неисправное колесо', type: 'regulation', category: 'КоАП',
+    tags: ['коап', 'тс', 'колесо'],
+    content: 'Управление транспортным с неисправным колесом, - влечёт наложение административного штрафа в размере 25.000 рублей' },
+  { id: 'koap-3-1', title: 'Статья 3.1. Управление без прав', type: 'regulation', category: 'КоАП',
+    tags: ['коап', 'права'],
+    content: 'Управление транспортным средством водителем, не имеющим права управления транспортным средством, — влечёт наложение административного штрафа в размере 35.000 рублей, а также эвакуация транспортного средства' },
+  { id: 'koap-3-2', title: 'Статья 3.2. Управление лишённым прав', type: 'regulation', category: 'КоАП',
+    tags: ['коап', 'права'],
+    content: 'Управление транспортным средством водителем, лишенным права управления, — влечёт наложение административного штрафа в размере 50.000 рублей, а также эвакуация транспортного средства' },
+  { id: 'koap-3-3', title: 'Статья 3.3. Управление в состоянии опьянения', type: 'regulation', category: 'КоАП',
+    tags: ['коап', 'опьянение'],
+    content: 'Управление транспортным средством водителем, находящимся в состоянии опьянения, если такие действия не содержат уголовно наказуемого деяния, — влечёт наложение административного штрафа в размере 40.000 рублей, а также лишение права управления транспортными средствами и эвакуация транспортного средства' },
+  { id: 'koap-5-1', title: 'Статья 5.1. Пересечение ЖД переезда вне переезда', type: 'regulation', category: 'КоАП',
+    tags: ['коап', 'жд'],
+    content: 'Пересечение железнодорожного пути вне железнодорожного переезда, выезд на железнодорожный переезд при закрытом или закрывающемся шлагбауме, — влечёт наложение административного штрафа в размере 50.000 рублей' },
+  { id: 'koap-5-2', title: 'Статья 5.2. Повреждение ЖД пути', type: 'regulation', category: 'КоАП',
+    tags: ['коап', 'жд'],
+    content: 'Повреждение железнодорожного пути посредством заезда или проезда по железнодорожным путям на транспортном средстве, — влечёт наложение административного штрафа в размере 25.000 рублей' },
+  { id: 'koap-6-1', title: 'Статья 6.1. Разворот на автомагистрали', type: 'regulation', category: 'КоАП',
+    tags: ['коап', 'автомагистраль'],
+    content: 'Разворот транспортного средства на автомагистрали либо движение задним ходом по автомагистрали, — влечёт наложение административного штрафа в размере 15.000 рублей' },
+  { id: 'koap-7-1', title: 'Статья 7.1. Проезд на красный свет', type: 'regulation', category: 'КоАП',
+    tags: ['коап', 'светофор'],
+    content: 'Проезд на запрещающий сигнал светофора (красный), — влечёт наложение административного штрафа в размере 30.000 рублей' },
+  { id: 'koap-7-2', title: 'Статья 7.2. Невыполнение требования уступить дорогу на перекрестке',
+    type: 'regulation', category: 'КоАП', tags: ['коап', 'перекресток'],
+    content: 'Невыполнение требования уступить дорогу транспортному средству, пользующемуся преимущественным правом проезда перекрестков, — влечёт наложение административного штрафа в размере 25.000 рублей' },
+  { id: 'koap-8-1', title: 'Статья 8.1. Невыполнение требования подать сигнал поворота', type: 'regulation',
+    category: 'КоАП', tags: ['коап', 'поворот'],
+    content: 'Невыполнение требования подать сигнал перед началом движения, перестроением, поворотом, разворотом или остановкой, — влечёт наложение административного штрафа в размере 5.000 рублей' },
+  { id: 'koap-8-2', title: 'Статья 8.2. Разворот в запрещённом месте', type: 'regulation', category: 'КоАП',
+    tags: ['коап', 'разворот'],
+    content: 'Разворот или движение задним ходом в местах, где такие маневры запрещены, — влечёт наложение административного штрафа в размере 5.000 рублей' },
+  { id: 'koap-8-3', title: 'Статья 8.3. Невыполнение требования уступить дорогу (общее)', type: 'regulation',
+    category: 'КоАП', tags: ['коап', 'уступить'],
+    content: 'Невыполнение требования уступить дорогу транспортному средству, пользующемуся преимущественным правом движения, — влечёт наложение административного штрафа в размере 10.000 рублей' },
+  { id: 'koap-8-4', title: 'Статья 8.4. Нарушение пользования звуковыми сигналами', type: 'regulation',
+    category: 'КоАП', tags: ['коап', 'звук'],
+    content: 'Нарушение правил пользования звуковыми сигналами, аварийной сигнализацией или знаком аварийной остановки, — влечёт наложение административного штрафа в размере 10.000 рублей' },
+  { id: 'koap-8-5', title: 'Статья 8.5. Опасное вождение', type: 'regulation', category: 'КоАП',
+    tags: ['коап', 'опасное вождение'],
+    content: 'Движение транспортного средства, которое создает угрозу гибели или ранения людей, повреждения транспортных средств, сооружений, грузов или причинения иного материального ущерба, — влечёт наложение административного штрафа в размере 17.500 рублей, а также лишение права управления транспортным средством' },
+  { id: 'koap-9-1', title: 'Статья 9.1. Нарушение правил расположения ТС', type: 'regulation', category: 'КоАП',
+    tags: ['коап', 'расположение'],
+    content: 'Нарушение правил расположения транспортного средства на проезжей части дороги, встречного разъезда, а равно движение по обочинам, — влечёт наложение административного штрафа в размере 10.000 рублей' },
+  { id: 'koap-9-2', title: 'Статья 9.2. Движение по тротуарам', type: 'regulation', category: 'КоАП',
+    tags: ['коап', 'тротуар'],
+    content: 'Движение по велосипедным или пешеходным дорожкам либо тротуарам, газонам, — влечёт наложение административного штрафа в размере 15.000 рублей' },
+  { id: 'koap-9-3', title: 'Статья 9.3. Выезд на встречную полосу', type: 'regulation', category: 'КоАП',
+    tags: ['коап', 'встречная'],
+    content: 'Выезд в нарушение Правил дорожного движения на полосу, предназначенную для встречного движения, — влечёт наложение административного штрафа в размере 15.000 рублей' },
+  { id: 'koap-9-4', title: 'Статья 9.4. Умышленный выезд на встречную полосу', type: 'regulation',
+    category: 'КоАП', tags: ['коап', 'встречная'],
+    content: 'Умышленный выезд в нарушение Правил дорожного движения на полосу, предназначенную для встречного движения, — влечёт наложение административного штрафа в размере 30.000 рублей, а также лишение права управления транспортными средствами и эвакуация транспортного средства' },
+  { id: 'koap-10-1', title: 'Статья 10.1. Несоблюдение требований знаков или разметки', type: 'regulation',
+    category: 'КоАП', tags: ['коап', 'знаки'],
+    content: 'Несоблюдение требований, предписанных дорожными знаками или разметкой проезжей части, — влечёт наложение административного штрафа в размере 10.000 рублей' },
+  { id: 'koap-10-2', title: 'Статья 10.2. Поворот налево или разворот в нарушение знаков', type: 'regulation',
+    category: 'КоАП', tags: ['коап', 'поворот'],
+    content: 'Поворот налево или разворот в нарушение требований, предписанных дорожными знаками или разметкой проезжей части дороги, — влечёт наложение административного штрафа в размере 15.000 рублей' },
+  { id: 'koap-10-3', title: 'Статья 10.3. Движение во встречном направлении по дороге с односторонним движением',
+    type: 'regulation', category: 'КоАП', tags: ['коап', 'одностороннее'],
+    content: 'Движение во встречном направлении по дороге с односторонним движением, — влечёт наложение административного штрафа в размере 35.000 рублей, а также лишение права управления транспортными средствами и эвакуация транспортного средства' },
+  { id: 'koap-11-1', title: 'Статья 11.1. Непредоставление преимущества маршрутному ТС', type: 'regulation',
+    category: 'КоАП', tags: ['коап', 'маршрутное'],
+    content: 'Непредоставление преимущества в движении маршрутному транспортному средству, — влечёт наложение административного штрафа в размере 15.000 рублей' },
+  { id: 'koap-11-2', title: 'Статья 11.2. Непредоставление преимущества ТС со спецсигналами', type: 'regulation',
+    category: 'КоАП', tags: ['коап', 'спецсигналы'],
+    content: 'Непредоставление преимущества в движении транспортному средству с одновременно включенными проблесковым маячком синего цвета и специальным звуковым сигналом, — влечёт наложение административного штрафа в размере 25.000 рублей, а также лишение права управления транспортными средствами и эвакуация транспортного средства' },
+  { id: 'koap-11-3', title: 'Статья 11.3. Непредоставление преимущества колонне со спецсигналами',
+    type: 'regulation', category: 'КоАП', tags: ['коап', 'колонна'],
+    content: 'Непредоставление преимущества в движении колонны в сопровождении государственных служб с включёнными специальными звуковыми и световыми сигналами, — влечёт наложение административного штрафа в размере 50.000 рублей, а также лишение права управления транспортными средствами и эвакуация транспортного средства' },
+  { id: 'koap-11-4', title: 'Статья 11.4. Невыполнение требования уступить дорогу пешеходам', type: 'regulation',
+    category: 'КоАП', tags: ['коап', 'пешеходы'],
+    content: 'Невыполнение требования Правил дорожного движения уступить дорогу пешеходам, велосипедистам или иным участникам дорожного движения, — влечёт наложение административного штрафа в размере 10.000 рублей' },
+  { id: 'koap-12-1', title: 'Статья 12.1. Нарушение правил остановки, стоянки', type: 'regulation',
+    category: 'КоАП', tags: ['коап', 'остановка'],
+    content: 'Нарушение правил остановки, стоянки, парковки транспортных средств, — влечёт наложение административного штрафа в размере 25.000 рублей, а также эвакуация транспортного средства' },
+  { id: 'koap-12-2', title: 'Статья 12.2. Нарушение правил остановки, повлекшее создание препятствий',
+    type: 'regulation', category: 'КоАП', tags: ['коап', 'остановка'],
+    content: 'Нарушение правил остановки, стоянки, парковки транспортных средств на проезжей части, повлекшее создание препятствий для движения других транспортных средств, — влечёт наложение административного штрафа в размере 50.000 рублей, а также эвакуация транспортного средства' },
+  { id: 'koap-13-1', title: 'Статья 13.1. Движение с выключенными габаритными огнями', type: 'regulation',
+    category: 'КоАП', tags: ['коап', 'свет'],
+    content: 'Движение транспортного средства с выключенными габаритными огнями в любое время суток — влечёт наложение административного штрафа в размере 10.000 рублей.' },
+  { id: 'koap-13-2', title: 'Статья 13.2. Дрифт и рискованные трюки', type: 'regulation', category: 'КоАП',
+    tags: ['коап', 'дрифт'],
+    content: 'Дрифт и другие рискованные трюки на проезжей части и прилегающей территории — влечёт наложение административного штрафа в размере 50.000 рублей, а также лишение права управления транспортными средствами и эвакуация транспортного средства.' },
+  { id: 'koap-13-3', title: 'Статья 13.3. Пользование телефоном за рулём', type: 'regulation', category: 'КоАП',
+    tags: ['коап', 'телефон'],
+    content: 'Пользование водителем во время движения транспортного средства телефоном — влечёт наложение административного штрафа в размере 10.000 рублей.' },
+  { id: 'koap-13-4', title: 'Статья 13.4. Нарушение ПДД пешеходом', type: 'regulation', category: 'КоАП',
+    tags: ['коап', 'пешеход'],
+    content: 'Нарушение правил дорожного движения пешеходом — влечёт наложение административного штрафа в размере 10.000 рублей.' },
+  { id: 'koap-13-5', title: 'Статья 13.5. Нарушение правил в жилых зонах', type: 'regulation', category: 'КоАП',
+    tags: ['коап', 'жилая зона'],
+    content: 'Нарушение правил, установленных для движения транспортных средств в жилых зонах — влечёт наложение административного штрафа в размере 55.000 рублей' },
+  { id: 'koap-13-6', title: 'Статья 13.6. Тонировка ниже 50%', type: 'regulation', category: 'КоАП',
+    tags: ['коап', 'тонировка'],
+    content: 'Управление транспортным средством, на котором установлены лобовое и/или боковые стекла, светопропускаемость которых ниже 50% — влечёт наложение административного штрафа в размере 50.000 рублей, а так же снятие тонировочной пленки на месте.' },
+  { id: 'koap-14-1', title: 'Статья 14.1. ДТП без вреда здоровью', type: 'regulation', category: 'КоАП',
+    tags: ['коап', 'дтп'],
+    content: 'Виновник дорожно-транспортного происшествия без вреда здоровью и жизни граждан — влечёт наложение административного штрафа в размере 15.000 рублей.' },
+  { id: 'koap-14-2', title: 'Статья 14.2. ДТП с тяжким вредом здоровью', type: 'regulation', category: 'КоАП',
+    tags: ['коап', 'дтп'],
+    content: 'Виновник дорожно-транспортного происшествия повлекшее тяжкий вред здоровью — влечёт наложение административного штрафа в размере 25.000 рублей, а также лишение права управления транспортными средствами и эвакуация транспортного средства.' },
+  { id: 'koap-14-3', title: 'Статья 14.3. ДТП со смертельным исходом', type: 'regulation', category: 'КоАП',
+    tags: ['коап', 'дтп'],
+    content: 'Виновник дорожно-транспортного происшествия повлекшее смерть — влечёт наложение административного штрафа в размере 30.000 рублей, а также лишение права управления транспортными средствами и эвакуация транспортного средства.' },
+  { id: 'koap-14-4', title: 'Статья 14.4. Оставление места ДТП', type: 'regulation', category: 'КоАП',
+    tags: ['коап', 'дтп'],
+    content: 'Оставление водителем места дорожно-транспортного происшествия — влечёт наложение административного штрафа в размере 50.000 рублей, а также лишение права управления транспортными средствами и эвакуация транспортного средства.' },
+  { id: 'koap-14-5', title: 'Статья 14.5. Умышленное создание аварийной ситуации', type: 'regulation',
+    category: 'КоАП', tags: ['коап', 'дтп'],
+    content: 'Умышленное создание аварийной ситуации со стороны виновника дорожно-транспортного происшествия — влечёт наложение административного штрафа в размере 50.000 рублей, а также лишение права управления транспортными средствами и эвакуация транспортного средства.' },
+  { id: 'koap-15-1', title: 'Статья 15.1. Неповиновение требованию об остановке', type: 'regulation',
+    category: 'КоАП', tags: ['коап', 'полиция'],
+    content: 'Неповиновение законного требования сотрудника полиции об остановке транспортного средства — влечёт наложение административного штрафа в размере 50.000 рублей и лишение права на управление транспортным средством.' },
+  { id: 'koap-15-2', title: 'Статья 15.2. Неповиновение требованию о предоставлении документов',
+    type: 'regulation', category: 'КоАП', tags: ['коап', 'полиция'],
+    content: 'Неповиновение законного требования сотрудника полиции о предоставлении документов на транспортное средство или перевозимый груз — влечёт наложение административного штрафа в размере от 25.000 до 50.000 рублей.' },
+  { id: 'koap-16-1', title: 'Статья 16.1. Оскорбление гражданина', type: 'regulation', category: 'КоАП',
+    tags: ['коап', 'оскорбление'],
+    content: 'Оскорбление, унижение чести в отношении гражданского лица, выраженное в неприличной или иной противоречащей общепринятым нормам морали и нравственности форме — влечёт наложение административного штрафа в размере 25.000 рублей.' },
+  { id: 'koap-16-2', title: 'Статья 16.2. Клевета', type: 'regulation', category: 'КоАП', tags: ['коап', 'клевета'],
+    content: 'Клевета, то есть распространение заведомо ложных сведений, порочащих честь и достоинство другого лица или подрывающих его репутацию — влечёт наложение административного штрафа в размере 20.000 рублей.' },
+  { id: 'koap-16-3', title: 'Статья 16.3. Дискриминация', type: 'regulation', category: 'КоАП',
+    tags: ['коап', 'дискриминация'],
+    content: 'Дискриминация (пол, раса, цвет кожи, национальность, язык, и т.д) — влечёт наложение административного штрафа в размере 25.000 рублей.' },
+  { id: 'koap-16-4', title: 'Статья 16.4. Мелкое хулиганство (КоАП)', type: 'regulation', category: 'КоАП',
+    tags: ['коап', 'хулиганство'],
+    content: 'Мелкое хулиганство, то есть нарушение общественного порядка, выражающее явное неуважение к обществу, сопровождающееся нецензурной бранью в общественных местах — влечёт наложение административного штрафа в размере 10.000 рублей.' },
+  { id: 'koap-17-1', title: 'Статья 17.1. Незаконный оборот наркотиков (КоАП)', type: 'regulation',
+    category: 'КоАП', tags: ['коап', 'наркотики'],
+    content: 'Незаконный оборот, наркотических и/или психотропных веществ. Употребление наркотических и/или психотропных веществ в общественных местах — влечёт наложение административного штрафа в размере 35.000 рублей. Примечание: граждане наказываются по данной статье, если нет состава преступления, предусмотренного 45 УК.' },
+  { id: 'koap-17-2', title: 'Статья 17.2. Занятие проституцией', type: 'regulation', category: 'КоАП',
+    tags: ['коап', 'проституция'],
+    content: 'Занятие проституцией — влечёт наложение административного штрафа в размере 25.000 рублей.' },
+  { id: 'koap-17-3', title: 'Статья 17.3. Курение в общественных местах', type: 'regulation', category: 'КоАП',
+    tags: ['коап', 'курение'],
+    content: 'Курение в общественных местах — влечёт наложение административного штрафа в размере 5.000 рублей.' },
+  { id: 'koap-17-4', title: 'Статья 17.4. Распитие спиртных напитков', type: 'regulation', category: 'КоАП',
+    tags: ['коап', 'алкоголь'],
+    content: 'Распитие спиртных напитков в общественных местах — влечёт наложение административного штрафа в размере 10.000 рублей.' },
+  { id: 'koap-17-5', title: 'Статья 17.5. Нарушение масочного режима', type: 'regulation', category: 'КоАП',
+    tags: ['коап', 'маски'],
+    content: 'Нарушение масочного режима, установленного региональным правительственным органом, при эпидемиологической чрезвычайной ситуации или при угрозе ее возникновения, а равно нахождение без средств индивидуальной защиты в общественных местах, на улицах, в парках, скверах, рынках, в государственных и муниципальных учреждениях, и в иных местах массового скопления людей, — влечёт замечание или наложение административного штрафа на граждан в размере 15.000 рублей; на должностных лиц - 25.000 рублей. Примечание: штраф по данной статье вписывается вручную "Нарушение ст. 17.5 КоАП"' },
+  { id: 'koap-18-1', title: 'Статья 18.1. Организация несанкционированного мероприятия', type: 'regulation',
+    category: 'КоАП', tags: ['коап', 'мероприятие'],
+    content: 'Организация несанкционированного публичного собрания, митинга, демонстрации, шествия или пикетирования, — влечёт наложение административного штрафа в размере 50.000 рублей' },
+  { id: 'koap-18-2', title: 'Статья 18.2. Участие в несанкционированном мероприятии', type: 'regulation',
+    category: 'КоАП', tags: ['коап', 'мероприятие'],
+    content: 'Участие в несанкционированном публичном собрании, митинге, демонстрации, шествии или пикетировании, — влечёт наложение административного штрафа в размере 35.000 рублей' },
+  { id: 'koap-18-4', title: 'Статья 18.4. Блокирование транспортных коммуникаций', type: 'regulation',
+    category: 'КоАП', tags: ['коап', 'блокировка'],
+    content: 'Организация блокирования, а равно активное участие в блокировании транспортных коммуникаций, — влечёт наложение административного штрафа в размере 30.000 рублей' },
+  { id: 'koap-18-5', title: 'Статья 18.5. Нарушение правил перевозки оружия', type: 'regulation',
+    category: 'КоАП', tags: ['коап', 'оружие'],
+    content: 'Нарушение правил перевозки, транспортирования оружия и патронов к нему, — влечёт наложение административного штрафа в размере 20.000 рублей' },
+  { id: 'koap-18-6', title: 'Статья 18.6. Нарушение общественного порядка', type: 'regulation',
+    category: 'КоАП', tags: ['коап', 'порядок'],
+    content: 'Хулиганство, а равно нарушение общественного порядка, — влечёт наложение административного штрафа в размере 25.000 рублей' },
+  { id: 'koap-18-7', title: 'Статья 18.7. Препятствование пожарно-инспекционным проверкам', type: 'regulation',
+    category: 'КоАП', tags: ['коап', 'пожар'],
+    content: 'Препятствование проведению пожарно-инспекционной проверки органами МЧС либо создание условий, делающих невозможным её проведение, в государственных и муниципальных учреждениях, — влечет наложение административного штрафа на ответственное должностное лицо в размере 500.000 рублей. Примечание: штраф по данной статье вписывается вручную "Нарушение ст. 18.7 КоАП"' },
+  { id: 'koap-18-8', title: 'Статья 18.8. Нарушение требований пожарной безопасности', type: 'regulation',
+    category: 'КоАП', tags: ['коап', 'пожар'],
+    content: '1. Нарушение требований пожарной безопасности в ходе учебных проверок государственных и муниципальных учреждений инспекционной комиссией государственного пожарного надзора, — влечет наложение административного штрафа на ответственное лицо в размере 250.000 рублей\n2. Нарушение требований пожарной безопасности в ходе пожара или иной чрезвычайной ситуации, — влечет наложение административного штрафа на ответственное лицо в размере 500.000 рублей' },
+  { id: 'koap-19-1', title: 'Статья 19.1. Подкуп избирателей', type: 'regulation', category: 'КоАП',
+    tags: ['коап', 'выборы'],
+    content: 'Подкуп избирателей, — влечёт наложение административного штрафа в размере 100.000 рублей' },
+  { id: 'koap-19-2', title: 'Статья 19.2. Агитация в день тишины', type: 'regulation', category: 'КоАП',
+    tags: ['коап', 'выборы'],
+    content: 'Агитация в день тишины, — влечёт наложение административного штрафа в размере 200.000 рублей' },
+  { id: 'koap-20-1', title: 'Статья 20.1. Заведомо ложный вызов спецслужб', type: 'regulation', category: 'КоАП',
+    tags: ['коап', 'вызов'],
+    content: 'Заведомо ложный вызов специализированных служб, — влечёт наложение административного штрафа в размере 25.000 рублей' },
+  { id: 'koap-20-2', title: 'Статья 20.2. Сообщение ложных сведений правоохранительным органам',
+    type: 'regulation', category: 'КоАП', tags: ['коап', 'ложь'],
+    content: '1. Дача заведомо ложных показаний, — влечёт наложение административного штрафа в размере 25.000 рублей\n2. Заведомо ложный донос о совершении преступления, — влечёт наложение административного штрафа в размере 25.000 рублей' },
+  { id: 'koap-20-3', title: 'Статья 20.3. Заведомо ложное сообщение об акте терроризма', type: 'regulation',
+    category: 'КоАП', tags: ['коап', 'терроризм'],
+    content: 'Заведомо ложное сообщение об акте терроризма, — влечёт наложение административного штрафа в размере 25.000 рублей' },
+  { id: 'koap-20-4', title: 'Статья 20.4. Применение насилия в отношении представителя власти (КоАП)',
+    type: 'regulation', category: 'КоАП', tags: ['коап', 'насилие'],
+    content: 'Применение насилия в отношении представителя власти, — влечёт наложение административного штрафа в размере 35.000 рублей' },
+  { id: 'koap-20-5', title: 'Статья 20.5. Оскорбление представителя власти (КоАП)', type: 'regulation',
+    category: 'КоАП', tags: ['коап', 'оскорбление'],
+    content: 'Оскорбления, а равно унижение чести в отношении представителя власти, выраженное в неприличной или иной противоречащей общепринятым нормам морали и нравственности форме, — влечёт наложение административного штрафа в размере 50.000 рублей' },
+  { id: 'koap-20-6', title: 'Статья 20.6. Неповиновение законному распоряжению сотрудника', type: 'regulation',
+    category: 'КоАП', tags: ['коап', 'неповиновение'],
+    content: 'Неповиновение законному распоряжению или требованию сотрудника полиции, военнослужащего либо сотрудника органа или учреждения уголовно-исполнительной системы в связи с исполнением ими обязанностей по охране общественного порядка и обеспечению общественной безопасности, а равно воспрепятствование исполнению ими служебных обязанностей, — влечёт наложение административного штрафа в размере 40.000 рублей' },
+  { id: 'koap-21-1', title: 'Статья 21.1. Неисполнение распоряжения судьи', type: 'regulation', category: 'КоАП',
+    tags: ['коап', 'суд'],
+    content: 'Неисполнение законного распоряжения судьи о прекращении действий, нарушающих установленные в суде, — влечёт наложение административного штрафа в размере 30.000 рублей. Примечание: штраф по данной статье вписывается вручную "Нарушение ст. 21.1 КоАП"' },
+
+  // ---- ФЕДЕРАЛЬНЫЙ ЗАКОН "О ПОЛИЦИИ" ----
+  { id: 'fz-police-1', title: 'Ст. 4. Представление сотрудника', type: 'regulation',
+    category: 'ФЗ-3 "О полиции"', tags: ['полиция', 'представление'],
+    content: 'Комментарий к ч. 3, 4 ст. 4:\nПредставление должно быть кратким — достаточно звания и фамилии (при необходимости — должности). Длинные формулировки с полным наименованием подразделения, региона, приветствиями и лишними деталями законом не требуются.\nПримеры правильного представления:\n«Майор полиции Иванов»\n«Лейтенант полиции Петров»\n«Оперуполномоченный уголовного розыска, капитан полиции Сидоров»\n\nСотрудник не должен спрашивать: «Удостоверение показать?» Удостоверение предъявляется только по прямому требованию гражданина, в случаях, когда полиция сама инициировала контакт или проводит процессуальные действия (проверка, досмотр и т.п.).' },
+  { id: 'fz-police-2', title: 'Ст. 7. Основания проверки документов', type: 'regulation',
+    category: 'ФЗ-3 "О полиции"', tags: ['полиция', 'документы'],
+    content: 'Комментарий к ч. 1 ст. 7:\nСотрудник полиции или ФСБ не вправе требовать документы, удостоверяющие личность, по личным подозрениям без конкретных оснований.\nПроверка документов допускается только при наличии хотя бы одного из следующих оснований:\n- Непосредственное обнаружение сотрудником признаков совершения административного правонарушения либо преступления;\n- Наличие достаточных данных, указывающих на признаки административного правонарушения или преступления;\n- Прямое указание граждан (свидетелей, очевидцев, заявителей) на конкретное лицо как на совершившее правонарушение или преступление;\n- Поступившая в установленном порядке информация, ориентировка, розыскные ориентировки либо иные сведения о конкретном лице, причастном к совершению правонарушения или преступления;\n- Действия или состояние лица, явно нарушающие либо создающие непосредственную угрозу нарушения общественного порядка (неадекватность или вызывающее поведение), общественной безопасности или кодекса об административных правонарушениях.\n\nВажно: Ношение маски, балаклавы, капюшона, очков или иных аксессуаров, закрывающих лицо (при отсутствии специальных правовых режимов в области), само по себе не является основанием для проверки документов, подозрений или задержания.' },
+  { id: 'fz-police-3', title: 'Ст. 4. Разъяснение сути нарушения', type: 'regulation',
+    category: 'ФЗ-3 "О полиции"', tags: ['полиция', 'разъяснение'],
+    content: 'Комментарий к ч. 6 ст. 4:\nРазъяснение не сводится к формальному зачитыванию диспозиции статьи целиком или простому называнию номера статьи — требуется пояснить суть нарушения в понятной форме.\nПримеры надлежащего разъяснения:\nВместо «Задержаны по ст. 37 УК» → «Задержаны по подозрению в совершении преступления, предусмотренного ст. 37 УК — хулиганство».\nВместо «по ст. 16.4 КоАП» → «по ст. 16.4 КоАП — мелкое хулиганство».\n\nФормальное указание только номера статьи без пояснения сути и без ссылки на конкретный закон не исполняет обязанность по разъяснению и может быть основанием для обжалования действий.' },
+  { id: 'fz-police-4', title: 'Ст. 8. Задержание госслужащих', type: 'regulation',
+    category: 'ФЗ-3 "О полиции"', tags: ['полиция', 'задержание', 'госслужащие'],
+    content: 'Комментарий к ч. 2 ст. 8:\nЗадержание и применение физической силы либо специальных средств (в том числе наручников) в отношении сотрудника государственной организации за административное правонарушение или малозначительное преступление допускается только при наличии хотя бы одного из следующих обстоятельств:\n1. лицо оказывает сопротивление;\n2. лицо пытается скрыться (в том числе покидает место происшествия или уезжает);\n3. действия лица создают угрозу жизни или здоровью граждан либо иные тяжкие последствия.\n\nПри отсутствии указанных обстоятельств (лицо не сопротивляется и не уезжает) задержание и применение специальных средств запрещается.\n\nВ этом случае сотрудник полиции обязан:\n1. установить обстоятельства правонарушения;\n2. зафиксировать доказательства имеющегося правонарушения (видеозапись, фотофиксации, в надлежащем качестве и с обязательным наличием аудиодорожки);\n3. в случае совершения госслужащим нарушения вызвать сотрудников Отдела собственной безопасности (ОСБ) соответствующей государственной организации на место совершения для проведения разбирательства на месте. При невозможности оперативного вызова сотрудников ОСБ передать собранные материалы в ОСБ в установленном порядке для проведения служебной проверки и решения вопроса о привлечении виновного лица к ответственности.\n\nНарушение настоящего комментария сотрудником правоохранительного органа (в том числе путём необоснованного задержания, применения специальных средств или отказа от передачи материалов в ОСБ) влечёт дисциплинарную или уголовную ответственность.' },
+
+  // ---- ФЕДЕРАЛЬНЫЙ ЗАКОН "ОБ ОРУЖИИ" ----
+  { id: 'fz-weapon-1', title: 'Ст. 2. Гражданское оружие', type: 'regulation', category: 'ФЗ-1 "Об оружии"',
+    tags: ['оружие', 'гражданское'],
+    content: '1. Гражданское оружие: АК-105М, АКС-74У, АК-47, дробовик, обрез (самооборона); дробовик, карабин "Сайга", охотничье ружье (СВД без ПСО) — охота.\n2. Если оружие не указано в этой статье, то для граждан его хранение и использование запрещено.' },
+  { id: 'fz-weapon-2', title: 'Ст. 3. Служебное оружие', type: 'regulation', category: 'ФЗ-1 "Об оружии"',
+    tags: ['оружие', 'служебное'],
+    content: '1. Служебное оружие — для должностных лиц и военнослужащих.\n2. Пистолет «Тульский Токарев» и СВД с ПСО — особый порядок хранения.\n3. Тульский Токарев и СВД с ПСО допускаются для спецподразделений, морского базирования, ОРД, ОСБ.\n4. Автомат АН-94 «Абакан», ОЦ-14 «Гроза», Striker-12, Desert Eagle, Steyr AUG — для ФСБ в ходе ОРМ и КТО.\n5. Руководство ОВД и гарнизонов может разрешить оружие п.3 руководящему составу и старшему составу спецподразделений (приказ на портале).\n6. В период спецопераций начальник ФСБ может временно разрешить оружие п.3 (кроме ЕСС, правительства, судов) и п.4 — спецподразделениям.\n7. Запрещено ношение служебного оружия вне службы — уголовная ответственность.' },
+  { id: 'fz-weapon-3', title: 'Ст. 4. Применение оружия гражданами', type: 'regulation',
+    category: 'ФЗ-1 "Об оружии"', tags: ['оружие', 'самооборона'],
+    content: '1. Граждане вправе применять оружие для защиты жизни, здоровья и собственности в состоянии необходимой обороны или крайней необходимости. Перед применением — предупреждение, кроме случаев, когда промедление создаёт угрозу жизни. Применение не должно причинять вред третьим лицам.\n2. Запрещено иметь оружие при участии в массовых мероприятиях.\n3. Запрещено извлекать или приводить в готовность оружие без достаточных оснований.' },
+  { id: 'fz-weapon-4', title: 'Ст. 5. Применение оружия органами исполнительной власти и воинскими частями',
+    type: 'regulation', category: 'ФЗ-1 "Об оружии"', tags: ['оружие', 'применение'],
+    content: '1. В населённых пунктах:\n— для защиты себя или иных от нападения с применением огнестрельного оружия;\n— при преследовании лица, если оно открывает огонь или создаёт угрозу;\n— для пресечения грубых нарушений ПДД (наезды, тараны);\n— для пресечения хищений частного имущества при достоверных данных.\n2. За пределами населённых пунктов:\n— для защиты от посягательства, сопряжённого насилием с применением огнестрельного оружия;\n— для предотвращения захвата оружия, спецоборудования, ТС, боевой техники;\n— для освобождения заложников и противодействия терроризму;\n— для задержания лиц, пытающихся уйти в воду;\n— для задержания лиц, сопротивляющихся аресту или отказывающихся сдать оружие;\n— для защиты зданий госорганов от групповых или вооруженных нападений;\n— для остановки ТС путём повреждения, если водитель отказывается остановиться и пытается скрыться.\n3. Не допускается в местах с высокой плотностью людей.\n4. Запрещено обнажать оружие без достаточных оснований.' },
+
+  // ---- УГОЛОВНО-ИСПОЛНИТЕЛЬНЫЙ КОДЕКС ----
+  { id: 'uik-1', title: 'Статья 1. Незнание регламента не освобождает', type: 'regulation', category: 'УИК',
+    tags: ['уик', 'регламент'],
+    content: 'Незнание регламента не освобождает осужденного от ответственности.' },
+  { id: 'uik-2', title: 'Статья 2. Виды дополнительной меры пресечения', type: 'regulation', category: 'УИК',
+    tags: ['уик', 'наказание'],
+    content: '1) увеличение срока на 1 месяц;\n2) увеличение срока на 2 месяца;\n3) увеличение срока на 3 месяца;\n4) изоляция в карцер.' },
+  { id: 'uik-3', title: 'Статья 3. Изоляция в карцер', type: 'regulation', category: 'УИК',
+    tags: ['уик', 'карцер'],
+    content: 'В случае изоляции осужденного в карцер, его освобождение происходит только после полной реабилитации.' },
+  { id: 'uik-4', title: 'Статья 4. Назначение дополнительной меры', type: 'regulation', category: 'УИК',
+    tags: ['уик', 'наказание'],
+    content: 'Назначение дополнительной меры пресечения устанавливается строго предусмотренными главами 2-6.' },
+  { id: 'uik-5', title: 'Статья 5. Неповиновение сотруднику ФСИН', type: 'regulation', category: 'УИК',
+    tags: ['уик', 'фсин'],
+    content: 'Неповиновение законному распоряжению сотрудника ФСИН — наказывается увеличением срока заключение на 2 месяца.' },
+  { id: 'uik-5-1', title: 'Статья 5.1. Повторное неповиновение сотруднику ФСИН', type: 'regulation',
+    category: 'УИК', tags: ['уик', 'фсин'],
+    content: 'Повторное неповиновение законному распоряжению сотрудника ФСИН — наказывается увеличением срока заключение на 3 месяца и временное заключение на 90 минут в карцере.' },
+  { id: 'uik-6', title: 'Статья 6. Массовый беспорядок осужденных', type: 'regulation', category: 'УИК',
+    tags: ['уик', 'беспорядки'],
+    content: 'Массовый беспорядок осужденных, выраженный насилием или порчей имущества — наказывается увеличением срока заключение на 3 месяца и временное заключение на 90 минут в карцере.' },
+  { id: 'uik-6-1', title: 'Статья 6.1. Употребление нецензурной брани (УИК)', type: 'regulation', category: 'УИК',
+    tags: ['уик', 'брань'],
+    content: 'Употребление нецензурной брани — наказывается увеличением срока заключение на 1 месяц.' },
+  { id: 'uik-7', title: 'Статья 7. Злоупотребление кнопкой вызова', type: 'regulation', category: 'УИК',
+    tags: ['уик', 'вызов'],
+    content: 'Злоупотребление кнопкой вызова — наказывается увеличением срока заключение на 2 месяца.' },
+  { id: 'uik-8', title: 'Статья 8. Отказ от работы', type: 'regulation', category: 'УИК',
+    tags: ['уик', 'работа'],
+    content: 'Отказ от выполнения работы или самовольное прекращение выполнение работы в рабочее время заключённых — наказывается увеличением срока заключение на 2 месяца.' },
+  { id: 'uik-9', title: 'Статья 9. Нахождение в неподобающем виде на работе', type: 'regulation',
+    category: 'УИК', tags: ['уик', 'работа'],
+    content: 'Недопустимость нахождения заключенного в неподобающем виде, в таком как в полотенце или нижнем белье, на месте работы — наказывается увеличением срока заключение на 1 месяц.' },
+  { id: 'uik-10', title: 'Статья 10. Унижение чести и достоинства (словесное оскорбление)', type: 'regulation',
+    category: 'УИК', tags: ['уик', 'оскорбление'],
+    content: 'Действие, направленное на унижение чести и достоинства лица путем использования устного оскорбления в отношении осужденного или гражданского лица.' },
+  { id: 'uik-11', title: 'Статья 11. Унижение чести и достоинства представителя власти', type: 'regulation',
+    category: 'УИК', tags: ['уик', 'оскорбление'],
+    content: 'Действие, нацеленное на унижение чести и достоинства лица при помощи устных оскорблений в отношении представителя власти — наказывается увеличением срока заключение на 2 месяца (+20 минут) и временное заключение на 60 минут в карцере.' },
+  { id: 'uik-12', title: 'Статья 12. Повторное унижение чести и достоинства', type: 'regulation',
+    category: 'УИК', tags: ['уик', 'оскорбление'],
+    content: 'Повторное унижение чести и достоинства лица — наказывается увеличением срока заключение на 3 месяца и временное заключение на 90 минут в карцере.' },
+  { id: 'uik-13', title: 'Статья 13. Дача взятки (УИК)', type: 'regulation', category: 'УИК',
+    tags: ['уик', 'взятка'],
+    content: 'Предоставление взятки сотруднику системы для выполнения определенной услуги — наказывается увеличением срока заключение на 3 месяца.' },
+  { id: 'uik-14', title: 'Статья 14. Попытка дачи взятки', type: 'regulation', category: 'УИК',
+    tags: ['уик', 'взятка'],
+    content: 'Попытка предоставления взятки сотруднику системы для выполнения определенной услуги — наказывается увеличением срока заключение на 1 месяц.' },
+  { id: 'uik-15', title: 'Статья 15. Нанесение телесных повреждений (УИК)', type: 'regulation', category: 'УИК',
+    tags: ['уик', 'телесные'],
+    content: 'Причинение телесных повреждений, не влекущих вреда здоровью пострадавшего, посредством неоднократного нанесения ударов или иные насильственные действия, причинившие физическую боль и поверхностные повреждения — наказывается увеличением срока заключение на 3 месяца и временное заключение на 90 минут в карцере.' },
+  { id: 'uik-16', title: 'Статья 16. Убийство (УИК)', type: 'regulation', category: 'УИК',
+    tags: ['уик', 'убийство'],
+    content: 'Убийство, то есть умышленное причинение смерти другому человеку — наказывается увеличением срока заключение на 3 месяца и временное заключение на 90 минут в карцере.' },
+  { id: 'uik-17', title: 'Статья 17. Организация побега', type: 'regulation', category: 'УИК',
+    tags: ['уик', 'побег'],
+    content: 'Побег из-под стражи, совершенный лицом, отбывающим наказание — наказывается увеличением срока заключение на 3 месяца и временное заключение на 90 минут в карцере.' },
+  { id: 'uik-18', title: 'Статья 18. Заведомо ложное сообщение о преступлении (УИК)', type: 'regulation',
+    category: 'УИК', tags: ['уик', 'ложь'],
+    content: 'Заведомо ложное сообщение в органы внутренней службы о готовящихся(-емуся) или совершившихся (-емуся) преступлениях (-ию), совершенное из хулиганских побуждений — наказывается увеличением срока заключение на 2 месяца и временное заключение на 60 минут в карцере.' },
+  { id: 'uik-19', title: 'Статья 19. Незаконный оборот наркотиков (УИК)', type: 'regulation', category: 'УИК',
+    tags: ['уик', 'наркотики'],
+    content: 'Незаконное изготовление, приобретение, продажа, хранение наркотических средств в значительном размере — наказывается увеличением срока заключение на 3 месяца и временное заключение на 90 минут в карцере.' },
+  { id: 'uik-20', title: 'Статья 20. Незаконное хранение оружия (УИК)', type: 'regulation', category: 'УИК',
+    tags: ['уик', 'оружие'],
+    content: 'Незаконное хранение оружия и боеприпасов к нему — наказывается конфискацией оружия и боеприпасов к нему.\nПримечание: Если у заключенного находят запрещенные предметы первый раз за срок в колонии, то выдавать срок/отправлять в карцер не нужно; при неоднократном нахождении — принять меры.' },
+
+  // ---- ПДД ----
+  { id: 'pdd-1', title: 'ПДД 1.2. Основные понятия', type: 'regulation', category: 'ПДД',
+    tags: ['пдд', 'термины'],
+    content: 'Водитель – лицо, управляющее ТС.\nВынужденная остановка – прекращение движения из-за неисправности, опасности, состояния водителя/пассажира, препятствия.\nГлавная дорога – имеет преимущество перед пересекаемой.\nДорога – обустроенная полоса земли или поверхность сооружения.\nДТП – событие в процессе движения, повлекшее гибель/травмы/повреждения/ущерб.\nЖелезнодорожный переезд – пересечение дороги с ЖД путями.\nНаселённый пункт – застроенная территория.\nОбгон – опережение с выездом на встречную полосу.\nОбочина – элемент дороги для движения, остановки и стоянки.\nОстановка – прекращение движения до 5 минут или более для посадки/высадки/погрузки.\nПерекрёсток – пересечение дорог на одном уровне.\nПешеход – лицо вне ТС на дороге.' },
+  { id: 'pdd-2', title: 'ПДД 2.1. Обязанности водителя', type: 'regulation', category: 'ПДД',
+    tags: ['пдд', 'водитель'],
+    content: '2.1.1. Иметь при себе: водительское удостоверение, регистрационные документы, разрешение на такси/путевой лист, документы на груз.\n2.1.2. Быть пристегнутым и не перевозить непристегнутых.\n2.1.3. Предоставлять ТС сотрудникам полиции и ФСБ в случаях, предусмотренных законом; медицинским работникам для перевозки граждан в лечебные учреждения.' },
+  { id: 'pdd-3', title: 'ПДД 2.2. Действия при ДТП', type: 'regulation', category: 'ПДД', tags: ['пдд', 'дтп'],
+    content: 'При ДТП водитель обязан:\n— остановить ТС, включить аварийку, выставить знак, не перемещать предметы;\n— оказать первую помощь, вызвать ЕСС, при необходимости отправить пострадавших на попутном или своем ТС в больницу, вернуться;\n— освободить проезжую часть, если движение невозможно, предварительно зафиксировав положение ТС и следы;\n— сообщить в полицию, записать очевидцев, ждать сотрудников.\n\n2.2.1. Если нет пострадавших, при взаимном согласии можно составить схему и прибыть на пост ДПС или в полицию.\n2.2.2. Если вред только имуществу, можно освободить проезжую часть, зафиксировать повреждения и разъехаться, составив письменную расписку.' },
+  { id: 'pdd-4', title: 'ПДД 2.3. Запреты водителю', type: 'regulation', category: 'ПДД', tags: ['пдд', 'запреты'],
+    content: 'Запрещается:\n— управлять в состоянии опьянения, под воздействием лекарств, в болезненном/утомленном состоянии;\n— передавать управление лицам в опьянении или без прав;\n— пересекать организованные колонны;\n— употреблять алкоголь/наркотики после ДТП или остановки до освидетельствования;\n— пользоваться телефоном без hands-free;\n— опасное вождение (неоднократные перестроения без уступания, перестроение при интенсивном движении, несоблюдение дистанции/интервала, резкое торможение, препятствование обгону, создающее угрозу).' },
+  { id: 'pdd-5', title: 'ПДД 3. Специальные сигналы', type: 'regulation', category: 'ПДД',
+    tags: ['пдд', 'спецсигналы'],
+    content: '3.1. ТС с синим маячком и звуковым сигналом могут отступать от ПДД при обеспечении безопасности. На сопровождаемых ТС — ближний свет.\n3.2. При приближении такого ТС водители обязаны уступить дорогу. Запрещен обгон ТС со спецсигналами и сопровождаемых.\n3.3. При приближении к стоящему ТС с синим маячком — снизить скорость до возможности остановки. Жёлтый/оранжевый маячок — предупреждение об опасности, преимущества не даёт.' },
+  { id: 'pdd-6', title: 'ПДД 4. Обязанности пешеходов', type: 'regulation', category: 'ПДД',
+    tags: ['пдд', 'пешеходы'],
+    content: '4.1. Двигаться по тротуарам, пешеходным дорожкам, при их отсутствии — по обочинам. При движении по краю проезжей части — навстречу транспорту.\n4.2. Переходить дорогу по пешеходным переходам, при их отсутствии — на перекрёстках по линии тротуаров.\n4.3. Руководствоваться сигналами светофора.\n4.4. На нерегулируемых переходах выходить после оценки расстояния до ТС и скорости. Вне перехода не создавать помех и не выходить из-за препятствия, не убедившись в безопасности.\n4.5. Не задерживаться на проезжей части. При неполном переходе остановиться на линии, разделяющей потоки.\n4.6. При приближении ТС со спецсигналами воздержаться от перехода, на проезжей части — немедленно освободить.' },
+  { id: 'pdd-7', title: 'ПДД 7. Начало движения, маневрирование', type: 'regulation', category: 'ПДД',
+    tags: ['пдд', 'маневры'],
+    content: '7.1. Перед началом движения, перестроением, поворотом, разворотом, остановкой подавать сигналы поворота. Маневр не должен создавать опасность и помехи.\n7.2. Сигнал подавать заблаговременно и прекращать после завершения.\n7.3. При выезде с прилегающей территории уступить дорогу ТС и пешеходам.\n7.4. При перестроении уступить дорогу попутным ТС. При одновременном перестроении — уступить тому, кто справа.\n7.5. Перед поворотом заблаговременно занять крайнее положение.\n7.6. При повороте не оказаться на стороне встречного движения. При повороте направо — ближе к правому краю.\n7.7. При невозможности поворота из-за габаритов допускается отступление при обеспечении безопасности.\n7.8. При повороте налево/развороте вне перекрёстка уступить встречным.\n7.9. Разворот запрещён на пешеходных переходах, в тоннелях, на мостах/путепроводах/эстакадах и под ними, на ЖД переездах, при видимости менее 100 м, в местах остановок маршрутных ТС.\n7.10. Движение задним ходом разрешено при безопасности; запрещено на перекрёстках и в местах, где запрещён разворот.' },
+  { id: 'pdd-8', title: 'ПДД 8. Расположение ТС', type: 'regulation', category: 'ПДД', tags: ['пдд', 'полосы'],
+    content: '8.1. Количество полос определяется разметкой и знаками, при их отсутствии — водителями с учётом ширины проезжей части. Сторона для встречного движения — половина ширины слева.\n8.2. На дорогах с 4+ полосами запрещён выезд на встречную для обгона. Повороты налево/развороты — на перекрёстках и в разрешённых местах.\n8.3. Вне населённых пунктов и на дорогах со скоростью >90 км/ч — держаться ближе к правому краю. Запрещено занимать левые полосы при свободных правых.\n8.4. Движение строго по полосам, наезд на прерывистую линию — только при перестроении.\n8.5. Соблюдать дистанцию и боковой интервал.' },
+  { id: 'pdd-9', title: 'ПДД 9. Обгон', type: 'regulation', category: 'ПДД', tags: ['пдд', 'обгон'],
+    content: '9.1. Перед обгоном убедиться, что полоса свободна, и маневр безопасен.\n9.2. Запрещено обгонять, если:\n— впереди идущее ТС обгоняет/объезжает препятствие;\n— впереди идущее ТС подало сигнал поворота налево;\n— следующее за ним ТС начало обгон;\n— после обгона невозможно вернуться на свою полосу без опасности.\n9.3. Обгоняемому запрещено препятствовать обгону повышением скорости или иными действиями.\n9.4. Обгон запрещён на регулируемых перекрёстках, на нерегулируемых при движении по неглавной дороге, на пешеходных переходах при наличии пешеходов, на ЖД переездах и ближе 100 м перед ними, на мостах/путепроводах/эстакадах и под ними, в тоннелях, в конце подъёма, на опасных поворотах, на участках с ограниченной видимостью.' },
+  { id: 'pdd-10', title: 'ПДД 10. Остановка и стоянка', type: 'regulation', category: 'ПДД',
+    tags: ['пдд', 'остановка'],
+    content: '10.1. Остановка и стоянка — на правой стороне на обочине, при её отсутствии — у края проезжей части. На левой стороне — в населённых пунктах на дорогах с одной полосой и на дорогах с односторонним движением.\n10.2. Ставить в один ряд параллельно краю проезжей части. Двухколёсные ТС — в два ряда.\n10.4. Остановка запрещена на ЖД переездах, в тоннелях, на эстакадах/мостах/путепроводах (менее 3 полос) и под ними, где расстояние до сплошной линии менее 3 м, на пешеходных переходах и ближе 5 м перед ними, на перекрёстках и ближе 5 м от края, ближе 15 м от остановок маршрутных ТС, в местах, где ТС закроет сигналы или создаст помехи.\n10.5. Стоянка запрещена в местах, где запрещена остановка, вне населённых пунктов на проезжей части, ближе 50 м от ЖД переездов.' },
+  { id: 'pdd-11', title: 'ПДД 11. Проезд перекрёстков', type: 'regulation', category: 'ПДД',
+    tags: ['пдд', 'перекресток'],
+    content: '11.1. При повороте уступить пешеходам.\n11.2. Запрещено выезжать на перекрёсток при заторе.\n11.3. Регулируемые — по сигналам светофора. Нерегулируемые — знаки приоритета.\n11.4. При повороте налево/развороте по зелёному уступить встречным прямо/направо.\n11.5. Въехав на перекрёсток на разрешающий сигнал, выехать независимо от сигналов.\n11.6. При разрешающем сигнале уступить ТС, завершающим движение, и пешеходам.\n11.7. На неравнозначных — уступить ТС по главной.\n11.8. При смене направления главной — руководствоваться правилами равнозначных.\n11.9. На равнозначных — уступить справа. Трамвай имеет преимущество.\n11.10. При круговом движении — уступить движущимся по кругу.\n11.11. При повороте налево/развороте уступить встречным прямо/направо.' },
+
+  // ---- УСТАВ ОВД ----
+  { id: 'uovd-1', title: 'Устав ОВД. Основные обязанности сотрудника', type: 'regulation',
+    category: 'Устав ОВД', tags: ['устав', 'полиция'],
+    content: '2.1. Действовать строго по законам, обеспечивая равное и справедливое обращение.\n2.2. Предоставлять информацию о себе при осуществлении функций.\n2.3. Своевременно реагировать на просьбы, требования, обращения граждан и сотрудников.\n2.4. Строго соблюдать внутренний распорядок, являться на построения.\n2.5. Беспрекословно выполнять законные поручения вышестоящих.\n2.6. Докладывать о препятствиях и предлагать решения.\n2.7. Соблюдать законы и НПА Нижегородской области.\n2.8. Не допускать дискриминации.\n2.9. Избегать выражения политических взглядов.\n2.10. Сохранять спокойствие в сложных ситуациях.\n2.11. Ежедневно появляться на рабочем месте; отсутствие более недели — увольнение.\n2.12. Старший состав (майор+) — 2+ часа в день, фиксировать работу за 7 дней.\n2.13. Инструкторский и руководящий состав — заполнять отчетную ведомость.' },
+  { id: 'uovd-2', title: 'Устав ОВД. Запреты (рация, построение, общие)', type: 'regulation',
+    category: 'Устав ОВД', tags: ['устав', 'полиция'],
+    content: 'Статья 4. Рация: строго служебные цели; департамент — со старшины полиции; запрещены брань, оскорбления, игнорирование, засорение волны.\nСтатья 5. Построение: запрещены телефон, рация, посторонние разговоры, спать, покидать строй без приказа; неявка без причины — наказание.\nСтатья 6. Общие запреты: нарушать законодательство; выпрашивать повышение; заниматься личными делами; использовать оружие в личных целях; спать в неположенном месте >20 мин; превышать полномочия; подстрекать; употреблять алкоголь; использовать спецсигналы в личных целях; обманывать руководство; организовывать блокпосты без разрешения; разглашать внутреннюю информацию; парковать личный транспорт на служебной парковке (искл. спецподразделения); исполнять службу на личном ТС (искл. спецподразделения, ОУР); носить форму чужого подразделения; въезжать на служебную парковку на личном ТС; пользоваться служебным положением; использовать аудиосистемы (кроме мероприятий/разведки); осуществлять службу на территории автовокзала Батырево; дежурить на посту в составе >4 сотрудников; охранять собеседование/призыв в составе >5; нарушать субординацию; нарушать приказы; понижать репутацию ОВД; использовать шлагбаум не по назначению; снимать розыск без причины; перекрашивать служебные авто; оставлять авто в плохом состоянии; проводить учебные мероприятия менее 5 мин; увольняться до 3 суток; нарушать служебную этику; проводить досмотр без оснований; оставлять камеру скорости после ухода с поста.' },
+
+  // ---- ОУР ----
+  { id: 'our-1', title: 'ОУР. Общие положения', type: 'regulation', category: 'ОУР',
+    tags: ['оур', 'уголовный розыск'],
+    content: '1. Положение определяет правовой статус, задачи, функции и полномочия сотрудников ОУР УМВД по Нижегородской области.\n2. Деятельность осуществляется в соответствии с Конституцией, ФЗ «О полиции», ФЗ «О службе в ОВД», ФЗ «Об ОРД».\n3. Соблюдение обязательно для всего личного состава ОУР. За нарушение — дисциплинарная ответственность.\n4. Руководство — начальник, назначаемый начальником УМВД. Заместители — по согласованию с УМВД.\n5. Структура и численность утверждаются начальником УМВД.\n6. К службе допускаются сотрудники со званием не ниже «старшины полиции».' },
+  { id: 'our-2', title: 'ОУР. Задачи и функции', type: 'regulation', category: 'ОУР',
+    tags: ['оур', 'уголовный розыск'],
+    content: 'Задачи:\n— выявление и раскрытие тяжких и особо тяжких преступлений (убийства, разбои, грабежи, кражи);\n— борьба с организованной преступностью оперативным путем;\n— оперативное сопровождение уголовных дел, сбор и документирование информации.\nФункции:\n— право на использование документов для конспирации;\n— запрос содействия и координация иных подразделений полиции (ОБ ППСП, ОСН «Гром»);\n— право принимать руководство ОРМ на месте происшествия до прибытия руководства УМВД;\n— обязаны соблюдать принцип законности.' },
+
+  // ---- ОСН "ГРОМ" ----
+  { id: 'osn-1', title: 'ОСН "Гром". Общие положения', type: 'regulation', category: 'ОСН "Гром"',
+    tags: ['осн', 'гром'],
+    content: '1. Положение определяет правовой статус, задачи, функции и полномочия сотрудников ОСН «Гром» УМВД по Нижегородской области.\n2. Деятельность осуществляется в соответствии с Конституцией, ФЗ «О полиции», ФЗ «О службе в ОВД», ФЗ «Об ОРД».\n3. Соблюдение обязательно для всего личного состава ОСН «Гром». За нарушение — дисциплинарная ответственность.\n4. Руководство — командир, назначаемый начальником УМВД. Заместители — по согласованию.\n5. Структура и численность утверждаются начальником УМВД.\n6. К службе допускаются сотрудники со званием не ниже «старшины полиции».' },
+  { id: 'osn-2', title: 'ОСН "Гром". Задачи и функции', type: 'regulation', category: 'ОСН "Гром"',
+    tags: ['осн', 'гром'],
+    content: 'Задачи:\n— силовая поддержка ОРМ, задержание лиц, совершивших тяжкие и особо тяжкие преступления;\n— обеспечение общественной безопасности при специальных операциях;\n— борьба с организованной преступностью, террористическими и экстремистскими группами;\n— силовая поддержка следственных действий.\nФункции:\n— право использовать средства маскировки лица;\n— право отдавать обязательные распоряжения сотрудникам иных подразделений в рамках своей компетенции;\n— право принимать руководство специальной операцией при отсутствии руководства оперативных подразделений.' },
+
+  // ---- АДМИНИСТРАТИВНЫЕ РЕГЛАМЕНТЫ ----
+  { id: 'admin-1', title: 'Регламент приёма граждан в ОВД', type: 'article', category: 'Административные регламенты',
+    tags: ['регламент', 'приём', 'граждане'],
+    content: '1. Приём граждан в органах внутренних дел осуществляется в соответствии с Федеральным законом "О порядке рассмотрения обращений граждан".\n2. Время приёма: понедельник-пятница с 10:00 до 18:00, перерыв с 13:00 до 14:00.\n3. При себе необходимо иметь документ, удостоверяющий личность.\n4. Запись на приём осуществляется через дежурную часть или по телефону.\n5. Срок рассмотрения обращения — до 30 дней, в исключительных случаях — до 45 дней с уведомлением заявителя.' },
+  { id: 'admin-3', title: 'Регламент проведения обыска в жилом помещении', type: 'article',
+    category: 'Административные регламенты', tags: ['обыск', 'жилище', 'регламент'],
+    content: '1. Обыск в жилом помещении проводится на основании судебного решения, за исключением случаев, не терпящих отлагательства.\n2. Перед началом обыска следователь предъявляет постановление о его проведении.\n3. Присутствие понятых — обязательно.\n4. Изъятые предметы и документы фиксируются в протоколе с указанием точного количества и индивидуальных признаков.\n5. Владелец жилья имеет право присутствовать при обыске и делать замечания, которые вносятся в протокол.' },
+  { id: 'admin-4', title: 'Инструкция по применению наручников', type: 'article',
+    category: 'Административные регламенты', tags: ['наручники', 'спецсредства', 'инструкция'],
+    content: '1. Наручники применяются сотрудником полиции в следующих случаях: при задержании лица, оказывающего сопротивление; при задержании лица, подозреваемого в совершении преступления средней тяжести или тяжкого; при доставлении в служебное помещение.\n2. Запрещается применение наручников: в отношении несовершеннолетних без присутствия родителей; в отношении беременных женщин; в отношении лиц с явными признаками психического расстройства.\n3. При надевании наручников необходимо избегать чрезмерного затягивания, проверять наличие пульса на запястье.\n4. Время непрерывного нахождения в наручниках не должно превышать 2 часов с обязательным перерывом на 15 минут.' },
+  { id: 'admin-5', title: 'Порядок эвакуации транспортного средства', type: 'article',
+    category: 'Административные регламенты', tags: ['эвакуация', 'тс', 'штрафстоянка'],
+    content: '1. Транспортное средство подлежит эвакуации на специализированную стоянку в случаях: нарушение правил остановки и стоянки; управление ТС водителем без прав; нахождение ТС в розыске.\n2. Перед эвакуацией производится фото- и видеофиксация места, положения ТС и его состояния.\n3. Владелец ТС уведомляется о месте хранения ТС в течение 1 часа.\n4. Возврат ТС осуществляется после оплаты штрафа и услуг эвакуатора/стоянки.\n5. Срок хранения на штрафстоянке — до 30 дней. По истечении срока ТС может быть реализовано в установленном порядке.' },
+  { id: 'admin-6', title: 'Регламент проверки по базам розыска', type: 'article',
+    category: 'Административные регламенты', tags: ['розыск', 'проверка', 'базы'],
+    content: '1. Проверка граждан и транспортных средств по оперативным базам проводится при наличии законных оснований: подозрение в совершении преступления; розыск; проверка на причастность к административному правонарушению.\n2. Запрещена проверка по личному усмотрению без оснований.\n3. Результаты проверки фиксируются в служебной документации.\n4. Гражданин имеет право знать факт проверки и её основания.' },
+  { id: 'admin-7', title: 'Порядок изъятия запрещённых предметов', type: 'article',
+    category: 'Административные регламенты', tags: ['изъятие', 'запрещённые предметы'],
+    content: '1. Изъятие запрещённых предметов (оружие, наркотики, взрывчатые вещества) производится сотрудником правоохранительных органов при наличии законных оснований.\n2. Изъятие оформляется протоколом с указанием изъятых предметов, их количества и индивидуальных признаков.\n3. При изъятии обязательно присутствие двух понятых.\n4. Изъятые предметы упаковываются и опечатываются.\n5. Владелец имеет право обжаловать изъятие в течение 10 дней.' },
+  { id: 'admin-8', title: 'Инструкция по работе с видеорегистраторами', type: 'article',
+    category: 'Административные регламенты', tags: ['видеорегистратор', 'фиксация', 'инструкция'],
+    content: '1. Сотрудник обязан использовать нагрудный видеорегистратор при выполнении всех служебных задач.\n2. Видеозапись должна содержать аудиодорожку и быть непрерывной.\n3. Запрещается отключать видеорегистратор без уважительной причины.\n4. Видеоматериалы хранятся в течение 30 дней с момента записи.\n5. Видеозаписи могут быть предоставлены для ознакомления участникам процесса только по официальному запросу.' },
+  { id: 'admin-9', title: 'Порядок взаимодействия с ФСБ', type: 'article',
+    category: 'Административные регламенты', tags: ['фсб', 'взаимодействие'],
+    content: '1. Взаимодействие с органами ФСБ осуществляется в рамках их компетенции.\n2. Запросы ФСБ являются обязательными для исполнения в установленный срок.\n3. Передача информации между ведомствами производится через защищённые каналы связи.\n4. Сотрудник обязан незамедлительно информировать ФСБ о выявленных фактах, относящихся к их компетенции.' },
+  { id: 'admin-10', title: 'Регламент проведения допроса несовершеннолетних', type: 'article',
+    category: 'Административные регламенты', tags: ['допрос', 'несовершеннолетние', 'психолог'],
+    content: '1. Допрос несовершеннолетнего проводится в присутствии законного представителя или педагога.\n2. Допрос не может продолжаться более 2 часов без перерыва.\n3. Психологическое состояние несовершеннолетнего должно учитываться при планировании допроса.\n4. Запрещается применение методов давления или внушения.\n5. Результаты допроса фиксируются в протоколе с особым вниманием к точности формулировок.' },
+  { id: 'admin-11', title: 'Инструкция по охране общественного порядка', type: 'article',
+    category: 'Административные регламенты', tags: ['охрана', 'общественный порядок'],
+    content: '1. Охрана общественного порядка осуществляется силами нарядов полиции.\n2. При проведении массовых мероприятий наряд должен иметь радиосвязь, боди-камеры и спецсредства.\n3. При возникновении конфликтных ситуаций сотрудник обязан применить меры по их урегулированию без применения силы.\n4. В случае угрозы жизни и здоровью граждан — действовать в соответствии с законом.' },
+  { id: 'admin-12', title: 'Порядок проведения экспертиз', type: 'article',
+    category: 'Административные регламенты', tags: ['экспертиза', 'следствие'],
+    content: '1. Назначение экспертизы производится по постановлению следователя.\n2. Эксперт предупреждается об ответственности за дачу заведомо ложного заключения.\n3. Стороны имеют право знакомиться с заключением эксперта.\n4. При несогласии с заключением стороны могут ходатайствовать о проведении дополнительной или повторной экспертизы.' },
+  { id: 'admin-14', title: 'Инструкция по обращению с секретными документами', type: 'article',
+    category: 'Административные регламенты', tags: ['секретные документы', 'гостайна'],
+    content: '1. Доступ к секретным документам предоставляется только лицам, имеющим допуск к государственной тайне.\n2. Документы хранятся в специальных сейфах или в защищённом электронном хранилище.\n3. Передача документов осуществляется по журналу учёта.\n4. Уничтожение документов производится комиссионно с составлением акта.' },
+  { id: 'admin-15', title: 'Порядок подачи рапорта на повышение', type: 'article',
+    category: 'Административные регламенты', tags: ['рапорт', 'повышение', 'карьера'],
+    content: '1. Рапорт на повышение подаётся на имя руководителя в письменном виде.\n2. В рапорте указываются: стаж, достижения, обоснование необходимости повышения.\n3. Рапорт рассматривается в течение 10 дней.\n4. Решение принимается с учётом профессиональных качеств и наличия вакансии.' },
+
+  // ---- КЕЙСЫ ----
+  { id: 'case-1', title: 'Кейс: Остановка ТС без оснований', type: 'case', category: 'Кейсы',
+    tags: ['кейс', 'полиция', 'остановка'],
+    content: 'Ситуация: Сотрудник ГИБДД остановил автомобиль без каких-либо видимых нарушений, сославшись на «профилактическую проверку».\nРешение: Согласно ч. 1 ст. 7 ФЗ «О полиции» и Порядку надзора в сфере БДД, остановка ТС допускается только при наличии данных о нарушении ПДД, причастности к ДТП/преступлению, розыске ТС или для регулирования движения. Профилактическая проверка без оснований — превышение полномочий. Действия сотрудника могут быть обжалованы.\nАлгоритм: 1) Вежливо попросить сотрудника назвать причину остановки. 2) Если причина не указана или указана формально — зафиксировать на видео. 3) После завершения проверки подать жалобу руководству УГИБДД или в суд в течение 3 суток.' },
+  { id: 'case-2', title: 'Кейс: Задержание госслужащего за мелкое правонарушение', type: 'case', category: 'Кейсы',
+    tags: ['кейс', 'госслужащий', 'задержание'],
+    content: 'Ситуация: Сотрудник полиции задержал и надел наручники на сотрудника правительства за переход дороги в неположенном месте. Госслужащий не сопротивлялся, не пытался скрыться.\nРешение: Согласно комментарию к ч. 2 ст. 8 ФЗ «О полиции», задержание и применение спецсредств в отношении госслужащего за малозначительное правонарушение допускаются только при сопротивлении, попытке скрыться или угрозе жизни/здоровью. При отсутствии этих обстоятельств задержание и наручники незаконны. Сотрудник полиции обязан был зафиксировать нарушение (видео) и передать материалы в ОСБ.\nАлгоритм: 1) Зафиксировать факт задержания (видео). 2) В случае незаконного применения силы — подать рапорт/жалобу руководителю ОВД, в ОСБ или в суд. 3) Срок обжалования — 10 дней (дисциплинарный вопрос).' },
+  { id: 'case-3', title: 'Кейс: Отказ в разъяснении статьи', type: 'case', category: 'Кейсы',
+    tags: ['кейс', 'разъяснение'],
+    content: 'Ситуация: При задержании сотрудник полиции сказал: «Вы задержаны по ст. 37», но не объяснил, что это за статья и в чём суть нарушения.\nРешение: Согласно ч. 6 ст. 4 ФЗ «О полиции» и комментариям, сотрудник обязан разъяснить суть нарушения, назвать конкретный закон и полную формулировку статьи. Простое называние номера статьи — нарушение. Задержанный вправе требовать разъяснения.\nАлгоритм: 1) Вежливо попросить сотрудника разъяснить, какая статья и в чём нарушение. 2) При отказе — зафиксировать на видео. 3) После освобождения подать жалобу руководству или в суд.' },
+  { id: 'case-4', title: 'Кейс: Превышение скорости с использованием радара', type: 'case', category: 'Кейсы',
+    tags: ['кейс', 'скорость', 'радар'],
+    content: 'Ситуация: Водитель превысил скорость на 40 км/ч в зоне действия стационарного радара. Зафиксировано камерой.\nРешение: Согласно ст. 12.9 КоАП, превышение скорости на 40-60 км/ч влечёт штраф 1.500 рублей. Водитель обязан оплатить штраф в течение 24 часов. При наличии видеозаписи суд может усилить наказание.\nАлгоритм: 1) Проверить дату и время фиксации. 2) Оплатить штраф. 3) При несогласии — обжаловать в суд в течение 3 суток.' },
+  { id: 'case-5', title: 'Кейс: Отказ от прохождения медицинского освидетельствования', type: 'case',
+    category: 'Кейсы', tags: ['кейс', 'освидетельствование', 'отказ'],
+    content: 'Ситуация: Водитель с признаками опьянения отказался от прохождения медицинского освидетельствования.\nРешение: Отказ приравнивается к признанию себя виновным. Наказание — штраф 40.000 рублей и лишение прав до 2 лет.\nАлгоритм: 1) Составить протокол об отказе. 2) Отстранить от управления. 3) Эвакуировать ТС. 4) Направить материалы в суд.' },
+  { id: 'case-6', title: 'Кейс: Незаконная проверка документов', type: 'case', category: 'Кейсы',
+    tags: ['кейс', 'документы', 'проверка'],
+    content: 'Ситуация: Сотрудник полиции остановил пешехода и потребовал документы без наличия признаков правонарушения.\nРешение: Действия сотрудника незаконны. Гражданин вправе отказаться от предъявления документов и подать жалобу.\nАлгоритм: 1) Спокойно спросить основание. 2) Зафиксировать на видео. 3) Подать жалобу в прокуратуру или суд.' },
+  { id: 'case-7', title: 'Кейс: Конфискация оружия без оснований', type: 'case', category: 'Кейсы',
+    tags: ['кейс', 'оружие', 'конфискация'],
+    content: 'Ситуация: У гражданина изъяли охотничье ружьё без объяснения причин, сославшись на "подозрение".\nРешение: Изъятие оружия допускается только при наличии законных оснований (нарушение правил хранения, использование в преступных целях). Без оснований — действия незаконны.\nАлгоритм: 1) Потребовать письменное обоснование. 2) Обжаловать изъятие в суд. 3) Требовать возмещения ущерба.' },
+  { id: 'case-8', title: 'Кейс: Нарушение прав при задержании', type: 'case', category: 'Кейсы',
+    tags: ['кейс', 'задержание', 'права'],
+    content: 'Ситуация: Гражданина задержали на 4 часа без сообщения родственникам и без адвоката.\nРешение: Нарушение ст. 8 Конституции (срок задержания до суда — не более 2 часов) и ст. 23 (право на адвоката).\nАлгоритм: 1) После освобождения — подать жалобу. 2) Требовать компенсацию морального вреда.' },
+  { id: 'case-9', title: 'Кейс: ДТП с участием служебного авто', type: 'case', category: 'Кейсы',
+    tags: ['кейс', 'дтп', 'служебное авто'],
+    content: 'Ситуация: Служебный автомобиль полиции столкнулся с частным ТС при движении на спецсигнале. Пострадавших нет.\nРешение: Согласно ПДД, ТС со спецсигналами имеет преимущество, но обязано убедиться в безопасности. Вина определяется в суде.\nАлгоритм: 1) Зафиксировать ДТП. 2) Оформить схему. 3) Передать материалы в суд.' },
+  { id: 'case-10', title: 'Кейс: Использование личного ТС для службы', type: 'case', category: 'Кейсы',
+    tags: ['кейс', 'личное тс', 'служба'],
+    content: 'Ситуация: Сотрудник ППС использовал личный автомобиль для патрулирования без разрешения руководства.\nРешение: Нарушение Устава ОВД (запрет на использование личного ТС для службы, кроме спецподразделений).\nАлгоритм: 1) Вынести предупреждение или выговор. 2) При повторном нарушении — понижение или увольнение.' }
+];
+
+// ============================================================
+//  3. UI РЕНДЕРИНГ
+// ============================================================
+const grid = document.getElementById('grid');
+const searchInput = document.getElementById('searchInput');
+const tabs = document.querySelectorAll('#tabs button');
+const counter = document.getElementById('countNum');
+const modal = document.getElementById('modal');
+const modalTitle = document.getElementById('modalTitle');
+const modalBadge = document.getElementById('modalBadge');
+const modalBody = document.getElementById('modalBody');
+const modalTags = document.getElementById('modalTags');
+const modalClose = document.getElementById('modalClose');
+
+let currentFilter = 'all';
+let currentQuery = '';
+
+// Статистика в hero
+document.getElementById('statDocs').textContent = DOCUMENTS.length;
+document.getElementById('statReg').textContent = DOCUMENTS.filter(d => d.type === 'regulation').length;
+document.getElementById('statCase').textContent = DOCUMENTS.filter(d => d.type === 'case').length;
+document.getElementById('statCat').textContent = new Set(DOCUMENTS.map(d => d.category)).size;
+
+function typeInfo(type) {
+  if (type === 'regulation') return { cls: 'npa', label: 'НПА' };
+  if (type === 'case') return { cls: 'case', label: 'Кейс' };
+  return { cls: 'article', label: 'Статья' };
+}
+
+function render() {
+  const query = currentQuery.toLowerCase().trim();
+  const filtered = DOCUMENTS.filter(doc => {
+    if (currentFilter !== 'all' && doc.type !== currentFilter) return false;
+    if (query) {
+      return doc.title.toLowerCase().includes(query)
+        || doc.content.toLowerCase().includes(query)
+        || doc.tags.some(t => t.toLowerCase().includes(query));
+    }
+    return true;
+  });
+
+  counter.textContent = filtered.length;
+
+  if (filtered.length === 0) {
+    grid.innerHTML = `<div class="empty"><span class="big">📜</span>Ничего не найдено.<br><b>Попробуйте изменить запрос</b> или выбрать другой фильтр.</div>`;
+    return;
+  }
+
+  grid.innerHTML = filtered.map((doc, i) => {
+    const ti = typeInfo(doc.type);
+    const preview = doc.content.slice(0, 180) + (doc.content.length > 180 ? '…' : '');
+    const tagsHtml = doc.tags.slice(0, 4).map(t => `<span class="tag-chip">#${t}</span>`).join('');
+    const delay = Math.min(i * 0.03, 0.45);
+    return `
+      <div class="card" data-id="${doc.id}" style="animation-delay:${delay}s">
+        <div class="card-top">
+          <div class="card-title">${doc.title}</div>
+          <span class="pill ${ti.cls}"><span class="dot"></span>${ti.label}</span>
+        </div>
+        <div class="card-preview">${preview}</div>
+        <div class="card-bottom">
+          <span class="cat-chip">${doc.category}</span>
+          ${tagsHtml}
+          <span class="card-arrow">→</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  document.querySelectorAll('.card').forEach(el => {
+    el.addEventListener('click', () => {
+      const doc = DOCUMENTS.find(d => d.id === el.dataset.id);
+      if (doc) openModal(doc);
+    });
+  });
+}
+
+function openModal(doc) {
+  const ti = typeInfo(doc.type);
+  modalTitle.textContent = doc.title;
+  modalBadge.className = `modal-badge ${ti.cls}`;
+  modalBadge.innerHTML = `<span class="dot"></span>${ti.label} · ${doc.category}`;
+  modalBody.textContent = doc.content;
+  modalTags.innerHTML = doc.tags.map(t => `<span class="modal-tag">#${t}</span>`).join('');
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  modalBody.scrollTop = 0;
+}
+
+function closeModal() {
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+modalClose.addEventListener('click', closeModal);
+modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+searchInput.addEventListener('input', (e) => {
+  currentQuery = e.target.value;
+  render();
+});
+
+tabs.forEach(btn => {
+  btn.addEventListener('click', () => {
+    tabs.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentFilter = btn.dataset.filter;
+    render();
+  });
+});
+
+render();
+</script>
+
+</body>
+</html>
+
